@@ -1,12 +1,26 @@
 <!-- ESTO ES SIMPLEMENTE EL PIE DE PÁGINA QUE SE MOSTRARÁ EN TODAS LAS PÁGINAS DE LA WEB -->
-<footer class="mt-5" style="background-color: #111111; color: #D1FAE5; padding: 20px 0; font-family: 'Poppins', sans-serif;">
-  <div class="container text-center">
-    <p>&copy; 2025 Clíniko. Todos los derechos reservados. Fracisco Javier Muriel Orta</p>
+<footer style="background-color: #76b7ec; color: #FFFFFF; border-top: 4px solid #f0cb93ff; padding: 20px 0;">
+  <div class="container">
+    <!--ENLACES DEL FOOTER DE LA IZQUIERDA-->
+    <p style="text-align: left; display: inline-block; width: 48%;">
+      <a href="aviso-legal.php" style="color: white; text-decoration: none;">Aviso legal</a><br>
+      <a href="politica-privacidad.php" style="color: white; text-decoration: none;">Política de privacidad</a><br>
+      <a href="politica-cookies.php" style="color: white; text-decoration: none;">Política de cookies</a><br>
+      <a href="terminos-uso.php" style="color: white; text-decoration: none;">Términos y condiciones de uso</a>
+    </p>
+
+    <!--ENLACES DEL FOOTER DE LA DERECHA-->
+    <p style="text-align: right; display: inline-block; width: 48%;">
+      <a href="como-funciona.php" style="color: white; text-decoration: none;">Cómo funciona Clíniko</a><br>
+      <a href="información-especialidades.php" style="color: white; text-decoration: none;">Especialidades médicas</a><br>
+      <a href="pagos.php" style="color: white; text-decoration: none;">Métodos de pago</a><br>
+    <!--IMAGEN DONDE SALEN LOS TIPOS DE TARJETA BANCARIA CON STRIPE. IMAGEN QUE OCUPE SIEMPRE EL 100% DEL ANCHO DEL CONTENEDOR PARA QEU NO SALGA EN RESPONSIVE Y NO SEA MÁS GRANDE 160PX DE ANCHO-->
+    <img 
+    src="img/tarjetas_stripe.png" style="margin-top: 8px; max-width: 160px; width: 100%;">
+    </p>
+  </div>
+
+  <div class="container text-center mt-3">
+    <p>&copy; 2025 Clíniko. Todos los derechos reservados. Francisco Javier Muriel Orta</p>
   </div>
 </footer>
-
-<!-- AL FINAL METO LOS SCRIPTS DE JAVASCRIPT PARA PRIORIZAR PRIMERO QUE SE CARGUE LOS ELEMENTOS HTML DE LA PÁGINA Y LOS ESTILOS-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/scripts.js"></script>
-</body>
-</html>

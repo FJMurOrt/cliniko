@@ -1,12 +1,31 @@
-/*COLOR DEL FONDO DEL BODY DE LA PÁGINA Y PARA QUE SE APLIQUE LA MISMA FUENTE A TODO*/
+/*COLOR DEL FONDO DEL BODY DE LA PÁGINA, QUE SE APLIQUE LA MISMA FUENTE A TODO Y QUE EL BODY SEPA QUE TIENE QUE OCUPAR EL 100% DE LA PÁGINA Y SIN MÁRGENES*/
+body, html{
+  height: 100%;
+  margin: 0;
+  background-color: #F7F7F7;
+  font-family: 'Roboto', sans-serif;
+}
+
+/*LE PONGO ESTE CSS AL BODY OTRA VEZ POR SEPARADO PARA DECIRLE QUE LA DESTRIBUCCIÓN ES FLEX Y DE TIPO COLUMNA, ES DECIR, DE ARRIBA A ABAJO. Y LA ALTURA MINIMA ES PARA QUE SIEMPRE OCUPE EL 100% DE LA ALTURA
+PÁGINA Y EL FOOTER NO SE ME SUBA HACIA ARRIBA*/
 body {
-  background-color: #e7e597ff;
-  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/*TIPO DE LETRA MONTSERRAT PARA LOS TITULOS*/
+h1, h2, h3, h4, h5 {
+  font-family: 'Montserrat', sans-serif;
 }
 
 /*UN HOVER PARA QUE CUANDO PASE EL RATÓN POR ENCIMA DE LOS ENLACES DEL MENÚ CAMBIEN A ESE COLOR*/
 .navbar-nav .nav-link:hover {
-    color: #6bd6a1 !important;
+    color: #FFF176 !important;
+}
+
+.navbar-nav .nav-link{
+    color: white !important;
 }
 
 /*ES LA CASE DONDE ESTAN METIDOS LOS CONTENIDOS DE LAS SECCIONES PARA QUE TENGA BASTANTE ANCHURA Y NO SE QUEDE CORTO Y QUE ESTÉ CENTADO TAMBIÉN*/
@@ -18,5 +37,22 @@ body {
 
 /*OTRO HOVER PARA CAMBIAR EL COLOR DE LOS BOTONES CUANDO ESTOY ENCIMA CON EL RATÓN, LE TENGO QUE METER !IMPORTANT PORQUE SI NO NO ES CAPAZ DE REEMPLAZAR EL ESTILO POR DEFECTO DE LA CLASE DE BOOTSTRAP*/
 .boton-cuadrado:hover {
-    background-color: #6bd6a1 !important;
+    background-color: #FFC107 !important;
+}
+
+/*CON FLEX 1 0 MANTENEMOS EL FOOTER SIEMPRE ABAJO DEL TODO PORQUE A VECES CUANDO EL CONTENIDO DEL BODY NO ERA TANTO, SE ME VENÍA PARA ARRIBA*/
+.contenedor_principal {
+  flex: 1 0 auto;
+}
+
+/*ESTILO DE HOVER PARA TODOS LOS ENLACES*/
+a:hover{
+  color: #FFF176 !important;
+}
+
+/*ESTILO PARA LOS ERRORES QUE LOS CAMPOS DEL FORMULARIO DE REGISTRO*/
+.error-text{
+  color: red;
+  font-size: 0.9em;
+  margin-top: 5px;
 }
