@@ -1,8 +1,8 @@
 <!-- ESTO ES SIMPLEMENTE EL PIE DE PÁGINA QUE SE MOSTRARÁ EN TODAS LAS PÁGINAS DE LA WEB -->
-<footer style="background-color: #76b7ec; color: #FFFFFF; border-top: 4px solid #f0cb93ff; padding: 20px 0;">
+<footer>
   <div class="container">
     <!--ENLACES DEL FOOTER DE LA IZQUIERDA-->
-    <p style="text-align: left; display: inline-block; width: 48%;">
+    <p style="text-align: left; display: inline-block; width: 48%; vertical-align: top;">
       <a href="aviso-legal.php" style="color: white; text-decoration: none;">Aviso legal</a><br>
       <a href="politica-privacidad.php" style="color: white; text-decoration: none;">Política de privacidad</a><br>
       <a href="politica-cookies.php" style="color: white; text-decoration: none;">Política de cookies</a><br>
@@ -10,13 +10,12 @@
     </p>
 
     <!--ENLACES DEL FOOTER DE LA DERECHA-->
-    <p style="text-align: right; display: inline-block; width: 48%;">
+    <p style="text-align: right; display: inline-block; width: 48%; vertical-align: top;">
       <a href="como-funciona.php" style="color: white; text-decoration: none;">Cómo funciona Clíniko</a><br>
       <a href="información-especialidades.php" style="color: white; text-decoration: none;">Especialidades médicas</a><br>
       <a href="pagos.php" style="color: white; text-decoration: none;">Métodos de pago</a><br>
     <!--IMAGEN DONDE SALEN LOS TIPOS DE TARJETA BANCARIA CON STRIPE. IMAGEN QUE OCUPE SIEMPRE EL 100% DEL ANCHO DEL CONTENEDOR PARA QEU NO SALGA EN RESPONSIVE Y NO SEA MÁS GRANDE 160PX DE ANCHO-->
-    <img 
-    src="img/tarjetas_stripe.png" style="margin-top: 8px; max-width: 160px; width: 100%;">
+    <img class="imagen-stripe" src="img/tarjetas_stripe.png">
     </p>
   </div>
 

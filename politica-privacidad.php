@@ -4,8 +4,8 @@
 <section class="seccion-que-es py-5">
     <div class="contenedor">
         <!--METO UNA IMAGEN Y LE PONGO FLOAR RIGHT PARA QUE QUEDE A LA DERECHA AL INICIO Y DE TAMAÑO DE ANCHO LO PONGO AL 30%-->
-        <img src="img/politica_privacidad.png" alt="candado" style="float: right; width: 30%;">
-        <h1 class="titulo-principal text-center" style="color: #f0cb93ff;">Política de privacidad</h1>
+        <img src="img/política_privacidad.png" alt="candado" style="float: right; width: 30%;">
+        <h1 class="titulo-principal text-center" style="color: #003366;">Política de privacidad</h1>
         
         <!--AQUÍ AHORA VOY HACIENDO PARRAFOS QUE SON CADA UNO DE LOS PUNTOS DEL CONTENIDO DE ESTA PÁGINA Y METO UNA BARRA HORIZONTAL CON HR PARA SEPARAR CADA PÁRRAFO-->
         <p class="descripcion-secundaria mt-3" style="color: #333333; text-align: justify;">
@@ -13,7 +13,7 @@
             usaremos y protegeremos toda información personal que se nos facilite al registrarse y hacer uso de las funciones de la plataforma.
         </p>
         <p class="descripcion-secundaria mt-3" style="color: #333333; text-align: justify;">
-            <h4 style="color: #f0cb93ff;"><u>Información que se recopila</u></h4>
+            <h4 style="color: #003366;"><u>Información que se recopila</u></h4>
             Cuando un usuario se registre en nuestra plataforma, recopilaremos la siguiente información:
                 <br><br>
                 <ul style = "list-style: none;">
@@ -29,7 +29,7 @@
         </p>
         <hr></hr>
         <p class="descripcion-secundaria mt-3" style="color: #333333; text-align: justify;">
-            <h4 style="color: #f0cb93ff;"><u>Uso de la información recopildad</u></h4>
+            <h4 style="color: #003366;"><u>Uso de la información recopildad</u></h4>
             El uso de la información que se recopila es el siguiente:
             <br><br>
                 <ul style = "list-style: none;">
@@ -42,7 +42,7 @@
         </p>
         <hr></hr>
         <p class="descripcion-secundaria mt-3" style="color: #333333; text-align: justify;">
-            <h4 style="color: #f0cb93ff;"><u>Protección de los datos</u></h4>
+            <h4 style="color: #003366;"><u>Protección de los datos</u></h4>
             <br><br>
                 <ul style = "list-style: none;">
                     <li>Todos los datos se almacenan en nuestra base de datos de manera segura</li>
@@ -53,7 +53,7 @@
         </p>
         <hr></hr>
         <p class="descripcion-secundaria mt-3" style="color: #333333; text-align: justify;">
-            <h4 style="color: #f0cb93ff;"><u>Compartir la información</u></h4>
+            <h4 style="color: #003366;"><u>Compartir la información</u></h4>
             <br><br>
                 <ul style = "list-style: none;">
                     <li>No vendemos ni alquilamos los datos personales a terceros</li>
@@ -62,7 +62,7 @@
         </p>
         <hr></hr>
         <p class="descripcion-secundaria mt-3" style="color: #333333; text-align: justify;">
-            <h4 style="color: #f0cb93ff;"><u>Cookies</u></h4>
+            <h4 style="color: #003366;"><u>Cookies</u></h4>
             <br><br>
                 <ul style = "list-style: none;">
                     <li>La web puede utlizar cookies para mejorar la navegación y recordar preferencias</li>
@@ -71,7 +71,7 @@
         </p>
         <hr></hr>
         <p class="descripcion-secundaria mt-3" style="color: #333333; text-align: justify;">
-            <h4 style="color: #f0cb93ff;"><u>Derecho de los usuarios</u></h4>
+            <h4 style="color: #003366;"><u>Derecho de los usuarios</u></h4>
             Como usuario de nuestra plataforma, tienes derecho a:
             <br><br>
                 <ul style = "list-style: none;">
@@ -82,7 +82,7 @@
         </p>
         <hr></hr>
         <p class="descripcion-secundaria mt-3" style="color: #333333; text-align: justify;">
-            <h4 style="color: #f0cb93ff;"><u>Contacto</u></h4>
+            <h4 style="color: #003366;"><u>Contacto</u></h4>
             Para más información, no dudes en ponerte en contacto con nosotros:
             <br><br>
                 <ul style = "list-style: none;">
@@ -90,7 +90,6 @@
                     <li>Teléfono: 000 000 000</li>
                 </ul>
         </p>
-        
     </div>
 </section>
 

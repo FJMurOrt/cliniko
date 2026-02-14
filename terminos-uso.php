@@ -5,21 +5,21 @@
     <div class="contenedor">
         <!--METO UNA IMAGEN Y LE PONGO FLOAR RIGHT PARA QUE QUEDE A LA DERECHA AL INICIO Y DE TAMAÑO DE ANCHO LO PONGO AL 30%-->
         <img src="img/contrato.png" alt="candado" style="float: right; width: 30%;">
-        <h1 class="titulo-principal text-center" style="color: #f0cb93ff;">Terminos y condiciones de uso</h1>
+        <h1 class="titulo-principal text-center" style="color: #003366;">Terminos y condiciones de uso</h1>
         
         <!--AQUÍ AHORA VOY HACIENDO PARRAFOS QUE SON CADA UNO DE LOS PUNTOS DEL CONTENIDO DE ESTA PÁGINA Y METO UNA BARRA HORIZONTAL CON HR PARA SEPARAR CADA PÁRRAFO-->
         <p class="descripcion-secundaria mt-3" style="color: #333333; text-align: justify;">
             El acceso y uso de la plataforma implica la aceptación de los presentes términos y condiciones de uso. En caso de rechazarlos, te recomendamos no usar la plataforma.
         </p>
         <p class="descripcion-secundaria mt-3" style="color: #333333; text-align: justify;">
-            <h4 style="color: #f0cb93ff;"><u>Objetivo de la plataforma</u></h4>
+            <h4 style="color: #003366;"><u>Objetivo de la plataforma</u></h4>
             Cíniko es un sitio web cuyo objetivo es facilitar el encuentro entre pacientes y médicos que busquen demandar u ofrecer sus servicios. En ningún caso, pretendemos sustituir
             la atención médica presencial.
             <br><br>
         </p>
         <hr></hr>
         <p class="descripcion-secundaria mt-3" style="color: #333333; text-align: justify;">
-            <h4 style="color: #f0cb93ff;"><u>Usuarios de la plataforma</u></h4>
+            <h4 style="color: #003366;"><u>Usuarios de la plataforma</u></h4>
             En Clíniko pueden registrarse los siguientes tipos de usuarios:
             <br><br>
                 <ul style = "list-style: none;">
@@ -31,7 +31,7 @@
         </p>
         <hr></hr>
         <p class="descripcion-secundaria mt-3" style="color: #333333; text-align: justify;">
-            <h4 style="color: #f0cb93ff;"><u>Registro y cuenta de usuario</u></h4>
+            <h4 style="color: #003366;"><u>Registro y cuenta de usuario</u></h4>
             <br><br>
             Para poder acceder a las funcionalidades que ofrece a la plataforma, la creación de una cuenta o registro es obligatorio. Con ello, además, el usuario se compromete
             a proporcionar inforación veraz y actualizada. También, se vuelve a recordar que el usuario debe ser responsable de la información que proporciona así como de mantener
@@ -39,7 +39,7 @@
         </p>
         <hr></hr>
         <p class="descripcion-secundaria mt-3" style="color: #333333; text-align: justify;">
-            <h4 style="color: #f0cb93ff;"><u>Uso correcto de la plataforma</u></h4>
+            <h4 style="color: #003366;"><u>Uso correcto de la plataforma</u></h4>
             <br><br>
             Para cumplir con los terminos y condiciones de uso, el usuario de ha de comprometer a:
             <ul style = "list-style: none;">
@@ -52,7 +52,7 @@
         </p>
         <hr></hr>
         <p class="descripcion-secundaria mt-3" style="color: #333333; text-align: justify;">
-            <h4 style="color: #f0cb93ff;"><u>Gestión de citas médicas</u></h4>
+            <h4 style="color: #003366;"><u>Gestión de citas médicas</u></h4>
             <br><br>
             <ul style = "list-style: none;">
                 <li>Los pacientes podrán solicitar, modificar o cancelar citas según la disponibildad que tenga el médico solicitado.</li>
@@ -62,7 +62,7 @@
         </p>
         <hr></hr>
         <p class="descripcion-secundaria mt-3" style="color: #333333; text-align: justify;">
-            <h4 style="color: #f0cb93ff;"><u>Valoracaiones y comentarios</u></h4>
+            <h4 style="color: #003366;"><u>Valoracaiones y comentarios</u></h4>
             <br><br>
             <ul style = "list-style: none;">
                 <li>Las valoraciones deben ser reales y, siempre, mantener el respeto.</li>
@@ -72,7 +72,7 @@
         </p>
         <hr></hr>
         <p class="descripcion-secundaria mt-3" style="color: #333333; text-align: justify;">
-            <h4 style="color: #f0cb93ff;"><u>Responsabilidad</u></h4>
+            <h4 style="color: #003366;"><u>Responsabilidad</u></h4>
             <br><br>
             Clíniko no garantiza la disponibilidad continua del servicio o no será responsable de:
             <ul style = "list-style: none;">
@@ -83,25 +83,25 @@
         </p>
         <hr></hr>
         <p class="descripcion-secundaria mt-3" style="color: #333333; text-align: justify;">
-            <h4 style="color: #f0cb93ff;"><u>Protección de datos</u></h4>
+            <h4 style="color: #003366;"><u>Protección de datos</u></h4>
             <br><br>
             El tratamiento de los datos personales se rige por lo establecido en la <a href="politica-privacidad.php">Política de privacidad</a>, accesible desde el mismo sitio web.
         </p>
         <hr></hr>
         <p class="descripcion-secundaria mt-3" style="color: #333333; text-align: justify;">
-            <h4 style="color: #f0cb93ff;"><u>Propiedad intelectual</u></h4>
+            <h4 style="color: #003366;"><u>Propiedad intelectual</u></h4>
             <br><br>
             Todos los contenidos de la web son propiedad de Clíniko o se utilizan con autorización previa. Queda prohibida su reproducción sin consentimiento previo.
         </p>
         <hr></hr>
         <p class="descripcion-secundaria mt-3" style="color: #333333; text-align: justify;">
-            <h4 style="color: #f0cb93ff;"><u>Modificaciones</u></h4>
+            <h4 style="color: #003366;"><u>Modificaciones</u></h4>
             <br><br>
             Clíniko se reserva el derecho de poder modificar estos términos y condiciones en cualquier momento.
         </p>
         <hr></hr>
         <p class="descripcion-secundaria mt-3" style="color: #333333; text-align: justify;">
-            <h4 style="color: #f0cb93ff;"><u>Legislación aplicable</u></h4>
+            <h4 style="color: #003366;"><u>Legislación aplicable</u></h4>
             <br><br>
             Estos términos se rigen por la legislación española. Cualquier conflicto se someterá a los tribunales de justicia correspondientes.
         </p>

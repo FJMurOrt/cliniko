@@ -2,7 +2,7 @@
 body, html{
   height: 100%;
   margin: 0;
-  background-color: #F7F7F7;
+  background-color: #AED0DE;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -19,14 +19,17 @@ h1, h2, h3, h4, h5 {
   font-family: 'Montserrat', sans-serif;
 }
 
-/*UN HOVER PARA QUE CUANDO PASE EL RATÓN POR ENCIMA DE LOS ENLACES DEL MENÚ CAMBIEN A ESE COLOR*/
-.navbar-nav .nav-link:hover {
-    color: #FFF176 !important;
+/*FONDO DE LA BARRA DE MENÚ*/
+.navbar{
+    background-color: #01497C;
+    border-bottom: 4px solid #D47B5E;
 }
 
-.navbar-nav .nav-link{
-    color: white !important;
+/*UN HOVER PARA QUE CUANDO PASE EL RATÓN POR ENCIMA DE LOS ENLACES DEL MENÚ CAMBIEN A ESE COLOR*/
+.navbar-nav .nav-link:hover {
+    color: #D47B5E !important;
 }
+
 
 /*ES LA CASE DONDE ESTAN METIDOS LOS CONTENIDOS DE LAS SECCIONES PARA QUE TENGA BASTANTE ANCHURA Y NO SE QUEDE CORTO Y QUE ESTÉ CENTADO TAMBIÉN*/
 .contenedor {
@@ -35,9 +38,30 @@ h1, h2, h3, h4, h5 {
   padding: 20px;
 }
 
-/*OTRO HOVER PARA CAMBIAR EL COLOR DE LOS BOTONES CUANDO ESTOY ENCIMA CON EL RATÓN, LE TENGO QUE METER !IMPORTANT PORQUE SI NO NO ES CAPAZ DE REEMPLAZAR EL ESTILO POR DEFECTO DE LA CLASE DE BOOTSTRAP*/
+/*ESTILOS PARA LOS BOTONES QUE SON NARANJAS CON HOVER MÁS CLARO. LE METO !IMPORTANT PORQUE SI NO CON EL ESTILO DE BOOTSTRAP ME LO TAPA*/
+.boton-cuadrado{
+    background-color: #D47B5E !important;
+    color: white;
+}
+
 .boton-cuadrado:hover {
     background-color: #FFC107 !important;
+    color: #D47B5E !important;
+}
+
+/*ESTILOS PARA EL FOOTER*/
+footer{
+  background-color: #01497C;
+  color: #FFFFFF;
+  border-top: 4px solid #D47B5E;
+  padding: 20px 0;
+}
+
+/*ESTILOS PARA LA IMAGEN DE LAS TARJETAS DE STRIPE DEL FOOTER*/
+.imagen-stripe{
+  margin-top: 8px;
+  max-width: 160px;
+  width: 100%;
 }
 
 /*CON FLEX 1 0 MANTENEMOS EL FOOTER SIEMPRE ABAJO DEL TODO PORQUE A VECES CUANDO EL CONTENIDO DEL BODY NO ERA TANTO, SE ME VENÍA PARA ARRIBA*/
@@ -47,7 +71,7 @@ h1, h2, h3, h4, h5 {
 
 /*ESTILO DE HOVER PARA TODOS LOS ENLACES*/
 a:hover{
-  color: #FFF176 !important;
+  color: #D47B5E !important;
 }
 
 /*ESTILO PARA LOS ERRORES QUE LOS CAMPOS DEL FORMULARIO DE REGISTRO*/
@@ -55,4 +79,163 @@ a:hover{
   color: red;
   font-size: 0.9em;
   margin-top: 5px;
+}
+
+/*ESTILO PARA EL DIFUMINADO DE LA PARTE DE ABAJO DE LA MÉDICA DE LA SECCIÓN PRINCIPAL DEL INDEX */
+.medico_index{
+  mask-image: linear-gradient(
+    black 50%,
+    transparent
+  );
+}
+
+/*ESTILO PARA EL DIFUMINADO DE LAS IMAGENES DE LOS SERVICIOS DISPONIBLES*/
+.imagen-servicio {
+  border: 3px solid #446a8f;
+  border-radius: 20px;
+}
+
+/*DIFUMINADO SUPERIOR DEL BANNER DE ABAJO DEL TODO DEL INDEX. TENGO QUE PONER DOS VECES LA LÍNEA PARA ASEGURARME DE LA COMPATIBILIDAD DEL ESITLO DE WEBKIT EN NAVEGADORES ANTIGUOS*/
+.banner_final {
+  width: 100%;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 30%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 30%);
+}
+
+/*COLOR PARA EL SELECCIONAR DEL RATÓN, PARA QUE NO SE EL AZUL POR DEFECTO*/
+::selection {
+  background-color: #D47B5E;
+  color: #FFFFFF;
+}
+
+/*ESTILO PARA EL FONDO DEL FORMULARIO DE REGISTRO*/
+.formulario-registro{
+    background-color: #F5F5F5;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 0 20px #D47B5E;
+}
+
+/*ESTILO PARA EL FONDO DEL FORMULARIO DEl LOGIN*/
+.formulario-login{
+    background-color: #F5F5F5;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 0 20px #D47B5E;
+}
+
+/*PARA METELER UN SOMBREADO CENTRAL AZUL A LOS DIVS DE CADA SERVICIO*/
+.servicio{
+  box-shadow: 0 0 20px #003366;
+}
+
+/*PARA DIFUMINAR LA IMÁGEN POR ABAJO*/
+.imagen_abrazados{
+  mask-image: linear-gradient(
+    black 50%,
+    transparent
+  );
+}
+
+/*TAMBIÉN, PARA DIFUMINAR LA IMÁGEN POR ABAJO*/
+.imagen-como-se-usa{
+  mask-image: linear-gradient(
+    black 50%,
+    transparent
+  );
+}
+
+/*TAMBIÉN, PARA DIFUMINAR LA IMÁGEN POR ABAJO*/
+.imagen-pagos{
+  mask-image: linear-gradient(
+    black 50%,
+    transparent
+  );
+}
+
+/*ESTILO PARA EL FONDO DEL FORMULARIO PARA RECUPERAR LA CONTRASEÑA*/
+.area-recuperar-contrasena{
+  background-color: #F5F5F5;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 0 20px #D47B5E;
+}
+
+/*ESTILOS PARA LA IMAGEN Y FONDO DEL MENSAJE DE CONFIRMACIÓN DE REGISTRO*/
+.imagen_esperar{
+  width: 60%;
+  display: block;
+  margin: 0 auto;
+}
+
+.esperar-registro{
+  background-color: #F5F5F5;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 0 20px #D47B5E;
+}
+/*ESTILO PARA LA ALERTA DE LAS COOKIES QUE ES BÁSICAMENTE UN DIV*/
+.alerta-para-que-aceptes{
+  display:none;
+  position:fixed;
+  bottom:0;
+  width:100%;
+  background:#003366;
+  color:white;
+  text-align:center;
+  padding:10px;
+  border:3px solid orange;
+}
+
+/*LOS ESTILOS PARA EL BOTÓN PARA SUBIR LA PAGÍNA ARRIBA*/
+.boton-subir{
+  display:none;
+  position:fixed;
+  bottom:60px;
+  right:20px;
+  background-color: #D47B5E !important;
+  color: white !important;
+}
+
+.boton-subir:hover{
+  background-color: #FFC107 !important;
+  color: #D47B5E !important;
+}
+
+/*FONDO DEL FORMULARIO PARA CAMBIAR LA CONTRASEÑA*/
+.area-cambiar-contrasena{
+  background-color: #F5F5F5;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 0 20px #D47B5E;
+}
+
+/*FONDO DEL MENSAJE DESPUÉS DE ENVIAR EL CORREO DE RECUPERACIÓN*/
+.area-mensaje-recuperacion {
+  background-color: #F5F5F5;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 0 20px #D47B5E;
+}
+
+/*FONDO PARA EL MENSAJE DE CONFIRMACIÓN DEL CAMBIO DE CONTRASEÑA*/
+.area-confirmacion-nueva-contrasena{
+  background-color: #F5F5F5;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 0 20px #D47B5E;
 }

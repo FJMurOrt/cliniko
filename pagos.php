@@ -4,9 +4,8 @@
 <section class="seccion-que-es py-5">
     <div class="contenedor">
         <!--METO UNA IMAGEN Y LE PONGO FLOAR RIGHT PARA QUE QUEDE A LA DERECHA AL INICIO Y DE TAMAÑO DE ANCHO LO PONGO AL 30%-->
-        <img src="img/pagos.png" alt="candado" style="float: right; width: 30%;">
-        <h1 class="titulo-principal text-center" style="color: #f0cb93ff;">Métodos de pago</h1>
-        
+        <img class="imagen-pagos" src="img/pagos.png" alt="candado" style="float: right; width: 30%;">
+        <h1 class="titulo-principal text-center" style="color: #003366;">Métodos de pago</h1>
         <!--AQUÍ AHORA VOY HACIENDO PARRAFOS QUE SON CADA UNO DE LOS PUNTOS DEL CONTENIDO DE ESTA PÁGINA Y METO UNA BARRA HORIZONTAL CON HR PARA SEPARAR CADA PÁRRAFO-->
         <p class="descripcion-secundaria mt-3" style="color: #333333; text-align: justify;">
            En Clíniko también nos ofrecemos a proporcionar un proceso de pago seguro, transparente y cómodo para todos nuestros pacientes. Actualmente, todas las citas médicas reservas a través

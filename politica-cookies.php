@@ -5,7 +5,7 @@
     <div class="contenedor">
         <!--METO UNA IMAGEN Y LE PONGO FLOAR RIGHT PARA QUE QUEDE A LA DERECHA AL INICIO Y DE TAMAÑO DE ANCHO LO PONGO AL 30%-->
         <img src="img/cookies.png" alt="candado" style="float: right; width: 30%;">
-        <h1 class="titulo-principal text-center" style="color: #f0cb93ff;">Política de Cookies</h1>
+        <h1 class="titulo-principal text-center" style="color: #003366;">Política de Cookies</h1>
         
         <!--AQUÍ AHORA VOY HACIENDO PARRAFOS QUE SON CADA UNO DE LOS PUNTOS DEL CONTENIDO DE ESTA PÁGINA Y METO UNA BARRA HORIZONTAL CON HR PARA SEPARAR CADA PÁRRAFO-->
         <p class="descripcion-secundaria mt-3" style="color: #333333; text-align: justify;">
@@ -13,7 +13,7 @@
             cómo las usamos en Clíniko y como puedes configurarlas a tu gusto:
         </p>
         <p class="descripcion-secundaria mt-3" style="color: #333333; text-align: justify;">
-            <h4 style="color: #f0cb93ff;"><u>¿Qué son las cookies?</u></h4>
+            <h4 style="color: #003366;"><u>¿Qué son las cookies?</u></h4>
             Las cookies son pequeños datos que se alamacenan en el dispotivo en el que te encuentres visualizando nuestra web. Al almacenarse, permiten que recordar
             las configuraciones o preferencias que hayas tenido en nuestra web. De esta manera, la próxima vez que entraras a la web, podrías omitir realizar algunos pasos porque
             el navegador ya recordaría como lo dejaste establecido la última vez.
@@ -21,7 +21,7 @@
         </p>
         <hr></hr>
         <p class="descripcion-secundaria mt-3" style="color: #333333; text-align: justify;">
-            <h4 style="color: #f0cb93ff;"><u>Tipos de cookies que usamos</u></h4>
+            <h4 style="color: #003366;"><u>Tipos de cookies que usamos</u></h4>
             El uso de la información que se recopila es el siguiente:
             <br><br>
                 <ul style = "list-style: none;">
@@ -32,14 +32,14 @@
         </p>
         <hr></hr>
         <p class="descripcion-secundaria mt-3" style="color: #333333; text-align: justify;">
-            <h4 style="color: #f0cb93ff;"><u>Cómo gestionar tus cookies</u></h4>
+            <h4 style="color: #003366;"><u>Cómo gestionar tus cookies</u></h4>
             <br><br>
             Puedes configurar tu propio navegador para aceptar, bloquear o incluso eliminar aquellas cookies que desees. Al mismo tiempo, hay que entender que bloquear cookies
             ténicas podría llevar a un mal funcionamiento de la web.
         </p>
         <hr></hr>
         <p class="descripcion-secundaria mt-3" style="color: #333333; text-align: justify;">
-            <h4 style="color: #f0cb93ff;"><u>Navegación y aceptación de cookies</u></h4>
+            <h4 style="color: #003366;"><u>Navegación y aceptación de cookies</u></h4>
             <br><br>
             Entonces, recuerda que si deseas mantener el correcto funcionamiento de la plataforma has de aceptar las coockiees establecidas por esta política.
         </p>

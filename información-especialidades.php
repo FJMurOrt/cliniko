@@ -5,8 +5,7 @@
     <div class="contenedor">
         <!--METO UNA IMAGEN Y LE PONGO FLOAR RIGHT PARA QUE QUEDE A LA DERECHA AL INICIO Y DE TAMAÑO DE ANCHO LO PONGO AL 30%-->
         <img src="img/especialidades.png" alt="candado" style="float: right; width: 30%;">
-        <h1 class="titulo-principal text-center" style="color: #f0cb93ff;">Especialidades médicas</h1>
-        
+        <h1 class="titulo-principal text-center" style="color: #003366;">Especialidades médicas</h1>
         <!--AQUÍ AHORA VOY HACIENDO PARRAFOS QUE SON CADA UNO DE LOS PUNTOS DEL CONTENIDO DE ESTA PÁGINA Y METO UNA BARRA HORIZONTAL CON HR PARA SEPARAR CADA PÁRRAFO-->
         <p class="descripcion-secundaria mt-3" style="color: #333333; text-align: justify;">
            En Clíniko nos comprometemos a ofrecer un servicio de salud integral, contando con profesionales cualificados en distintas especialidades médicas.

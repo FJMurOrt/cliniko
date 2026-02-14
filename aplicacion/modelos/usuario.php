@@ -2,9 +2,12 @@
 require_once '../configuracion/config.php';
 
 function registrarUsuario($conexion, $nombre, $apellidos, $correo, $contrasena, $rol, $telefono, $fecha_nacimiento, $direccion, $nss, $numero_colegiado, $id_especialidad, $foto) {
+    //HASEAMOS LA CONTRASEÑA PARA MÁS SEGURIDAD
+    $contrasena = password_hash($contrasena, PASSWORD_DEFAULT);
+
     //GUARDAMOS LA INFROMACIÓN EN LA TABLA USUARIOS.
-    $sql = "INSERT INTO usuarios (nombre, apellidos, correo, contrasena, telefono, rol, foto_perfil) 
-            VALUES ('$nombre', '$apellidos', '$correo', '$contrasena', '$telefono', '$rol', '$foto')";
+    $sql = "INSERT INTO usuarios (nombre, apellidos, correo, contrasena, telefono, rol, foto_perfil, habilitado) 
+            VALUES ('$nombre', '$apellidos', '$correo', '$contrasena', '$telefono', '$rol', '$foto', 'no')";
 
     $resultado = mysqli_query($conexion, $sql);
 
