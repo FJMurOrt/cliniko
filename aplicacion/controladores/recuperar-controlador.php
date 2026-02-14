@@ -29,7 +29,7 @@ if(mysqli_num_rows($resultado) == 1){
     mysqli_query($conexion, $sql2);
 
     //ENVIAMOS EL CORREO CON LA API
-    $api = "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";
+    $api = "clave_de_la_api(no la puedo poner porque no puedo subirla a github)";
     $url = "https://api.brevo.com/v3/smtp/email";
     $enlace_recuperar = "http://localhost/cliniko_copia_con_datos_para_local - copia/cambiar-contrasena.php?token=$token";
 
