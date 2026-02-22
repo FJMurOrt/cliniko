@@ -12,4 +12,6 @@ $conexion = mysqli_connect($host, $usuario, $contrasena, $base_datos);
 if (!$conexion) {
     die("Hubo un error al intentar conectar con la base de datos: " . mysqli_connect_error());
 }
+
+mysqli_set_charset($conexion, "utf8");
 ?>

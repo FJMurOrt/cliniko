@@ -30,7 +30,6 @@ h1, h2, h3, h4, h5 {
     color: #D47B5E !important;
 }
 
-
 /*ES LA CASE DONDE ESTAN METIDOS LOS CONTENIDOS DE LAS SECCIONES PARA QUE TENGA BASTANTE ANCHURA Y NO SE QUEDE CORTO Y QUE ESTÉ CENTADO TAMBIÉN*/
 .contenedor {
   max-width: 1200px;
@@ -238,4 +237,12 @@ a:hover{
   max-width: 500px;
   margin: 0 auto;
   box-shadow: 0 0 20px #D47B5E;
+}
+
+/*PARA LA ALERTA DE LOS ERRORES DEL BACKEND CON SESSION*/
+.alert{
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: 0 auto;
 }

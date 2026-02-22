@@ -29,9 +29,9 @@ if(mysqli_num_rows($resultado) == 1){
     mysqli_query($conexion, $sql2);
 
     //ENVIAMOS EL CORREO CON LA API
-    $api = "clave_de_la_api(no la puedo poner porque no puedo subirla a github)";
+    $api = "CLAVE_SECRETA_QUE_NO_PUEDO_MOSTRAR";
     $url = "https://api.brevo.com/v3/smtp/email";
-    $enlace_recuperar = "http://localhost/cliniko_copia_con_datos_para_local - copia/cambiar-contrasena.php?token=$token";
+    $enlace_recuperar = "http://localhost/cliniko_copia_con_datos_para_local/cambiar-contrasena.php?token=$token";
 
     $correo = [
         "sender" => ["name" => "Clíniko", "email" => "francisco.javier.muriel.orta@ieslaarboleda.es"],

@@ -1,0 +1,127 @@
+:root {
+  --bs-primary: #ff0066;
+  --bs-success: #00c853;
+  --bs-info: #00bcd4;
+  --bs-warning: #ff9800;
+  --bs-danger: #e53935;
+}
+
+/*CAMBIO DE COLORES A LA BARRA DE MENÚ LATERAL Y LOS ENLACES*/
+.sidebar{
+  background: #064635 !important;
+}
+.sidebar .nav-link{
+  color: #D1FAE5 !important;
+}
+.sidebar .nav-link:hover{
+  background-color: #1E9E6A !important;
+  color: white !important;
+}
+
+/*APLICO LA FUENTE ROBOTO QUE ES LA QUE USO EN MI WEB PARA TODO EL PANEL*/
+body, 
+h1, h2, h3, h4, h5, h6,
+.sidebar,
+.navbar,
+.btn,
+.card,
+.dropdown-menu{
+  font-family: 'Roboto', sans-serif !important;
+}
+/*EL FONDO DEL BODY SERÁ DEL MISMO COLOR QUE EL DEL CONTENIDO PARA EN CASO DE QE EL CONTENIDO SE QUEDE CORTO*/
+body{
+  background-color: #F7FCFA;
+}
+
+/*PARA QUE EL CONTENEDOR QUE ESTÁ DENTRO DEL BODY OCUPE TODA LA ALTURA Y COJA DEL COLOR DE FONDO QUE YA LE PUSE AL BODY (PORQUE SE ROMPÍA)*/
+#content-wrapper {
+    flex: 1 !important;
+    background-color: inherit !important;
+}
+
+/*COLOR PARA EL FONDO DEL CONTENEDOR DONDE SE MUESTRA TODO EL CONTENIDO EN EL PANEL*/
+.content, .container-fluid{
+    background-color: #F7FCFA !important;
+}
+
+/*COLOR DE LA BARRA DE MENÚ HORIZONTAL*/
+.navbar{
+    background-color: #1E9E6A !important;
+    color: white !important;
+    border-bottom: 3px solid #064635;
+}
+
+/*CAMBIO DE COLOR AL FONDO DEL FOOTER*/
+footer.sticky-footer{
+    background-color: #1E9E6A !important;
+    color: white !important;
+    border-top: 3px solid #064635;
+}
+
+/*ESTO PARA QUITAR EL ESPACIO DE MARGEN QUE VENÍA POR DEFECTO QUE ERA HORRIBLE LA VERDAD*/
+.navbar {
+    margin-bottom: 0 !important;
+}
+
+.content, .container-fluid{
+   padding: 20px;
+}
+
+/*ESTILOS PARA EL COLOR DE LOS ICONOS DE LA CAMPA Y EL DE CORREO DE LA BARRA DE MENU DE ARRIBA*/
+#alertsDropdown i.fas.fa-bell,
+#messagesDropdown i.fas.fa-envelope{
+    color: white !important;
+}
+
+/*ESTILOS HVOER PARA ICONO DE LA CAMPANA EN LA BARRA DE MENU DE ARRIBA*/
+#alertsDropdown i.fas.fa-bell:hover,
+#messagesDropdown i.fas.fa-envelope:hover{
+    color: #01497C !important;
+}
+
+/*PARA HACER EL ICONO DONDE APARECE LA FOTO DE PERFIL MÁS GRANDE Y METERLE TAMBIÉN UN BORDE*/
+.img-profile{
+    width: 50px !important;
+    height: 50px !important;
+    border: 3px solid #01497C;
+    box-sizing: border-box;
+}
+
+.nombre-usuario{
+    color: white !important;
+}
+
+/*CAMBIO DE COLOR AL BOTÓN PARA ESCONDER LA BARRA DE MENÚ LATERAL*/
+#sidebarToggle,
+#sidebarToggleTop{
+    background-color: #1E9E6A !important;
+}
+
+/*CAMBIO DE COLOR AL BOTÓN QUE ESCONDE LA BARRA DE MENÚ LATERAL CUANDO SE HACE HOVER*/
+#sidebarToggle:hover,
+#sidebarToggleTop:hover {
+    background-color: #B7E4C7 !important;
+}
+
+/*ESTILO BOTON DE LA BARRA DE ARRIBA*/
+#sidebarToggleTop i {
+    color: #064635 !important;
+}
+
+/*ESTILO DEL BOTON PARA SUBIR LA PÁGINA*/
+.scroll-to-top{
+    background-color: #01497C;
+    color: white;
+}
+
+/*ESTILO PARA EL HOVER DEL BOTÓN PARA SUBIR PARA ARRIBA*/
+.scroll-to-top:hover{
+    background-color: #1E9E6A;
+    color: #064635;
+}
+
+/*ESTILO EL COLOR DE LA SELECCIÓN CON EL RATÓN EN EL PANEL*/
+::selection{
+    background-color: #B7E4C7;
+    color: #064635;
+}

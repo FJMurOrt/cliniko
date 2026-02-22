@@ -38,10 +38,37 @@ if(empty($errores)){
     if(!$usuario_que_inicia_sesion){
         $errores[] = "El correo o la contraseña introducida no es correcto.";
     } else {
+        //GUARDARMOS EN EL SESSION TODOS LOS CAMPOS DEL USUARIO PARA LLEVARNOSLOS AL PANEL DEL INICIO DE SESIÓN
+        $_SESSION['id_usuario']    = $usuario_que_inicia_sesion['id_usuario'];
+        $_SESSION['habilitado']    = $usuario_que_inicia_sesion['habilitado'];
+        $_SESSION['rol']            = $usuario_que_inicia_sesion['rol'];
+        $_SESSION['nombre']         = $usuario_que_inicia_sesion['nombre'];
+        $_SESSION['apellidos']      = $usuario_que_inicia_sesion['apellidos'];
+        $_SESSION['correo']         = $usuario_que_inicia_sesion['correo'];
+        $_SESSION['telefono']        = $usuario_que_inicia_sesion['telefono'];
+        $_SESSION['fecha_registro'] = $usuario_que_inicia_sesion['fecha_registro'];
+        $_SESSION['foto_perfil']    = $usuario_que_inicia_sesion['foto_perfil'];
+
+        if ($usuario_que_inicia_sesion['rol'] === "administrador") {
+            header("Location: ../vistas/administrador/index.php");
+            exit;
+        }
         if($usuario_que_inicia_sesion['habilitado'] === "no"){
             header("Location: ../../despues-de-registro.php");
             exit;
         }
+        if ($usuario_que_inicia_sesion['rol'] === "medico") {
+            header("Location: ../vistas/medico/index.php");
+            exit;
+        } 
+        elseif ($usuario_que_inicia_sesion['rol'] === "paciente") {
+            header("Location: ../vistas/paciente/index.php");
+            exit;
+        } 
     }
 }
+//ENVIAMOS EL ARRAY CON LOS ERRORES EN EL SESSION Y LOS MOTRAMOS EN EL LOGIN.PHP
+$_SESSION["errores"] = $errores;
+header("Location: ../../login.php");
+exit;
 ?>
