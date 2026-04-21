@@ -14,7 +14,7 @@
   color: #D1FAE5 !important;
 }
 .sidebar .nav-link:hover{
-  background-color: #1E9E6A !important;
+  background-color: #D47B5E !important;
   color: white !important;
 }
 
@@ -30,7 +30,7 @@ h1, h2, h3, h4, h5, h6,
 }
 /*EL FONDO DEL BODY SERÁ DEL MISMO COLOR QUE EL DEL CONTENIDO PARA EN CASO DE QE EL CONTENIDO SE QUEDE CORTO*/
 body{
-  background-color: #F7FCFA;
+  background-color: #c3e9d9;
 }
 
 /*PARA QUE EL CONTENEDOR QUE ESTÁ DENTRO DEL BODY OCUPE TODA LA ALTURA Y COJA DEL COLOR DE FONDO QUE YA LE PUSE AL BODY (PORQUE SE ROMPÍA)*/
@@ -39,23 +39,17 @@ body{
     background-color: inherit !important;
 }
 
-/*COLOR PARA EL FONDO DEL CONTENEDOR DONDE SE MUESTRA TODO EL CONTENIDO EN EL PANEL*/
-.content, .container-fluid{
-    background-color: #F7FCFA !important;
-}
-
 /*COLOR DE LA BARRA DE MENÚ HORIZONTAL*/
 .navbar{
-    background-color: #1E9E6A !important;
+    background-color: transparent !important;
     color: white !important;
-    border-bottom: 3px solid #064635;
 }
 
 /*CAMBIO DE COLOR AL FONDO DEL FOOTER*/
 footer.sticky-footer{
-    background-color: #1E9E6A !important;
-    color: white !important;
-    border-top: 3px solid #064635;
+    background-color: transparent !important;
+    color: #064635 !important;
+    border-top: 2px solid #064635;
 }
 
 /*ESTO PARA QUITAR EL ESPACIO DE MARGEN QUE VENÍA POR DEFECTO QUE ERA HORRIBLE LA VERDAD*/
@@ -64,6 +58,7 @@ footer.sticky-footer{
 }
 
 .content, .container-fluid{
+    margin-top: 20px;
    padding: 20px;
 }
 
@@ -81,26 +76,34 @@ footer.sticky-footer{
 
 /*PARA HACER EL ICONO DONDE APARECE LA FOTO DE PERFIL MÁS GRANDE Y METERLE TAMBIÉN UN BORDE*/
 .img-profile{
-    width: 50px !important;
-    height: 50px !important;
-    border: 3px solid #01497C;
+    width: 65px !important;
+    height: 65px !important;
+    border: 2px solid #064635;
     box-sizing: border-box;
+    object-fit: cover;
+    box-shadow: 0 0 20px #38bf87;
 }
 
 .nombre-usuario{
-    color: white !important;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border: 2px solid #064635;
+    border-radius: 6px;
+    color: #064635 !important;
 }
 
 /*CAMBIO DE COLOR AL BOTÓN PARA ESCONDER LA BARRA DE MENÚ LATERAL*/
 #sidebarToggle,
 #sidebarToggleTop{
-    background-color: #1E9E6A !important;
+    background-color: #659380 !important;
 }
 
 /*CAMBIO DE COLOR AL BOTÓN QUE ESCONDE LA BARRA DE MENÚ LATERAL CUANDO SE HACE HOVER*/
 #sidebarToggle:hover,
 #sidebarToggleTop:hover {
-    background-color: #B7E4C7 !important;
+    background-color: #a2c6ae !important;
 }
 
 /*ESTILO BOTON DE LA BARRA DE ARRIBA*/
@@ -110,18 +113,779 @@ footer.sticky-footer{
 
 /*ESTILO DEL BOTON PARA SUBIR LA PÁGINA*/
 .scroll-to-top{
-    background-color: #01497C;
+    background-color: #064635;
     color: white;
 }
 
 /*ESTILO PARA EL HOVER DEL BOTÓN PARA SUBIR PARA ARRIBA*/
 .scroll-to-top:hover{
-    background-color: #1E9E6A;
+    background-color: #a2c6ae;
     color: #064635;
 }
 
 /*ESTILO EL COLOR DE LA SELECCIÓN CON EL RATÓN EN EL PANEL*/
 ::selection{
-    background-color: #B7E4C7;
+    background-color: #72a785;
     color: #064635;
+}
+
+/*ESTILO PARA EL FORMULARIO DE LA DISPONIBILIDAD DEL MÉDICO*/
+.area-gestionar-disponibilidad-medico{
+    background-color: transparent !important;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 0 20px #38bf87;
+}
+
+/*LETRA PARA EL TITULO DEL FORMULARIO DE LA GESTIÓN DE LA DISPONBIILIDAD DEL MÉDICO*/
+.disponibilidad-form-titulo{
+    color: #064635;
+}
+/*ESTILOS DE LOS BOTONES*/
+.boton-cuadrado{
+    border: 2px solid #0e7f52;
+    border-radius: 20px;
+    background-color: #1E9E6A !important;
+    color: #D1FAE5;
+}
+
+.boton-cuadrado:hover{
+    background-color: #B7E4C7 !important;
+    border: 2px solid #1E9E6A;
+    color: #1E9E6A;
+    box-shadow: 0 0 20px #1E9E6A;
+    
+}
+
+.boton-cuadrado-eliminar{
+    border-radius: 20px;
+    border: 2px solid rgb(100, 29, 29);
+    background-color: rgb(179, 41, 41) !important;
+    color: #D1FAE5;
+}
+
+.boton-cuadrado-eliminar:hover{
+    background-color: rgb(249, 160, 160) !important;
+    border: 2px solid rgb(100, 29, 29);
+    color: #D1FAE5 !important;
+    box-shadow: 0 0 20px rgb(100, 29, 29);
+}
+
+/*ESTILOS DE LOS BOTONES*/
+.boton-cuadrado-editar{
+    border-radius: 20px;
+    background-color: #1E9E6A !important;
+    color: #D1FAE5;
+}
+
+.boton-cuadrado-editar:hover{
+    background-color: #B7E4C7 !important;
+    border: 1px solid #1E9E6A;
+    color: #1E9E6A;
+    box-shadow: 0 0 20px #1E9E6A;
+}
+
+.boton-actualizar-horario{
+    border-radius: 20px;
+    background-color: #26b8b3 !important;
+    border: 1px solid #1E9E6A;
+    color: #D1FAE5;
+}
+
+.boton-actualizar-horario:hover{
+    background-color: #a5ecf0 !important;
+    border: 1px solid #1E9E6A;
+    color: #6aaf8b;
+    box-shadow: 0 0 20px #15aeb6;
+}
+
+/*ALERT PARA MOSTRAR LOS ERRORES DEL SESSION*/
+.alert{
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/*PARA LOS ESTILOS DE LA TABLA DE LSITA DE HORARIOS DEL MÉDICO*/
+.tarjeta-lista-horarios{
+    background-color: transparent !important;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 0 20px #38bf87;
+}
+
+/*COLORES DE LOS TITULOS EN LOS THEADS DE LAS TABLAS*/
+thead{
+    border: 2px solid #1D4635;
+    color: #1D4635;
+    text-align: center;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+/*COLORES DEL CONTENIDO DE LOS TD DE LAS TABLAS*/
+td{
+    text-align: center;
+}
+
+/*COLOR TITULO MIS HORARIOS*/
+.mis-horarios{
+    color: #1D4635;
+}
+
+/*COLOR BORDE DE LAS TABLAS*/
+table, th, td, thead{
+    border-radius: 20px;
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+
+/*ESTILOS PARA EL DIV DEL FORMULARIO DE EDITAR EL HORARIO DEL MEDICO*/
+.tarjeta-editar{
+    background-color: transparent !important;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 0 20px #38bf87;
+}
+
+/*COLOR DE OTRO TITULO*/
+.titulo-actualizacion{
+    color: #1D4635;
+}
+
+/*ESTILOS DEL BOTÓN VOLVER*/
+.boton-cancelar{
+    border-radius: 20px;
+    background-color: #1E9E6A;
+    color: #D1FAE5;
+}
+
+.boton-cancelar:hover{
+    background-color: rgb(222, 101, 101) !important;
+    border: 1px solid rgb(100, 29, 29);
+    color: #B7E4C7;
+}
+
+/*COLOR PARA TODOS LOS LABELS*/
+label{
+    color: #1D4635;
+}
+
+/*ESTILO PARA EL RELOJ*/
+.reloj{
+    border: 2px solid #1D4635;
+    color: #1D4635;
+    border-radius: 6px;
+}
+
+/*PARA QUE LAS ETIQUETAS SE LOS CAMPOS SE ROMPAN AL HACER RESPONSIVE*/
+label,a{ 
+  white-space: normal;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+/*ESTILO PARA QUE EL BOTON DE LOS FORMUALRISO OCUPE EL 100% DEL CONTENEDOR, ES DECIR, DEL FORM*/
+.btn-form{
+    width: 100%;
+}
+
+/*MENSAJE DEL FORMULARIO DE GESTIONAR LA DISPONIBILIAD QUE HAY DEBAJO DEL BOTÓN*/
+.mensaje-gestion-dispo{
+    color: #1D4635;
+}
+
+/*VENTANA DE CUANDO CIERRAS SESIÓN*/
+.modal-content{
+    border: 3px solid #D47B5E;
+    background-color: #064635;
+}
+
+.modal-header{
+    border-bottom: 3px solid #D47B5E;
+}
+
+.pregunta-modal{
+    color: #D1FAE5;
+}
+
+/*MENSAJE DE SIN SIN DISPOBIBILIDAD*/
+.mensaje-no-dispo{
+    color: #064635;
+}
+
+/*ESTILOS PARA LAS OPCIONES DE CITAS EN EL SIDEBAR DEL MEDICO*/
+.desplegable-citas{
+    background-color: #659380 !important;
+}
+
+.opcion-cita{
+    color: #D1FAE5 !important;
+}
+
+.opcion-cita:hover{
+    background-color: #D47B5E !important;
+}
+
+/*PARA PONERLE UNA IMAGEN DE FONDO AL BODY Y QUITARLE EL FONDO POR DEFECTO QUE TIENE EL CONTENEDOR DEL FLUID*/
+#content-wrapper{
+    background: url("../img/fondo-medico.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#content-wrapper .container-fluid{
+    background-color: transparent !important;
+}
+
+/*ESTILOS PARA EL MENU QUE SALE DE LA FOTO DE PERFIL*/
+.menu-foto{
+    background-color: #064635;
+}
+
+.menu-foto-opcion{
+    color: #D1FAE5;
+}
+
+.menu-foto-opcion:hover{
+    background-color: #D47B5E;
+    color: #D1FAE5;
+}
+
+/*ESTILOS PARA LA TARJETA DE LAS CITAS SOLICITADAS*/
+.tarjeta-lista-citas{
+    background-color: transparent !important;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 0 20px #38bf87;
+}
+
+/*PARA LOS BOTONES PARA CAMBIAR DE PÁGINA DE LA TABLA*/
+.boton-pagina{
+    border: 2px solid #064635;
+    border-radius: 15px;
+    background-color: #659380;
+    color: #064635;
+}
+
+/*EL HOVER DE LOS BOTONES*/
+.boton-pagina:hover{
+    background-color: #A2C6AE;
+    color: #064635;
+}
+
+/*ESTILOS PARA TABLAS*/
+.tabla-horarios, .tabla-citas-solicitadas{
+    width: 100%;
+}
+
+.tabla-horarios th, .tabla-horarios td,
+.tabla-citas-solicitadas th, .tabla-citas-solicitadas td{
+    text-align: center;
+    vertical-align: middle;
+}
+
+/*ESTILOS PARA EL CONTENIDO DE LA TABLA DE LAS CITAS PENDIENTES POR SOLICITAR*/
+.datos-cita{
+    color: #064635;
+}
+
+/*PARA EL COLOR DE LA BRRA DE AL LADOD E LA FOTO*/
+.barra-divide-foto{
+    border-left: 1px solid #4CAF50;
+}
+
+.opcion-cerrar-sesion{
+    border: 2px solid #064635;
+    background-color: transparent;
+}
+
+.enlace-cerrar-sesion{
+    color: #064635;
+}
+
+/*ESTULOS PARA EL CARD DONDE SE MUESTRA LOS DATOS DE CONTACTO DE UN PACIENTE*/
+.info-paciente{
+    background-color: transparent !important;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 700px;
+    margin: 0 auto;
+    box-shadow: 0 0 20px #38bf87;
+}
+
+.foto-info-paciente{
+    width: 100%;
+    max-width: 100px !important;
+    height: 100px !important;
+    border: 2px solid #064635;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 20px #38bf87;
+}
+
+.info-paciente-contenido{
+    color: #064635;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    word-break: break-word
+}
+
+.dato-info-paciente{
+    border: 3px solid #064635;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #D47B5E;
+}
+
+.contenido-info-paciente{
+    text-align: right;
+}
+
+/*EL BOTON DE VER LOS DATOS DEL CONTACTO DEL PACIENTE DE LA TABLA DE CITAS ACTIVAS*/
+.boton-ver{
+    border-radius: 20px;
+    background-color: #1E9E6A !important;
+    color: #D1FAE5;
+}
+
+.boton-ver:hover{
+    background-color: #B7E4C7 !important;
+    border: 1px solid #1E9E6A;
+    color: #1E9E6A;
+}
+
+/*BOTONES DE NO ATENDIDENDA Y REALIZADA DE LA TABLA CITAS ACTIVAS*/
+.boton-cuadrado2{
+    border-radius: 20px;
+    background-color: #1E9E6A !important;
+    color: #D1FAE5;
+}
+
+.boton-cuadrado2:hover{
+    background-color: #B7E4C7 !important;
+    border: 1px solid #1E9E6A;
+    color: #1E9E6A;
+}
+
+.boton-cancelar2{
+    border-radius: 20px;
+    background-color: #1E9E6A;
+    color: #D1FAE5;
+}
+
+.boton-cancelar2:hover{
+    background-color: rgb(222, 101, 101) !important;
+    border: 1px solid rgb(100, 29, 29);
+    color: #B7E4C7;
+}
+
+.btn-form2{
+    width: 100%;
+}
+/*ESTILOS PARA LA TARJETA DE LOS HISTORIALES MÉDICOS Y BOTONES*/
+.tarjeta-pacientes-historiales-medicos{
+    background-color: transparent !important;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 0 20px #38bf87;
+}
+
+.fecha-tarjeta-paciente{
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid #064635;
+    color: #064635;
+}
+
+.boton-subir-historial{
+    border: 2px solid #03834e;
+    border-radius: 20px;
+    background-color: #1E9E6A !important;
+    color: #D1FAE5;
+}
+
+.boton-subir-historial:hover{
+    border: 2px solid #03834e;
+    border-radius: 20px;
+    background-color: #1E9E6A !important;
+    color: #D1FAE5;
+    box-shadow: 0 0 20px #fcff40;
+}
+
+.foto-paciente-historiales{
+    border: 2px solid #064635;
+    box-shadow: 0 0 20px #38bf87;
+}
+
+.observaciones{
+    display: inline-block;
+    max-width: 100%;
+    border: 2px solid #064635;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #bae5da;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.bordes-observaciones{
+    border: 2px solid #D47B5E;
+    background-color: #ffd1c3;
+    color: #064635;
+}
+
+/*ESTILOS DE LOS BOTONES DE SUBIR LAS RECETAS Y LOS HISTORIALES*/
+.boton-subir-receta{
+    border-radius: 20px;
+    border: 2px solid #1E9E6A;
+    background-color: #257b59 !important;
+    color: #D1FAE5;
+}
+
+.boton-subir-receta:hover{
+    background-color: #B7E4C7 !important;
+    border: 2px solid #257b59;
+    color: #1E9E6A;
+    box-shadow: 0 0 20px #01a966;
+}
+
+.boton-agregar-nota{
+    border-radius: 20px;
+    background-color: #ea8e6f;
+    border: 2px solid #D47B5E;
+    color: #daf8e4;
+}
+
+.boton-agregar-nota:hover{
+    background-color: #edc5b7 !important;
+    border: 2px solid #D47B5E;
+    color: #1E9E6A;
+    box-shadow: 0 0 20px #b44f2d;
+}
+
+.boton-observaciones-eliminar{
+    border-radius: 20px;
+    border: 1px solid rgb(100, 29, 29);
+    background-color: rgb(179, 41, 41) !important;
+    color: #D1FAE5;
+}
+
+.boton-observaciones-eliminar:hover{
+    background-color: rgb(222, 101, 101) !important;
+    border: 1px solid rgb(100, 29, 29);
+    color: #D1FAE5 !important;
+}
+
+.boton-ver-receta{
+    border-radius: 20px;
+    background-color: #26b8b3 !important;
+    border: 2px solid #1c9ca2;
+    color: #D1FAE5;
+}
+
+.boton-ver-receta:hover{
+    background-color: #8ee5e9 !important;
+    border: 2px solid #1c9ca2;
+    color: #1E9E6A;
+    box-shadow: 0 0 20px #1c9ca2;
+}
+
+.tarjeta-pacientes-recetas{
+    background-color: transparent !important;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 0 20px #38bf87;
+}
+
+.tarjeta-cita-receta{
+    background-color: #d6f4ec;
+    color: #064635;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 0 20px #38bf87;
+}
+
+.fecha-cita-receta{
+    border: 1px solid #064635;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.boton-ver-historial{
+    border-radius: 20px;
+    background-color: #26b8b3 !important;
+    border: 2px solid #1E9E6A;
+    color: #D1FAE5;
+}
+
+.boton-ver-historial:hover{
+    background-color: #8ee5e9 !important;
+    border: 2px solid #1E9E6A;
+    color: #1E9E6A;
+    box-shadow: 0 0 20px #38a2a8;
+}
+
+/*PARA LOS LABELS DE LOS FILTROS*/
+.etiqueta-filtro{
+    padding: 5px;
+    border: 1px solid #064635;
+    border-radius: 5px;
+}
+
+.tarjeta-paciente{
+    background-color: #d6f4ec;
+    color: #064635;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 0 20px #38bf87;
+    transition: transform 0.2s ease;
+}
+
+.tarjeta-paciente:hover{
+    background-color: #7cdfc4;
+    box-shadow: 0 0 20px #D47B5E;
+    transform: scale(1.05);
+}
+
+.modal-footer {
+    border-top: 3px solid #D47B5E;
+}
+
+.tarjeta-pacientes-valoraciones{
+    background-color: transparent !important;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 0 20px #38bf87;
+}
+
+/*BOTÓN DE LEER LA NOTIFICIÓN*/
+.boton-leida{
+    max-width: 100%;
+    border: 2px solid #226a10;
+    border-radius: 20px;
+    background-color: #93dd3e !important;
+    color: #48325a;
+}
+
+.boton-leida:hover{
+    background-color: #d7ffa9 !important;
+    color: #48325a;
+}
+
+/*TARJETA DE LAS NOTIFICACIONES*/
+.tarjeta-notificaciones{
+    background-color: #e8f1ac;
+    color: #48325A;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 0 20px #bfb501;
+    transition: transform 0.2s ease;
+}
+
+.tarjeta-notificaciones:hover{
+    background-color: #f5c3b2;
+    box-shadow: 0 0 20px #D47B5E;
+    transform: scale(1.05);
+}
+
+.tarjeta-lista-notificaciones{
+    background-color: transparent !important;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 0 20px #38bf87;
+}
+
+/*ESTILOS PARA LOS FIELDSET DE LOS AJUSTES DE PERFIL CON TRANSFORM Y TRANSITION*/
+.borde-fieldset-ajustes-perfil{
+    border: 1px solid #064635 !important;
+    transition: transform 0.4s ease;
+}
+
+.borde-fieldset-ajustes-perfil:hover{
+    background-color: #b0d5ba;
+    border: 1px solid #32a284 !important;
+    box-shadow: 0 4px 10px 2px #D47B5E;
+    transform: scale(1.05);
+}
+
+.borde-fieldset-ajustes-perfil-eliminar{
+    border: 1px solid #873223 !important;
+    transition: transform 0.4s ease;
+}
+
+.borde-fieldset-ajustes-perfil-eliminar:hover{
+    background-color: #f1acac;
+    border: 1px solid #e35b5b !important;
+    box-shadow: 0 4px 10px 2px #fc2b2b;
+    transform: scale(1.05);
+}
+
+.titulo-ajustes-perfil{
+    color: #064635;
+    border: 3px solid #064635;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #D47B5E;
+}
+
+.titulo-ajustes-perfil-eliminar{
+    color: #5d0808;
+    border: 3px solid #ba1111;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #e45d5d;
+}
+
+.tarjeta-ajustes-perfil{
+    background-color: transparent !important;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 0 20px #38bf87;
+}
+
+.texto-eliminar{
+    color: #064635;
+}
+
+/*ESTILOS PARA LAS TARJETAS DE LA PANTIALLA DEL INICIO DEL PANEL*/
+.tarjeta-inicio{
+    background-color: transparent;
+    color: #064635;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 0 20px #38bf87;
+    transition: transform 0.4s ease;
+}
+
+.tarjeta1{
+    background-color: #f0f7ee;
+    box-shadow: 0 0 15px rgba(24, 126, 8, 0.2);
+}
+
+.tarjeta2{
+    background-color: #eef6ec;
+    box-shadow: 0 0 15px rgba(24, 126, 8, 0.2);
+}
+
+.tarjeta3{
+    background-color: #ecf5ea;
+    box-shadow: 0 0 15px rgba(24, 126, 8, 0.2);
+}
+
+.tarjeta4{
+    background-color: #eaf4e8;
+    box-shadow: 0 0 15px rgba(24, 126, 8, 0.2);
+}
+
+.tarjeta5{
+    background-color: #e8f3e6;
+    box-shadow: 0 0 15px rgba(24, 126, 8, 0.2);
+}
+
+.tarjeta6{
+    background-color: #e6f2e4;
+    box-shadow: 0 0 15px rgba(24, 126, 8, 0.2);
+}
+
+.tarjeta7{
+    background-color: #e4f1e2;
+    box-shadow: 0 0 15px rgba(24, 126, 8, 0.2);
+}
+
+.tarjeta8{
+    background-color: #e2f0e0;
+    box-shadow: 0 0 15px rgba(24, 126, 8, 0.2);
+}
+
+.tarjeta1:hover{
+    box-shadow: 0 0 20px rgba(24, 126, 8, 0.4);
+    transform: scale(1.03);
+}
+
+.tarjeta2:hover{
+    box-shadow: 0 0 20px rgba(24, 126, 8, 0.4);
+    transform: scale(1.03);
+}
+
+.tarjeta3:hover{
+    box-shadow: 0 0 20px rgba(24, 126, 8, 0.4);
+    transform: scale(1.03);
+}
+
+.tarjeta4:hover{
+    box-shadow: 0 0 20px rgba(24, 126, 8, 0.4);
+    transform: scale(1.03);
+}
+
+.tarjeta5:hover{
+    box-shadow: 0 0 20px rgba(24, 126, 8, 0.4);
+    transform: scale(1.03);
+}
+
+.tarjeta6:hover{
+    box-shadow: 0 0 20px rgba(24, 126, 8, 0.4);
+    transform: scale(1.03);
+}
+
+.tarjeta7:hover{
+    box-shadow: 0 0 20px rgba(24, 126, 8, 0.4);
+    transform: scale(1.03);
+}
+
+.tarjeta8:hover{
+    box-shadow: 0 0 20px rgba(24, 126, 8, 0.4);
+    transform: scale(1.03);
+}
+
+.nombre-medico-tarjeta-inicio-proxima-cita{
+    display: inline-block;
+    color: #064635;
+    max-width: 100%;
+    border: 3px solid #064635;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #b1e0d3;
+}
+
+.fecha-cita-receta{
+    border: 1px solid #48325A;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.imagen-perfil-info{
+    width:80px;
+    height:80px;
+    object-fit:cover;
+    border: 2px solid #064635;
+    box-shadow: -5px 5px 20px #38bf87;
 }

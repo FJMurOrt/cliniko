@@ -17,9 +17,7 @@ formulario.addEventListener("submit", function(evento){
     if(correo == ""){
         document.getElementById("error-correo").innerHTML = "Debes introducir tu correo.";
         errores = true;
-    }
-
-    if(!expresion_correo.test(correo)){
+    }else if(!expresion_correo.test(correo)){
         document.getElementById("error-correo").innerHTML = "El correo debe tener el formato correcto.";
         errores = true;
     }

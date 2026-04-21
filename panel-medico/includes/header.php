@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +17,7 @@
     <!-- SB Admin 2 CSS -->
     <link href="../../../panel-medico/css/sb-admin-2.min.css" rel="stylesheet">
 
-    <!-- Estilos propios -->
+    <!-- ESTILOS PROPIOS -->
     <link href="../../../panel-medico/css/mis_estilos.css" rel="stylesheet">
 </head>
 <body id="page-top">

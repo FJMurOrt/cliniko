@@ -8,41 +8,64 @@ $especialidades = buscar_especialidades($conexion);
 <div class=contenedor_principal>
   <section class="seccion-registro py-5">
     <div class="contenedor">
-      <?php
-      //PARA MOSTRAR LOS ERRORES DE LAS VALIDACIONES DEL BACKEND.
+      <form id="form-registro" action="aplicacion/controladores/registro-controlador.php" method="post" enctype="multipart/form-data" class="formulario-registro mt-4" style="max-width: 700px; margin: auto;">
+        <div style="text-align: center;">
+            <img src="img/registro.png" style="width: 340px; max-width: 100%; height: auto;">
+        </div>
+        <hr>
+        <?php
+        //PARA MOSTRAR LOS ERRORES DE LAS VALIDACIONES DEL BACKEND.
         session_start();
-
         if (isset($_SESSION["errores"])) {
-            echo "<div class='alert alert-danger'>";
             foreach ($_SESSION["errores"] as $error) {
-                echo "<p>" . htmlspecialchars($error) . "</p>";
+                echo "<p style='color: red;'>".htmlspecialchars($error)."</p>";
             }
-            echo "</div>";
+            echo "<hr>";
             unset($_SESSION["errores"]);
         }
-      ?>
-      <form id="form-registro" action="aplicacion/controladores/registro-controlador.php" method="post" enctype="multipart/form-data" class="formulario-registro mt-4" style="max-width: 700px; margin: auto;">
-        <h2 class="titulo-principal text-center mb-4" style="color: #003366;">Registrarse</h2>
-        <hr>
+        ?>
         <div class="row">
             <div class="col-md-6 mb-3 text-start">
               <label for="nombre" class="form-label">Nombre</label>
-              <input type="text" class="form-control" id="nombre" name="nombre" value="<?= htmlspecialchars($_SESSION['valores']['nombre'] ?? '') ?>">
+              <?php $nombre = ""; 
+              if(isset($_SESSION['valores']['nombre'])) {
+                  $nombre = htmlspecialchars($_SESSION['valores']['nombre']);
+              } 
+              ?>
+              <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo $nombre;?>">
               <span id="error-nombre" style="color: red;"></span>
             </div>
             <div class="col-md-6 mb-3 text-start">
               <label for="apellidos" class="form-label">Apellidos</label>
-              <input type="text" class="form-control" id="apellidos" name="apellidos" value="<?= htmlspecialchars($_SESSION['valores']['apellidos'] ?? '') ?>">
+              <?php 
+              $apellidos = "";
+              if (isset($_SESSION['valores']['apellidos'])) {
+                  $apellidos = htmlspecialchars($_SESSION['valores']['apellidos']);
+              }
+              ?>
+              <input type="text" class="form-control" id="apellidos" name="apellidos" value="<?php echo $apellidos;?>">
               <span id="error-apellidos" style="color: red;"></span>
             </div>
             <div class="col-md-6 mb-3 text-start">
               <label for="correo" class="form-label">Correo electrónico</label>
-              <input type="email" class="form-control" id="correo" name="correo" value="<?= htmlspecialchars($_SESSION['valores']['correo'] ?? '') ?>">
+              <?php
+              $correo = "";
+              if (isset($_SESSION['valores']['correo'])) {
+                  $correo = htmlspecialchars($_SESSION['valores']['correo']);
+              }
+              ?>
+              <input type="text" class="form-control" id="correo" name="correo" value="<?php echo $correo;?>">
               <span id="error-correo" style="color: red;"></span>
             </div>
             <div class="col-md-6 mb-3 text-start">
               <label for="telefono" class="form-label">Teléfono</label>
-              <input type="tel" class="form-control" id="telefono" name="telefono" value="<?= htmlspecialchars($_SESSION['valores']['telefono'] ?? '') ?>">
+              <?php
+              $telefono = "";
+              if (isset($_SESSION['valores']['telefono'])) {
+                  $telefono = htmlspecialchars($_SESSION['valores']['telefono']);
+              }
+              ?>
+              <input type="tel" class="form-control" id="telefono" name="telefono" value="<?php echo $telefono;?>">
               <span id="error-telefono" style="color: red;"></span>
             </div>
             <div class="col-md-6 mb-3 text-start">
@@ -69,23 +92,41 @@ $especialidades = buscar_especialidades($conexion);
           <div class="mb-3 text-start">
               <label for="foto_perfil" class="form-label">Foto de perfil</label>
               <input type="file" class="form-control" id="foto_perfil" name="foto" accept="image/*">
+              <span id="error-foto" style="color: red;"></span>
           </div>
-          <span id="error-foto" style="color: red;"></span>
           <!-- CAMPOS PARA EL ROL DE PACIENTE -->
           <div id="campos_paciente" style="display:none;">
             <div class="mb-3 text-start">
               <label for="fecha_nacimiento" class="form-label">Fecha de nacimiento</label>
-              <input type="date" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento" value="<?= htmlspecialchars($_SESSION['valores']['fecha_nacimiento'] ?? '') ?>">
+              <?php
+              $fecha_nacimiento = "";
+              if (isset($_SESSION['valores']['fecha_nacimiento'])) {
+                  $fecha_nacimiento = htmlspecialchars($_SESSION['valores']['fecha_nacimiento']);
+              }
+              ?>
+              <input type="date" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento" value="<?php echo $fecha_nacimiento;?>">
             </div>
             <span id="error-fecha" style="color: red;"></span>
             <div class="mb-3 text-start">
               <label for="direccion" class="form-label">Dirección</label>
-              <input type="text" class="form-control" id="direccion" name="direccion" value="<?= htmlspecialchars($_SESSION['valores']['direccion'] ?? '') ?>">
+              <?php
+              $direccion = "";
+              if (isset($_SESSION['valores']['direccion'])) {
+                  $direccion = htmlspecialchars($_SESSION['valores']['direccion']);
+              }
+              ?>
+              <input type="text" class="form-control" id="direccion" name="direccion" value="<?php echo $direccion;?>">
             </div>
             <span id="error-direccion" style="color: red;"></span>
             <div class="mb-3 text-start">
               <label for="nss" class="form-label">Número de la Seguridad Social (NSS)</label>
-              <input type="text" class="form-control" id="nss" name="nss" value="<?= htmlspecialchars($_SESSION['valores']['nss'] ?? '') ?>">
+              <?php
+              $nss = "";
+              if (isset($_SESSION['valores']['nss'])) {
+                  $nss = htmlspecialchars($_SESSION['valores']['nss']);
+              }
+              ?>
+              <input type="text" class="form-control" id="nss" name="nss" value="<?php echo $nss;?>">
               <span id="error-nss" style="color: red;"></span>
             </div>
           </div>
@@ -93,7 +134,13 @@ $especialidades = buscar_especialidades($conexion);
           <div id="campos_medico" style="display:none;">
             <div class="mb-3 text-start">
               <label for="numero_colegiado" class="form-label">Número de colegiado</label>
-              <input type="text" class="form-control" id="numero_colegiado" name="numero_colegiado" value="<?= htmlspecialchars($_SESSION['valores']['numero_colegiado'] ?? '') ?>">
+              <?php
+              $numero_colegiado = "";
+              if (isset($_SESSION['valores']['numero_colegiado'])) {
+                  $numero_colegiado = htmlspecialchars($_SESSION['valores']['numero_colegiado']);
+              }
+              ?>
+              <input type="text" class="form-control" id="numero_colegiado" name="numero_colegiado" value="<?php echo $numero_colegiado;?>">
               <span id="error-colegiado" style="color: red;"></span>
             </div>
             <div class="mb-3 text-start">
@@ -116,7 +163,7 @@ $especialidades = buscar_especialidades($conexion);
             <span id="error-privacidad" style="color: red;"></span>
           </div>
           <div class="d-flex justify-content-end">
-            <button type="submit" class="btn boton-cuadrado" style="background-color: #FF7F50; color:white;">Registrarse</button>
+            <button type="submit" class="btn boton-cuadrado btn-form" style="background-color: #FF7F50; color:white;">Registrarse</button>
           </div>
       </form>
       <?php

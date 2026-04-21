@@ -24,7 +24,9 @@
 <section class="seccion-que-es text-center py-5">
     <div class="contenedor">
         <img class="medico_index" src="img/pensando.png" alt="medico_pensando" style="float: left; width: 40%; margin-right: 30px;">
-        <h2 class="titulo-secundario" style="color: #003366; margin-top: 50px;">¿Por qué somos una buena opción?</h2>
+        <div style="text-align: center;">
+            <img src="img/porque.png" style="width: 340px; max-width: 100%; height: auto;">
+        </div>
         <p class="descripcion-secundaria mt-3" style="color: #333333; text-align: justify;">
             La plataforma es ideal para quienes buscan o necesitan gestionar su salud de una manera más innovadora y rápida. Con nuestro sistema,
             podrás reservar citas con médicos espcializados y acceder a un sistema de comunicación mediante notificaciones importantes, algo que es muy importante cuando se tranta con citas médicas.
@@ -39,7 +41,9 @@
 <!-- SECCIÓN PARA ATRAER AL USUARIO PARA QUE SE REGISTRES-->
 <section class="seccion-llamada-accion text-center py-5">
     <div class="contenedor">
-        <h2 class="titulo-accion" style="color: #003366; margin-top: 50px;">¡Únete ahora!</h2>
+        <div style="text-align: center;">
+            <img src="img/unete.png" style="width: 340px; max-width: 100%; height: auto;">
+        </div>
         <p class="descripcion-accion mt-3" style="color: #333333;" >
            ¡Regístrate como paciente o médico!
         </p>
@@ -48,7 +52,7 @@
 </section>
 
 <!--IMAGEN BANNER ABAJO DEL TODO-->
-<img class="banner_final" src="img/banner.jpg" alt="persona_rellenado_registro">
+<img class="banner_final" src="img/banner.jpg" alt="medico_de_brazos_cruzados">
 
 <!-- EL DIV PARA LA ALERTA PARA QUE ACEPTES LAS COOKIES-->
 <div class="alerta-para-que-aceptes" id="alerta-para-que-aceptes">

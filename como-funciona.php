@@ -5,7 +5,9 @@
     <div class="contenedor">
         <!--METO UNA IMAGEN Y LE PONGO FLOAR RIGHT PARA QUE QUEDE A LA DERECHA AL INICIO Y DE TAMAÑO DE ANCHO LO PONGO AL 30%-->
         <img class="imagen-como-se-usa" src="img/como_se_usa.png" alt="candado" style="float: right; width: 30%;">
-        <h1 class="titulo-principal text-center" style="color: #003366;">Cómo funciona Clíniko</h1>
+        <div style="text-align: center;">
+            <img src="img/como-funciona.png" style="width: 340px; max-width: 100%; height: auto;">
+        </div>
         <!--AQUÍ AHORA VOY HACIENDO PARRAFOS QUE SON CADA UNO DE LOS PUNTOS DEL CONTENIDO DE ESTA PÁGINA Y METO UNA BARRA HORIZONTAL CON HR PARA SEPARAR CADA PÁRRAFO-->
         <p class="descripcion-secundaria mt-3" style="color: #333333; text-align: justify;">
             Clíniko es una plataforma digital diseñada para facilitar la búsqueda de atención médica al momento, ofreciendo una comunicación rápida y segura. A continuación,
@@ -23,13 +25,11 @@
                 <li>Dejar valoraciones: Después de una cita, podrás valorar al médico y dejar un comentario sobre tu experencia, ayudando a otros pacientes a tomar decisiones.</li>
                 <li>Consultar historial médico: tu panel te permite acceder a tus historiales médicos, donde los médicos con los que has hayas tenido cita podrán añadir información al respecto de tu seguimiento.</li>
             </ul>
-            <br><br>
         </p>
         <hr></hr>
         <p class="descripcion-secundaria mt-3" style="color: #333333; text-align: justify;">
             <h4 style="color: #003366;"><u>Cíniko para médicos</u></h4>
             Sin embargo, si eres médico:
-            <br><br>
             <ul style = "list-style: none;">
                 <li>Registro y perfil profesional: los médicos crean su cuenta proporcionando datos profesionales como el número de colegiado y su especialidad.</li>
                 <li>Gestión de citas: Podrán habilitar sus días y horarios dipsonibles para que los pacientes reserven citas. Desde su panel, también pueden ver todas las citas activas y pasadas y
@@ -41,13 +41,11 @@
         <hr></hr>
         <p class="descripcion-secundaria mt-3" style="color: #333333; text-align: justify;">
             <h4 style="color: #003366;"><u>Seguridad y notificaciones</u></h4>
-            <br><br>
             Todos los datos están protegidos y se manejan de forma segura. Además, los usuarios reciben noticiaciones automáticas por correo electrónico sobre reservas, cancelaciones y cambios de cita.
         </p>
         <hr></hr>
         <p class="descripcion-secundaria mt-3" style="color: #333333; text-align: justify;">
             <h4 style="color: #003366;"><u>¿Por qué deberías unirte?</u></h4>
-            <br><br>
             <ul style = "list-style: none;">
                 <li>Ahorras tiempo en la búsqueda de atención médica.</li>
                 <li>Tienes un historial médico accesible.</li>

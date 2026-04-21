@@ -4,7 +4,9 @@
  <div class="contenedor_principal">
 <section class="seccion-servicios py-5">
     <div class="contenedor">
-        <h1 class="titulo-principal text-center" style="color: #003366;">Nuestros servicios</h1>
+        <div style="text-align: center;">
+            <img src="img/servicios.png" style="width: 340px; max-width: 100%; height: auto;">
+        </div>
         <p class="descripcion-secundaria text-center mt-3" style="color: #333333;">
             En Clíniko ofrecemos servicios para que pacientes y médicos se encuentren.
         </p>
@@ -15,7 +17,6 @@
                 <div class="card h-100 text-center servicio" style = "background-color: #c6dbea; border-radius: 30px;">
                     <div class="card-body">
                         <img class="imagen-servicio" src="img/imagen_cita.png" alt="cita_medica" style="max-width: 100%; height: auto;">
-
                         <h5 class="card-titulo mt-4" style="color: #333333;">Gestión de citas</h5>
                         <p class="card-text mt-4">
                             ¡Solicita, modifica o cancela tus citas médicas!

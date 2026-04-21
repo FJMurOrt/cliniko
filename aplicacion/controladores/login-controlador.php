@@ -33,35 +33,41 @@ if(empty($contrasena)){
 
 //CONSULTAMOS EL USUARIO EN LA BASE DE DATOS, ES DECIR, VEMOS SI EL CORREO EXISTE Y SU CONTRASEÑA COINCIDE
 if(empty($errores)){
-    $usuario_que_inicia_sesion = comprobar_usuario_en_bd($conexion,$correo, $contrasena);
+    $usuario_que_inicia_sesion = comprobarUsuarioEnBD($conexion,$correo, $contrasena);
 
     if(!$usuario_que_inicia_sesion){
         $errores[] = "El correo o la contraseña introducida no es correcto.";
     } else {
         //GUARDARMOS EN EL SESSION TODOS LOS CAMPOS DEL USUARIO PARA LLEVARNOSLOS AL PANEL DEL INICIO DE SESIÓN
-        $_SESSION['id_usuario']    = $usuario_que_inicia_sesion['id_usuario'];
-        $_SESSION['habilitado']    = $usuario_que_inicia_sesion['habilitado'];
-        $_SESSION['rol']            = $usuario_que_inicia_sesion['rol'];
-        $_SESSION['nombre']         = $usuario_que_inicia_sesion['nombre'];
-        $_SESSION['apellidos']      = $usuario_que_inicia_sesion['apellidos'];
-        $_SESSION['correo']         = $usuario_que_inicia_sesion['correo'];
-        $_SESSION['telefono']        = $usuario_que_inicia_sesion['telefono'];
-        $_SESSION['fecha_registro'] = $usuario_que_inicia_sesion['fecha_registro'];
-        $_SESSION['foto_perfil']    = $usuario_que_inicia_sesion['foto_perfil'];
+        $_SESSION["id_usuario"]    = $usuario_que_inicia_sesion["id_usuario"];
+        $_SESSION["habilitado"]    = $usuario_que_inicia_sesion["habilitado"];
+        $_SESSION["rol"]            = $usuario_que_inicia_sesion["rol"];
+        $_SESSION["nombre"]         = $usuario_que_inicia_sesion["nombre"];
+        $_SESSION["apellidos"]      = $usuario_que_inicia_sesion["apellidos"];
+        $_SESSION["correo"]         = $usuario_que_inicia_sesion["correo"];
+        $_SESSION["telefono"]        = $usuario_que_inicia_sesion["telefono"];
+        $_SESSION["fecha_registro"] = $usuario_que_inicia_sesion["fecha_registro"];
+        $_SESSION["foto_perfil"]    = $usuario_que_inicia_sesion["foto_perfil"];
+        if($usuario_que_inicia_sesion["rol"] === "medico"){
+            $_SESSION["id_medico"] = $usuario_que_inicia_sesion["id_usuario"];
+        }
+        if($usuario_que_inicia_sesion["rol"] === "paciente"){
+            $_SESSION["id_paciente"] = $usuario_que_inicia_sesion["id_usuario"];
+        }
 
-        if ($usuario_que_inicia_sesion['rol'] === "administrador") {
+        if ($usuario_que_inicia_sesion["rol"] === "administrador") {
             header("Location: ../vistas/administrador/index.php");
             exit;
         }
-        if($usuario_que_inicia_sesion['habilitado'] === "no"){
+        if($usuario_que_inicia_sesion["habilitado"] === "no"){
             header("Location: ../../despues-de-registro.php");
             exit;
         }
-        if ($usuario_que_inicia_sesion['rol'] === "medico") {
+        if ($usuario_que_inicia_sesion["rol"] === "medico") {
             header("Location: ../vistas/medico/index.php");
             exit;
         } 
-        elseif ($usuario_que_inicia_sesion['rol'] === "paciente") {
+        elseif ($usuario_que_inicia_sesion["rol"] === "paciente") {
             header("Location: ../vistas/paciente/index.php");
             exit;
         } 

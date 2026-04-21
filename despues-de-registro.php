@@ -3,14 +3,16 @@
 <!-- DE NUEVO, METO LA SECCIÓN PARA QUE EL USUARIO QUIERA REGISTRARSE -->
 <section class="seccion-despues-de-registro text-center py-5">
     <div class="contenedor esperar-registro">
-        <h2 class="titulo-accion" style="color: #003366;">¡Gracias por unirte!</h2>
+        <div style="text-align: center;">
+            <img src="img/gracias-registro.png" style="width: 340px; max-width: 100%; height: auto;">
+        </div>
         <div class="contenedor">
-        <img class="imagen_esperar" src="img/medico_espera.png" alt="medico_y_paciente_sonriendo">
-    </div>
+            <img class="imagen_esperar" src="img/medico_espera.png" alt="medico_y_paciente_sonriendo">
+        </div>
         <p class="descripcion-accion mt-3" style="color: #333333;">
             ¡Nuestros administradores está verificando que los datos de tu cuenta sean correctos, espera y te daremos paso!
         </p>
-        <a href="login.php" class="btn boton-cuadrado mt-3" style="background-color: #FF7F50; color:white;">Inicia Sesión</a>
+        <a href="login.php" class="btn boton-cuadrado mt-3 brn-form" style="background-color: #FF7F50; color:white;">Inicia Sesión</a>
     </div>
 </section>
 

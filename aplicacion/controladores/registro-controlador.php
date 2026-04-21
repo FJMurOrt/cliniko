@@ -1,7 +1,7 @@
 <?php
 //INIDICAMOS LA SESSIÓN Y VINCULAMOS EL ACHIVO DEL MODELO USUARIO.PHP QUE ES BÁSCIAMNENTE DONDE TENEMOS LA FUNCIÓN QUE AGREGA EL USUARIO EN LA BASE DE DATOS.
 session_start();
-require_once '../modelos/usuario.php';
+require_once "../modelos/usuario.php";
 
 //ARRAY DONDE VAMOS A IR GUARDANDO LOS ERRORES
 $errores = [];
@@ -27,13 +27,13 @@ if(empty($nombre)){
     }
 
     //CONTAMOS CUANTOS CARACTERES TIENE Y SI TIENE MÁS DE 20 NO ES VÁLIDO.
-    $letras_en_total = strlen(str_replace(' ', '', $nombre));
+    $letras_en_total = strlen(str_replace(" ", "", $nombre));
     if($letras_en_total > 20){
         $errores[] = "El nombre no puede tener más de 20 caracteres.";
     }
 
     //SOLO PUEDE TENER LETRAS Y ESPACIOS.
-    if(!preg_match('/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/u', $nombre)){
+    if(!preg_match("/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/u", $nombre)){
         $errores[] = "El nombre solo puede contener letras y espacios (sin números ni caracteres especiales).";
     }
 }
@@ -58,13 +58,13 @@ if(empty($apellidos)){
     }
 
     //PARA QUE SÓLO PUEDA TENER 20 CARACTERES COMO EL NOMBRE
-    $letras_en_total = strlen(str_replace(' ', '', $apellidos));
+    $letras_en_total = strlen(str_replace(" ", "", $apellidos));
     if($letras_en_total > 20){
         $errores[] = "Los apellidos no pueden tener más de 20 caracteres.";
     }
 
     //PARA QUE SOLO PEUDA TENER LETRAS Y ESPACIOS
-    if(!preg_match('/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/u', $apellidos)){
+    if(!preg_match("/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/u", $apellidos)){
         $errores[] = "Los apellidos solo pueden contener letras y espacios (sin números ni caracteres especiales).";
     }
 }
@@ -82,10 +82,10 @@ if(empty($correo)){
     if(!filter_var($correo, FILTER_VALIDATE_EMAIL)){
         $errores[] = "El correo no cumple con el formato válido.";
     }else{
-        $partes = explode('@', $correo);
+        $partes = explode("@", $correo);
         $usuario = $partes[0];
 
-        if(!preg_match('/^[A-Za-z0-9._-]+$/', $usuario)){
+        if(!preg_match("/^[A-Za-z0-9._-]+$/", $usuario)){
             $errores[] = "El correo solo puede contener letras, números, '.', '-' o '_'";
         }
     }
@@ -101,41 +101,41 @@ if(mysqli_num_rows($resultado) > 0){
 }
 
 //VALIDACIÓN DEL TELÉFONO
-if(isset($_POST['telefono'])){
-    $telefono = trim($_POST['telefono']);
+if(isset($_POST["telefono"])){
+    $telefono = trim($_POST["telefono"]);
 }else{
-    $telefono = '';
+    $telefono = "";
 }
 
 if(empty($telefono)){
     $errores[] = "El campo del teléfono es obligatorio.";
-}elseif(!preg_match('/^[0-9]{9}$/', $telefono)){
+}elseif(!preg_match("/^[0-9]{9}$/", $telefono)){
     $errores[] = "El teléfono debe contener exactamente 9 números y sin espacios.";
 }
 
 //VALIDACIÓN DE LA CONTRASEÑA
-if(isset($_POST['contrasena'])){
-    $contrasena = $_POST['contrasena'];
+if(isset($_POST["contrasena"])){
+    $contrasena = $_POST["contrasena"];
 }else{
     $contrasena = "";
 }
 
 if(empty($contrasena)){
     $errores[] = "El campo de la contraseña es obligatorio.";
-}else {
+}else{
     if(strlen($contrasena) < 8){
         $errores[] = "La contraseña debe tener como mínnimo 8 caracteres.";
     }
-    if(!preg_match('/[A-Z]/', $contrasena)){
+    if(!preg_match("/[A-Z]/", $contrasena)){
         $errores[] = "La contraseña debe contener al menos una letra mayúscula.";
     }
-    if(!preg_match('/[a-z]/', $contrasena)){
+    if(!preg_match("/[a-z]/", $contrasena)){
         $errores[] = "La contraseña debe contener al menos una letra minúscula.";
     }
-    if(!preg_match('/[0-9]/', $contrasena)){
+    if(!preg_match("/[0-9]/", $contrasena)){
         $errores[] = "La contraseña debe contener al menos un número.";
     }
-    if(!preg_match('/[.\-_]/', $contrasena)){
+    if(!preg_match("/[.\-_]/", $contrasena)){
         $errores[] = "La contraseña debe contener al menos un carácter especial: '.', '-' o '_'";
     }
 }
@@ -186,14 +186,14 @@ if(isset($_POST["nss"])){
 }
 
 //VALIDACIÓN DEL CHECKBOX DE ACEPTAR LA POLÍTICA DE PRIVACIDAD.
-if(!isset($_POST['acepta_politica'])){
+if(!isset($_POST["acepta_politica"])){
     $errores[] = "Debes aceptar la política de privacidad para registrarte.";
 }
 
 //ELIMINAMOS LOS ESPACIOS O CUALQUIER OTRO CARACTER QUE NO SEA UN NÚMERO PARA PODER VALIDAR LOS 12 NÚMEROS DEL NÚMERO DE LA SEGURIDAD SOCIAL
 if($rol === "paciente"){
     //BUSCAMOS CUALQUIER CARACTER QUE NO SEA UN NÚMERO Y LO SUSTITUIMOS POR NADA BÁSICAMENTE, ES DECIR, QUE NOS QUEDAMOS CON LO NÚMEROS SOLO.
-    $nss_sin_espacios = preg_replace('/\D/', '', $nss);
+    $nss_sin_espacios = preg_replace("/\D/", "", $nss);
 
     if(empty($nss)){
         $errores[] = "El campo del número de la seguridad social (NSS) es obligatorio para los pacientes.";
@@ -228,7 +228,7 @@ if($rol === "paciente"){
 
     if(empty($direccion)){
         $errores[] = "El campo de la dirección es obligatoria para pacientes.";
-    }elseif(!preg_match('/^[A-Za-z0-9 ]+$/', $direccion)){
+    }elseif(!preg_match("/^[A-ZÑa-zñ0-9 ]+$/", $direccion)){
         $errores[] = "La dirección solo puede contener letras y números.";
     }
 }
@@ -251,7 +251,7 @@ if(isset($_POST["id_especialidad"])){
 if($rol === "medico"){
     if (empty($numero_colegiado)){
         $errores[] = "El campo de número de colegiado es obligatorio para los médicos.";
-    }elseif (!preg_match('/^[0-9]{9}$/', $numero_colegiado)) {
+    }elseif (!preg_match("/^[0-9]{9}$/", $numero_colegiado)) {
         $errores[] = "El número de colegiado debe contener exactamente 9 números y sin espacios.";
     }
 
@@ -266,7 +266,7 @@ if($rol === "medico"){
 
     $sql = "SELECT id_medico FROM medicos WHERE numero_colegiado = '$numColegiado_limpio'";
     $resultado = mysqli_query($conexion, $sql);
-    if (mysqli_num_rows($resultado) > 0) {
+    if(mysqli_num_rows($resultado) > 0){
         $errores[] = "Este número de colegiado ya se encuentra registrado.";
     }
 }
@@ -277,76 +277,76 @@ if(!isset($_FILES["foto"]) || $_FILES["foto"]["error"] !== 0){
 }
 
 //PARA GUARDAR LOS VALORES DE LOS CAMPOS CADA VEZ QUE SALTE ALGÚN ERROR Y NO SE RESETEEN Y TENGA QUE VOLVER A RELLENARLOS
-$_SESSION['valores'] = [];
+$_SESSION["valores"] = [];
 
 //GUARDAMOS EL NOMBRE.
-if(isset($_POST['nombre'])){
-    $_SESSION['valores']['nombre'] = $_POST['nombre'];
-}else {
-    $_SESSION['valores']['nombre'] = '';
+if(isset($_POST["nombre"])){
+    $_SESSION["valores"]["nombre"] = $_POST["nombre"];
+}else{
+    $_SESSION["valores"]["nombre"] = "";
 }
 
 //GUARDAMOS LOS APELLIDOS.
-if(isset($_POST['apellidos'])){
-    $_SESSION['valores']['apellidos'] = $_POST['apellidos'];
-}else {
-    $_SESSION['valores']['apellidos'] = '';
+if(isset($_POST["apellidos"])){
+    $_SESSION["valores"]["apellidos"] = $_POST["apellidos"];
+}else{
+    $_SESSION["valores"]["apellidos"] = "";
 }
 
 //GUARDAMOS EL CORREO.
-if(isset($_POST['correo'])){
-    $_SESSION['valores']['correo'] = $_POST['correo'];
-}else {
-    $_SESSION['valores']['correo'] = '';
+if(isset($_POST["correo"])){
+    $_SESSION["valores"]["correo"] = $_POST["correo"];
+}else{
+    $_SESSION["valores"]["correo"] = "";
 }
 
 //GUARDAMOS EL TELEFONO.
-if(isset($_POST['telefono'])){
-    $_SESSION['valores']['telefono'] = $_POST['telefono'];
-}else {
-    $_SESSION['valores']['telefono'] = '';
+if(isset($_POST["telefono"])){
+    $_SESSION["valores"]["telefono"] = $_POST["telefono"];
+}else{
+    $_SESSION["valores"]["telefono"] = "";
 }
 
 //GUARDAMOS EL TIPO DE ROL DEL USUARIO.
-if(isset($_POST['rol'])) {
-    $_SESSION['valores']['rol'] = $_POST['rol'];
-}else {
-    $_SESSION['valores']['rol'] = '';
+if(isset($_POST["rol"])){
+    $_SESSION["valores"]["rol"] = $_POST["rol"];
+}else{
+    $_SESSION["valores"]["rol"] = "";
 }
 
 //GUARDAMOS LA FECHA DE NACIMIENTO.
-if(isset($_POST['fecha_nacimiento'])){
-    $_SESSION['valores']['fecha_nacimiento'] = $_POST['fecha_nacimiento'];
-}else {
-    $_SESSION['valores']['fecha_nacimiento'] = '';
+if(isset($_POST["fecha_nacimiento"])){
+    $_SESSION["valores"]["fecha_nacimiento"] = $_POST["fecha_nacimiento"];
+}else{
+    $_SESSION["valores"]["fecha_nacimiento"] = "";
 }
 
 //GUARDAMOS LA DIRECCIÓN.
-if(isset($_POST['direccion'])){
-    $_SESSION['valores']['direccion'] = $_POST['direccion'];
-}else {
-    $_SESSION['valores']['direccion'] = '';
+if(isset($_POST["direccion"])){
+    $_SESSION["valores"]["direccion"] = $_POST["direccion"];
+}else{
+    $_SESSION["valores"]["direccion"] = "";
 }
 
 //GUARDAMOS EL NÚMERO DE LA SEGURIDAD SOCIAL.
-if(isset($_POST['nss'])){
-    $_SESSION['valores']['nss'] = $_POST['nss'];
+if(isset($_POST["nss"])){
+    $_SESSION["valores"]["nss"] = $_POST["nss"];
 }else{
-    $_SESSION['valores']['nss'] = '';
+    $_SESSION["valores"]["nss"] = "";
 }
 
 //GUARDAMOS EL NÚMERO DE COLEGIADO.
-if(isset($_POST['numero_colegiado'])){
-    $_SESSION['valores']['numero_colegiado'] = $_POST['numero_colegiado'];
+if(isset($_POST["numero_colegiado"])){
+    $_SESSION["valores"]["numero_colegiado"] = $_POST["numero_colegiado"];
 }else{
-    $_SESSION['valores']['numero_colegiado'] = '';
+    $_SESSION["valores"]["numero_colegiado"] = "";
 }
 
 //GUARDAMOS LA ESPECIALIDAD.
-if(isset($_POST['id_especialidad'])){
-    $_SESSION['valores']['id_especialidad'] = $_POST['id_especialidad'];
-}else {
-    $_SESSION['valores']['id_especialidad'] = '';
+if(isset($_POST["id_especialidad"])){
+    $_SESSION["valores"]["id_especialidad"] = $_POST["id_especialidad"];
+}else{
+    $_SESSION["valores"]["id_especialidad"] = "";
 }
 
 //SUBIMOS LA IMAGEN VALIDANDO QUE SOLO PUEDA SER JPG O PNG Y TAMBIÉN QUE SOLO PUEDA OCUPAR 2MB COMO MÁXIMO.
@@ -359,10 +359,10 @@ if(isset($_FILES["foto"]) && $_FILES["foto"]["error"] == 0){
     $infoImagen = getimagesize($rutaTmp);
     if ($infoImagen === false){
         $errores[] = "El archivo que intentas subir debe ser una imagen válida (.JPG o .PNG).";
-    }else {
+    }else{
         //ESTO ES PARA LOS TIPOS DE IMAGEN QUE SE PUEDEN SUBIR, YO SOLO PERMITO FORMATO JPG O PNG.
-        $tipo = $infoImagen['mime'];
-        if (!in_array($tipo, ['image/jpeg', 'image/png'])){
+        $tipo = $infoImagen["mime"];
+        if (!in_array($tipo, ["image/jpeg", "image/png"])){
             $errores[] = "Solo se permiten imágenes en formato .JPG o .PNG";
         }
     }
@@ -375,8 +375,8 @@ if(isset($_FILES["foto"]) && $_FILES["foto"]["error"] == 0){
     //SI SE CUMPLE CON LO ANTERIOR, SE SUBE A LA CARPETA UPLOADS.
     if (empty($errores)){
         //CON EL UNIQUID LE METEMOS UN ID ALEATORIO DE LETRAS Y NÚMEROS AL NOMBRE DE LA IMÁGEN.
-        $nombreArchivo = uniqid() . '-' . $_FILES["foto"]["name"];
-        $rutaDestino = '../../uploads/perfiles/' . $nombreArchivo;
+        $nombreArchivo = uniqid() . "-" . $_FILES["foto"]["name"];
+        $rutaDestino = "../../uploads/perfiles/" . $nombreArchivo;
         move_uploaded_file($rutaTmp, $rutaDestino);
     }
 }else{
@@ -385,13 +385,59 @@ if(isset($_FILES["foto"]) && $_FILES["foto"]["error"] == 0){
 
 //LANZAMOS ERRORES
 if(!empty($errores)){
-    $_SESSION['errores'] = $errores;
+    $_SESSION["errores"] = $errores;
     header("Location: ../../registro.php");
     exit;
 }
 
 //GUARDAMOS LOS DATOS EN LA BASE DE DATOS.
-if(registrarUsuario($conexion, $nombre, $apellidos, $correo, $contrasena, $rol, $telefono, $fecha_nacimiento, $direccion, $nss, $numero_colegiado, $id_especialidad, $nombreArchivo)) {
+if(registrarUsuario($conexion, $nombre, $apellidos, $correo, $contrasena, $rol, $telefono, $fecha_nacimiento, $direccion, $nss, $numero_colegiado, $id_especialidad, $nombreArchivo)){
+    // OBTENEMOS EL CORREO DEL ADMINISTRADOR
+    $sql_correo_admin = "SELECT u.correo FROM usuarios u 
+                        INNER JOIN administradores a ON u.id_usuario = a.id_administrador 
+                        LIMIT 1";
+
+    $resultado_correo_admin = mysqli_query($conexion, $sql_correo_admin);
+    $admin = mysqli_fetch_assoc($resultado_correo_admin);
+
+    // ENVIAMOS EL CORREO AL ADMINISTRADOR
+    $api = "CLAVE QUE NO PUEDO SUBIR A GITHUB";
+    $url_brevo = "https://api.brevo.com/v3/smtp/email";
+
+    $asunto = "Nuevo usuario registrado en Clíniko";
+    $mensaje = "<h2>Nuevo registro en Clíniko</h2>";
+    $mensaje .= "<p>Se ha registrado un nuevo usuario. Sus datos son los siguietes:</p>";
+    $mensaje .= "<ul style='list-style: none;'>";
+    $mensaje .= "<li><u>Nombre</u>: ".$nombre." ".$apellidos."</li>";
+    $mensaje .= "<li><u>Correo</u>: ".$correo."</li>";
+    $mensaje .= "<li><u>Teléfono</u>: ".$telefono."</li>";
+    $mensaje .= "<li><u>Rol</u>: ".ucfirst($rol)."</li>";
+    $mensaje .= "</ul>";
+    $mensaje .= "<p>¡Recuerda habilitar al usuario para que pueda acceder!.</p>";
+    $mensaje .= "<p>Saludos cordiales,</p>";
+    $mensaje .= "<p>El equipo de Clíniko</p>";
+
+    $correoEmail = [
+        "sender" => ["name" => "Clíniko", "email" => "francisco.javier.muriel.orta@ieslaarboleda.es"],
+        "to" => [["email" => $admin["correo"]]],
+        "subject" => $asunto,
+        "htmlContent" => $mensaje
+    ];
+
+    $curl = curl_init($url_brevo);
+    curl_setopt($curl, CURLOPT_HTTPHEADER, [
+        "api-key: $api",
+        "Content-Type: application/json",
+        "accept: application/json"
+    ]);
+    
+    curl_setopt($curl, CURLOPT_POST, 1);
+    curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($correoEmail));
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    curl_exec($curl);
+    curl_close($curl);
+
+    //Y REDIRIJO A LA PÁGINA DE CONFIRMACIÓN DE REGISTRO
     header("Location: ../../despues-de-registro.php");
     exit();
 }

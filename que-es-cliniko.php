@@ -3,7 +3,9 @@
 <!-- SECCIÓN DONDE SE EXPLICA BREVEMENTE QUÉ ES CLÍNIKO-->
 <section class="seccion-que-es py-5">
     <div class="contenedor">
-        <h1 class="titulo-principal text-center" style="color: #003366;">¿Qué es Clíniko?</h1>
+        <div style="text-align: center;">
+            <img src="img/somos.png" style="width: 340px; max-width: 100%; height: auto;">
+        </div>
         <p class="descripcion-secundaria mt-3" style="color: #333333; text-align: justify;">
             Nuestra plataforma fue diseñada con el objeto de facilitar el encuentro entre personas que buscan asistencia médica y personas que puedan ofrecer dicha asistencia,
             todo esto, bajo un entorno sencillo, intuitivo y seguro donde los usarios puedan organizar sus agendas sin necesidad de ningún tipo de proceso complejo o lento.
@@ -29,7 +31,9 @@
 <!-- DE NUEVO, METO LA SECCIÓN PARA QUE EL USUARIO QUIERA REGISTRARSE -->
 <section class="seccion-para-llamar-al-registro text-center py-5">
     <div class="contenedor">
-        <h2 class="titulo-accion" style="color: #003366;">¡Únete ahora!</h2>
+        <div style="text-align: center;">
+            <img src="img/unes.png" style="width: 340px; max-width: 100%; height: auto;">
+        </div>
         <p class="descripcion-accion mt-3" style="color: #333333;">
             ¡Si necesitas atención o la puedas dar, puedes registrarte ya!
         </p>

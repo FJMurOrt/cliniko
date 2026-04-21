@@ -20,6 +20,6 @@
   </div>
 
   <div class="container text-center mt-3">
-    <p>&copy; 2025 Clíniko. Todos los derechos reservados. Francisco Javier Muriel Orta</p>
+    <p>&copy; 2026 Clíniko. Francisco Javier Muriel Orta. Desarrollo de Aplicaciones Web. IES La Arboleda.</p>
   </div>
 </footer>

@@ -39,6 +39,7 @@ h1, h2, h3, h4, h5 {
 
 /*ESTILOS PARA LOS BOTONES QUE SON NARANJAS CON HOVER MÁS CLARO. LE METO !IMPORTANT PORQUE SI NO CON EL ESTILO DE BOOTSTRAP ME LO TAPA*/
 .boton-cuadrado{
+    border-radius: 20px;
     background-color: #D47B5E !important;
     color: white;
 }
@@ -69,7 +70,7 @@ footer{
 }
 
 /*ESTILO DE HOVER PARA TODOS LOS ENLACES*/
-a:hover{
+  a:hover{
   color: #D47B5E !important;
 }
 
@@ -196,6 +197,7 @@ a:hover{
 
 /*LOS ESTILOS PARA EL BOTÓN PARA SUBIR LA PAGÍNA ARRIBA*/
 .boton-subir{
+  border-radius: 20px;
   display:none;
   position:fixed;
   bottom:60px;
@@ -220,7 +222,7 @@ a:hover{
 }
 
 /*FONDO DEL MENSAJE DESPUÉS DE ENVIAR EL CORREO DE RECUPERACIÓN*/
-.area-mensaje-recuperacion {
+.area-mensaje-recuperacion{
   background-color: #F5F5F5;
   padding: 20px;
   border-radius: 10px;
@@ -245,4 +247,19 @@ a:hover{
   border-radius: 10px;
   max-width: 500px;
   margin: 0 auto;
+}
+
+/*PARA QUE LAS ETIQUETAS SE LOS CAMPOS SE ROMPAN AL HACER RESPONSIVE*/
+.form-label, .form-check-label,a{ 
+  white-space: normal;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+/*PARA PONER LOS BOTONES DE LOS FORMUALRIOS A LA ANCHURA DEL CONTENEDOR*/
+.btn-form{
+  width: 100%;
+  white-space: normal;
+  word-break: break-word;
+  text-align: center;
 }

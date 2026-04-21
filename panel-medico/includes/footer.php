@@ -20,18 +20,15 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">¿Estás seguro de que quieres salir?</h5>
-                <button class="close" type="button" data-dismiss="modal"><span>&times;</span></button>
+                <h5 class="modal-title mx-auto pregunta-modal">¿Estás seguro de que quieres salir?</h5>
             </div>
-            <div class="modal-body">Pulsa en "Cerrar sesión" y se cerrará.</div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">No, aún no.</button>
-                <a class="btn btn-primary" href="../../controladores/cerrar-sesion.php">Sí, quiero salir.</a>
+            <div class="mx-auto mt-3 mb-3">
+                <button class="btn boton-cancelar btn-form mb-2" type="button" data-dismiss="modal">No, aún no.</button>
+                <a class="btn boton-cuadrado btn-form" href="../../controladores/cerrar-sesion.php">Sí, quiero salir.</a>
             </div>
         </div>
     </div>
 </div>
-
 <!-- Scripts -->
 <script src="../../../panel-medico/vendor/jquery/jquery.min.js"></script>
 <script src="../../../panel-medico/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -45,10 +42,21 @@
 <script src="../../../panel-medico/js/demo/chart-area-demo.js"></script>
 <script src="../../../panel-medico/js/demo/chart-pie-demo.js"></script>
 
-<!-- Scroll to Top Button-->
-<a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-</a>
+<!--ESTOS SON MIS SCRIPTS QUE NO PERTECEN A LA PLANTILLA-->
 <script src="../../../js/quitar-efecto-focus-botones.js"></script>
+<script src="../../../js/actualizar-horas.js"></script>
+<script src="../../../js/validaciones-form-disponibilidad-medico.js"></script>
+<script src="../../../js/reloj-panel-de-usuarios.js"></script>
+<script src="../../../js/citas-solicitadas.js"></script>
+<script src="../../../js/citas-activas.js"></script>
+<script src="../../../js/citas-realizadas.js"></script>
+<script src="../../../js/citas-canceladas.js"></script>
+<script src="../../../js/historiales-medicos.js"></script>
+<script src="../../../js/citas-realizadas-recetas.js"></script>
+<script src="../../../js/mis-valoraciones-medico.js"></script>
+<script src="../../../js/mis-notificaciones-medico.js"></script>
+<script src="../../../js/validaciones-ajustes-de-perfil.js"></script>
+<script src="../../../js/eliminar-cuenta-confirmacion.js"></script>
+<script src="../../../js/pantalla-inicio-medico.js"></script>
 </body>
 </html>

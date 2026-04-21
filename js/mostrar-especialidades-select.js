@@ -3,18 +3,18 @@
   const camposPaciente = document.getElementById("campos_paciente");
   const camposMedico = document.getElementById("campos_medico");
 
-  rol.addEventListener("change", function() {
-    if (this.value === "paciente") {
+  rol.addEventListener("change", function(){
+    if(this.value === "paciente"){
       //SI SE SELECCIONA PACIENTE, MODIFICAMOS EL ESTILO DEL DIV DE LOS CAMPOS DE PACIENTE Y LE PONEMOS DE VALOR BLOCK PARA MOSTRARLO.
         camposPaciente.style.display = "block";
-    } else {
+    }else{
         camposPaciente.style.display = "none"; //Y SI NO SE SE SELECCIONA, DEJAMOS EL ATRIBUTO DISPLAY EN NONE PARA QUE SIMPLEMENTE NO SE MUESTRE.
     }
 
-    if (this.value === "medico") {
+    if(this.value === "medico"){
       //LO MISMO CON EL MÉDICO, SE SI SE SELECCIONA MOSTRAMOS EL DIV CON LOS CAMPOS DEL MÉDICO Y SI NO, PUES NADA.
         camposMedico.style.display = "block";
-    } else {
+    }else{
         camposMedico.style.display = "none";
     }
 });
