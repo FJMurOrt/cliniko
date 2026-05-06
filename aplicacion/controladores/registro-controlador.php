@@ -405,7 +405,7 @@ if(registrarUsuario($conexion, $nombre, $apellidos, $correo, $contrasena, $rol, 
     $admin = mysqli_fetch_assoc($resultado_correo_admin);
 
     // ENVIAMOS EL CORREO AL ADMINISTRADOR
-    $api = "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";
+    $api = "CLAVE_DE_LA_API_BREVO";
     $url_brevo = "https://api.brevo.com/v3/smtp/email";
 
     $asunto = "Nuevo usuario registrado en Clíniko";
