@@ -1,4 +1,4 @@
-:root {
+:root{
   --bs-primary: #ff0066;
   --bs-success: #00c853;
   --bs-info: #00bcd4;
@@ -8,14 +8,18 @@
 
 /*CAMBIO DE COLORES A LA BARRA DE MENÚ LATERAL Y LOS ENLACES*/
 .sidebar{
-  background: #48325a !important;
+  background: #1A6B8A !important;
 }
 .sidebar .nav-link{
-  color: #b7a3c7 !important;
+  color: white !important;
 }
 .sidebar .nav-link:hover{
   background-color: #D47B5E !important;
   color: white !important;
+}
+.nav-item.active .nav-link {
+    color: #fff;
+    background-color: rgba(255,255,255,.2);
 }
 
 /*APLICO LA FUENTE ROBOTO QUE ES LA QUE USO EN MI WEB PARA TODO EL PANEL*/
@@ -27,11 +31,11 @@ h1, h2, h3, h4, h5, h6,
 .card,
 .dropdown-menu{
   font-family: 'Roboto', sans-serif !important;
-  color: #48325a;
+  color: #1A6B8A;
 }
 /*EL FONDO DEL BODY SERÁ DEL MISMO COLOR QUE EL DEL CONTENIDO PARA EN CASO DE QE EL CONTENIDO SE QUEDE CORTO*/
 body{
-  background-color: #e1d2ed;
+  background-color: #F7FBFC;
 }
 
 /*PARA QUE EL CONTENEDOR QUE ESTÁ DENTRO DEL BODY OCUPE TODA LA ALTURA Y COJA DEL COLOR DE FONDO QUE YA LE PUSE AL BODY (PORQUE SE ROMPÍA)*/
@@ -48,9 +52,9 @@ body{
 
 /*CAMBIO DE COLOR AL FONDO DEL FOOTER*/
 footer.sticky-footer{
-    background-color: transparent !important;
-    color: white !important;
-    border-top: 2px solid #48325a;
+    background-color: #F0F9F8 !important;
+    color: #1A6B8A !important;
+    border-top: 2px solid #1A6B8A;
 }
 
 /*ESTO PARA QUITAR EL ESPACIO DE MARGEN QUE VENÍA POR DEFECTO QUE ERA HORRIBLE LA VERDAD*/
@@ -81,8 +85,8 @@ footer.sticky-footer{
     height: 65px !important;
     box-sizing: border-box;
     object-fit: cover;
-    box-shadow: 0 0 20px #6a3397;
-    border: 2px solid #48325a;
+    border: 2px solid rgba(42, 157, 143, 0.35);
+    box-shadow: 0 2px 8px rgba(1, 73, 124, 0.15);
 }
 
 .nombre-usuario{
@@ -90,44 +94,27 @@ footer.sticky-footer{
     padding-left: 10px;
     padding-bottom: 5px;
     padding-top: 5px;
-    border: 2px solid #48325a;
+    border: 2px solid #1A6B8A;
     border-radius: 6px;
-    color: #48325a !important;
-}
-
-/*CAMBIO DE COLOR AL BOTÓN PARA ESCONDER LA BARRA DE MENÚ LATERAL*/
-#sidebarToggle,
-#sidebarToggleTop{
-    background-color: #8a729c !important;
-}
-
-/*CAMBIO DE COLOR AL BOTÓN QUE ESCONDE LA BARRA DE MENÚ LATERAL CUANDO SE HACE HOVER*/
-#sidebarToggle:hover,
-#sidebarToggleTop:hover {
-    background-color: #caaae3 !important;
-}
-
-/*ESTILO BOTON DE LA BARRA DE ARRIBA*/
-#sidebarToggleTop i {
-    color: #48325a !important;
+    color: #1A6B8A !important;
 }
 
 /*ESTILO DEL BOTON PARA SUBIR LA PÁGINA*/
 .scroll-to-top{
-    background-color: #48325a;
+    background-color: #1A6B8A;
     color: white;
 }
 
 /*ESTILO PARA EL HOVER DEL BOTÓN PARA SUBIR PARA ARRIBA*/
 .scroll-to-top:hover{
     background-color: #caaae3;
-    color: #48325a;
+    color: #1A6B8A;
 }
 
 /*ESTILO EL COLOR DE LA SELECCIÓN CON EL RATÓN EN EL PANEL*/
 ::selection{
-    background-color: #b7a3c7;
-    color: #48325a;
+    background-color: #1A6B8A;
+    color: white;
 }
 
 /*ESTILO PARA EL FORMULARIO DE LA DISPONIBILIDAD DEL MÉDICO*/
@@ -142,21 +129,23 @@ footer.sticky-footer{
 
 /*LETRA PARA EL TITULO DEL FORMULARIO DE LA GESTIÓN DE LA DISPONBIILIDAD DEL MÉDICO*/
 .disponibilidad-form-titulo{
-    color: #064635;
+    color: #013d69;
 }
 /*ESTILOS DE LOS BOTONES*/
 .boton-cuadrado{
-    border: 2px solid #48325a;
+    background-color: #2A9D8F;
+    border-color: #2A9D8F;
+    box-shadow: 0 2px 6px rgba(42, 157, 143, 0.30);
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    color: white;
     border-radius: 20px;
-    background-color: #8A729C !important;
-    color: #48325a;
 }
 
 .boton-cuadrado:hover{
-    background-color: #CAAAE3 !important;
-    color: #48325a;
-    box-shadow: 0 0 20px #48325a;
-
+    background-color: #a5e3dc;
+    border-color: #228a7d;
+    box-shadow: 0 4px 12px rgba(42, 157, 143, 0.40);
+    color: #228a7d;
 }
 
 /*ALERT PARA MOSTRAR LOS ERRORES DEL SESSION*/
@@ -167,29 +156,18 @@ footer.sticky-footer{
   margin: 0 auto;
 }
 
-/*ESTILOS DEL BOTÓN VOLVER*/
-.boton-cancelar{
-    border-radius: 20px;
-    background-color: #8A729C !important;
-    color: #48325a;
-}
-
-.boton-cancelar:hover{
-    background-color: rgb(222, 101, 101) !important;
-    border: 1px solid rgb(100, 29, 29);
-    color: #48325a !important;
-}
-
 /*COLOR PARA TODOS LOS LABELS*/
 label{
-    color: #48325a;
+    color: #1A6B8A;
 }
 
 /*ESTILO PARA EL RELOJ*/
 .reloj{
-    border: 2px solid #48325a;
-    color: #48325a;
+    border: 2px solid #1A6B8A;
+    color: #1A6B8A;
     border-radius: 6px;
+    font-family: 'Cinzel', serif;
+    min-width: 90px;
 }
 
 /*PARA QUE LAS ETIQUETAS SE LOS CAMPOS SE ROMPAN AL HACER RESPONSIVE*/
@@ -205,7 +183,7 @@ label,a{
 }
 /*COLOR DEL CARTEL AL CERRAR LA SESIÓN*/
 .modal-content{
-    background-color: #48325a !important;
+    background-color: #1A6B8A !important;
     border: 3px solid #D47B5E;
 }
 
@@ -214,7 +192,11 @@ label,a{
 }
 
 .modal-title{
-    color: #CAAAE3;
+    color: white;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    max-width: 100%;
 }
 
 .modal-footer {
@@ -223,18 +205,19 @@ label,a{
 
 /*ESTILOS PARA LA TARJETA DONDE SE MUESTRA LA TABLA*/
 .tarjeta-lista-medicos{
-    background: transparent !important;
+    background-color: #E0F4F1 !important;
     padding: 20px;
     border-radius: 10px;
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
-    box-shadow: 0 0 20px #a066cf;
+    box-shadow: 0 1px 4px rgba(1, 73, 124, 0.10);
+    border: 1px solid rgba(1, 73, 124, 0.12);
 }
 
 /*ESTILOS DEL THEAD DE LA TABLA DE LA LISTA DE MÉDICOS*/
 thead{
-    border: 2px solid #48325A;
-    color: #48325A;
+    border: 2px solid #1A6B8A;
+    color: #1A6B8A;
     text-align: center;
     font-family: 'Roboto', sans-serif !important;
 }
@@ -244,55 +227,47 @@ table, th, td, thead{
     border-radius: 20px;
     text-align: center !important;
     vertical-align: middle !important;
-    color: #48325A;
+    color: #1A6B8A;
 }
 
 /*ESTILO PARA LOS ENLACES A LA INFORMACIÓN DEL MÉDICO EN LA TABLA*/
-.enlace-medico{
+.enlace-medico {
     white-space: nowrap;
-    color: #48325A;
+    color: #1A6B8A;
     padding: 10px;
+    transition: color 0.2s ease, background-color 0.2s ease;
+    border-radius: 6px;
 }
 
-/*HOVER DE LOS ENLACES DE LA TABLA*/
-.enlace-medico:hover{
+.enlace-medico:hover {
     text-decoration: none;
-    background-color: #D47B5E;
-    border-radius: 20px;
-    color: #48325A;
-    box-shadow: 0 2px 3px #8A729C;
+    color: white;
+    background-color: rgba(44, 138, 127, 0.825);
 }
 
 /*PARA LOS BOTONES PARA CAMBIAR DE PÁGINA DE LA TABLA*/
 .boton-pagina{
-    border: 2px solid #48325A;
+    background-color: #2A9D8F;
+    border-color: #2A9D8F;
+    color: #ffffff;
     border-radius: 15px;
-    background-color: #8A729C;
-    color: #48325A;
 }
 
 /*EL HOVER DE LOS BOTONES*/
 .boton-pagina:hover{
-    background-color: #CAAAE3;
-    color: white;
+    color: #2A9D8F;
+    background-color: rgba(42, 157, 143, 0.08);
+    border-color: rgba(42, 157, 143, 0.30);
 }
 
 /*PARA EL COLOR DEL TEXTO DE LA ESPECIALDIADES DE LA TABLA*/
 .especialidad-en-tabla{
-    color: #48325A;
+    color: #1A6B8A;
 }
 
 /*MENSAJE DE NO HAY EMDICOS PARA LA TABLA*/
 .no-hay-medicos{
-    color: #48325A;
-}
-
-/*PARA LOS TEXTOS EN NEGRITA*/
-b{
-    border: 3px solid #48325A;
-    border-radius: 5px;
-    padding: 5px;
-    background-color: #D47B5E;
+    color: #1A6B8A;
 }
 
 /*PARA PONERLE SOMBRA A LA IMAGEN DE PERFIL DE LA INFO DE LAS TABLAS DE MEDICOS*/
@@ -300,16 +275,17 @@ b{
     width:80px;
     height:80px;
     object-fit:cover;
-    border: 2px solid #48325A;
-    box-shadow: -5px 5px 20px #8A729C;
+    border: 2px solid #1A6B8A;
+    box-shadow: -5px 5px 20px #1A6B8A;
 }
 
 /*PARA LAS ESPECIALIDADES EN LA TABLA DE LA LISTA DE MEDICOS*/
 .espe-tabla{
-    border: 3px solid #48325A;
+    border: 3px solid #1A6B8A;
     border-radius: 5px;
     padding: 5px;
-    background-color: #D47B5E;
+    background-color: #2A9D8F;
+    color: #ffffff;
 }
 
  /*PARA LOS BOTONES PARA CAMBIAR DE PÁGINA DE LA TABLA*/
@@ -318,13 +294,13 @@ b{
     border-radius: 20px;
     border: 2px solid green;
     background-color: #7db861;
-    color: #48325A;
+    color: #1A6B8A;
 }
 
 /*EL HOVER DE LOS BOTONES*/
 .boton-solicitar:hover{
     background-color: #cce7b7;
-    color: #48325A;
+    color: #1A6B8A;
 }
 
 .medico-contento{
@@ -335,25 +311,22 @@ b{
 }
 
 .boton-normal{
-    border: 2px solid #48325A;
+    border: 2px solid #1A6B8A;
     border-radius: 15px;
     background-color: #8A729C;
-    color: #48325A;
+    color: #1A6B8A;
     width: 100%;
 }
 
 .boton-normal:hover{
     width: 100%;
     background-color: #caaae3;
-    color: #48325A;
+    color: #1A6B8A;
 }
 
 /*PARA PONERLE UNA IMAGEN DE FONDO AL BODY Y QUITARLE EL FONDO POR DEFECTO QUE TIENE EL CONTENEDOR DEL FLUID*/
 #content-wrapper{
-    background: url("../img/fondo-paciente.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: #F7FBFC;
 }
 
 #content-wrapper .container-fluid{
@@ -362,13 +335,13 @@ b{
 
 /*ESTILOS PARA EL MENU QUE SALE DE LA FOTO DE PERFIL*/
 .menu-foto{
-    border: 2px solid #48325A;
+    border: 2px solid #1A6B8A;
     background-color: transparent;
 }
 
 .menu-foto-opcion{
     background-color: transparent;
-    color: #48325A;
+    color: #1A6B8A;
 }
 
 .menu-foto-opcion:hover{
@@ -397,40 +370,40 @@ b{
 
 /*LA BARRA QUE DIVIDE LA FOTO DEL NOMBRE*/
 .barra-dividir-foto{
-    border-left: 1px solid #48325A;
+    border-left: 1px solid #1A6B8A;
 }
 
 /*ESTILO PARA EL ESTADO DE LA CITA DE LA TABLA MIS CITAS*/
 .pendiente{
-    border: 3px solid #48325A;
+    border: 3px solid #1A6B8A;
     border-radius: 5px;
     padding: 5px;
     background-color: #e7cf81;
 }
 
 .no_atendida{
-    border: 3px solid #48325A;
+    border: 3px solid #1A6B8A;
     border-radius: 5px;
     padding: 5px;
     background-color: #e97f7c;
 }
 
 .confirmada{
-    border: 3px solid #48325A;
+    border: 3px solid #1A6B8A;
     border-radius: 5px;
     padding: 5px;
     background-color: #9ff2af;
 }
 
 .cancelada{
-    border: 3px solid #48325A;
+    border: 3px solid #1A6B8A;
     border-radius: 5px;
     padding: 5px;
     background-color: #ccb5b5;
 }
 
 .realizada{
-    border: 3px solid #48325A;
+    border: 3px solid #1A6B8A;
     border-radius: 5px;
     padding: 5px;
     background-color: #7cdae4;
@@ -445,59 +418,62 @@ b{
 .boton-cancelar-cita{
     width: 100%;
     border-radius: 15px;
-    border: 2px solid #48325A;
+    border: 2px solid #1A6B8A;
     background-color: #caaae3;
-    color: #48325A;
+    color: #1A6B8A;
 }
 
 /*EL HOVER DE LOS BOTONES*/
 .boton-cancelar-cita:hover{
     background-color: rgb(222, 101, 101) !important;
     border: 2px solid rgb(100, 29, 29);
-    color: #48325A;
+    color: #1A6B8A;
 }
 
 /*PARA EL BOTÓN DE DESCARGAR EL JSUTIFICANTE*/
-.boton-justificante-cita{
+.boton-justificante-cita {
     width: 100%;
     border-radius: 15px;
-    border: 2px solid #dac400;
-    background-color: #d5df4c;
-    color: #48325A;
-    transition: transform 0.4s ease;
+    border: 2px solid #1A6B8A;
+    background-color: #E0F4F1;
+    color: #1A6B8A;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.boton-justificante-cita:hover{
-    background-color: rgb(243, 252, 195) !important;
-    border: 2px solid #dac400;
-    color: #48325A;
-    box-shadow: 0 0 20px #ffe137;
-    transform: scale(1.15);
+.boton-justificante-cita:hover {
+    background-color: #2A9D8F !important;
+    border: 2px solid #2A9D8F;
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(42, 157, 143, 0.25);
+    transform: scale(1.02);
 }
 
 /*ESTILOS PARA L ATARJETA DONDE SE MUESTRABN LOS HISTORIALES MEDICOS*/
 .tarjeta-pacientes-historiales-medicos{
-    background-color: transparent;
     padding: 20px;
     border-radius: 10px;
     max-width: 1200px;
     margin: 0 auto;
-    box-shadow: 0 0 20px #a066cf;
+    background-color: #E0F4F1 !important;
+    box-shadow: 0 1px 4px rgba(1, 73, 124, 0.10);
+    border: 1px solid rgba(1, 73, 124, 0.12);
 }
 
 .tarjeta-medico{
     background-color: #edd5f5;
-    color: #48325A;
+    color: #1A6B8A;
     padding: 20px;
     border-radius: 10px;
     max-width: 1200px;
     margin: 0 auto;
-    box-shadow: 0 0 20px #a066cf;
+    background-color: #E0F4F1 !important;
+    box-shadow: 0 1px 4px rgba(1, 73, 124, 0.10);
+    border: 1px solid rgba(1, 73, 124, 0.12);
 }
 
 .foto-medico-historiales{
-    border: 2px solid #48325A;
-    box-shadow: 0 0 20px #6a3397;
+    border: 2px solid rgba(42, 157, 143, 0.35);
+    box-shadow: 0 4px 16px rgba(1, 73, 124, 0.22);
 }
 
 .boton-elminar-resenia{
@@ -514,42 +490,44 @@ b{
 }
 
 .tarjeta-pacientes-recetas{
-    background-color: transparent;
     padding: 20px;
     border-radius: 10px;
     max-width: 1200px;
     margin: 0 auto;
-    box-shadow: 0 0 20px #a066cf;
+    background-color: #E0F4F1 !important;
+    box-shadow: 0 1px 4px rgba(1, 73, 124, 0.10);
+    border: 1px solid rgba(1, 73, 124, 0.12);
 }
 
 .tarjeta-cita-receta{
-    background-color: #f7eafb;
-    color: #48325A;
+    color: #1A6B8A;
     padding: 20px;
     border-radius: 10px;
     max-width: 1200px;
     margin: 0 auto;
-    box-shadow: 0 0 20px #a066cf;
-    transition: transform 0.2s ease;
+    background-color: #ffffff;
+    border: 0.5px solid rgba(42, 157, 143, 0.20);
+    box-shadow: 0 1px 4px rgba(1, 73, 124, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .tarjeta-cita-receta:hover{
-    background-color: rgb(218, 197, 250);
-    box-shadow: 0 0 20px #D47B5E;
-    transform: scale(1.05);
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(42, 157, 143, 0.22);
+    border-color: rgba(42, 157, 143, 0.45);
 }
 
 .nota-observaciones{
     background-color: #ffd1c3;
     border: 2px solid #D47B5E;
-    color: #48325A;
+    color: #1A6B8A;
     box-shadow: 0 0 20px #ef4848;
 }
     
 .recuerda{
     display: inline-block;
     max-width: 100%;
-    border: 2px solid #48325A;
+    border: 2px solid #1A6B8A;
     border-radius: 5px;
     padding: 5px;
     background-color: #e7e18a;
@@ -560,225 +538,210 @@ b{
 .boton-ver-receta{
     border-radius: 20px;
     background-color: #26b8b3 !important;
-    border: 1px solid #48325a;
-    color: #48325a;
+    border: 1px solid #1A6B8A;
+    color: #1A6B8A;
 }
 
 .boton-ver-receta:hover{
     background-color: #afeaed !important;
-    border: 1px solid #48325a;
-    color: #48325a;
+    border: 1px solid #1A6B8A;
+    color: #1A6B8A;
     box-shadow: 0 0 20px #25a9b0;
 }
 
-.boton-descargar-receta{
-    border: 1px solid #48325a;
+.boton-descargar-receta {
+    border: 1px solid #1A6B8A;
     border-radius: 20px;
-    background-color: #70d442 !important;
-    color: #48325a;
+    background-color: #E0F4F1;
+    color: #1A6B8A;
 }
 
-.boton-descargar-receta:hover{
-    border: 1px solid #48325a;
+.boton-descargar-receta:hover {
+    border: 1px solid #2A9D8F;
     border-radius: 20px;
-    background-color: #d0edad !important;
-    color: #48325a;
-    box-shadow: 0 0 20px #59a001;
+    background-color: #2A9D8F !important;
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(42, 157, 143, 0.25);
 }
 
 .fecha-cita-receta{
-    border: 1px solid #48325A;
+    border: 1px solid #1A6B8A;
+    color: #1A6B8A;
     border-radius: 5px;
     padding: 5px;
 }
 
 .foto-medico-cita{
-    border: 3px solid #48325A;
-    box-shadow: 0 0 20px #581a8a;
+    border: 2px solid rgba(42, 157, 143, 0.35);
+    box-shadow: 0 4px 16px rgba(1, 73, 124, 0.22);
 }
 
 .boton-ver-historial{
     border-radius: 20px;
     background-color: #26b8b3 !important;
-    border: 1px solid #48325a;
-    color: #48325a;
+    border: 1px solid #1A6B8A;
+    color: white;
 }
 
 .boton-ver-historial:hover{
     background-color: #8ee5e9 !important;
-    border: 1px solid #48325a;
-    color: #48325a;
+    border: 1px solid #1A6B8A;
+    color: #1A6B8A;
     box-shadow: 0 0 20px #03878e;
 }
 
 .tarjeta-medicos-valoraciones{
-    background-color: transparent;
     padding: 20px;
     border-radius: 10px;
     max-width: 1200px;
     margin: 0 auto;
-    box-shadow: 0 0 20px #a066cf;
-}
-
-.tarjeta-resenia{
-    background-color: #f7eafb;
-    color: #48325A;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 1200px;
-    margin: 0 auto;
-    box-shadow: 0 0 20px #a066cf;
+    background-color: #E0F4F1 !important;
+    box-shadow: 0 1px 4px rgba(1, 73, 124, 0.10);
+    border: 1px solid rgba(1, 73, 124, 0.12);
 }
 
 /*PARA EDITAR LA RESENIA*/
-.boton-editar-resenia{
+.boton-editar-resenia {
     border-radius: 20px;
-    border: 2px solid #818805;
-    background-color: #cfd72d;
-    color: #48325A;
+    border: 2px solid #1A6B8A;
+    background-color: #E0F4F1;
+    color: #1A6B8A;
 }
 
-.boton-editar-resenia:hover{
-    background-color: rgb(237, 245, 193) !important;
-    border: 2px solid #818805;
-    color: #48325A;
-    box-shadow: 0 0 20px #979f01;
+.boton-editar-resenia:hover {
+    background-color: #2A9D8F;
+    border: 2px solid #2A9D8F;
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(42, 157, 143, 0.25);
 }
 
 /*ESTILOS DEL BOTÓN CANCELAR RESEÑA*/
 .boton-cancelar-resenia{
     border-radius: 20px;
-    background-color: #ee5959 !important;
-    border: 2px solid rgb(100, 29, 29);
-    color: #48325a;
+    background-color: #C0392B;
+    border-color: #C0392B;
+    color: #ffffff;
+    box-shadow: 0 2px 6px rgba(192, 57, 43, 0.25);
 }
 
 .boton-cancelar-resenia:hover{
-    background-color: rgb(240, 178, 178) !important;
-    border: 2px solid rgb(164, 76, 76);
-    color: #48325a !important;
-    box-shadow: 0 0 20px rgb(190, 0, 0);
+    color: #C0392B;
+    background-color: #e39e97;
+    border-color: #a93226;
+    box-shadow: 0 4px 12px rgba(192, 57, 43, 0.35);
 }
 
 /*FOTO DE LA RESEÑA*/
 .foto-medico-resenia{
-    border: 2px solid #48325A;
-    box-shadow: 0 0 20px #6a3397;
+    border: 2px solid rgba(42, 157, 143, 0.35);
+    box-shadow: 0 4px 16px rgba(1, 73, 124, 0.22);
 }
 
 /*BOTÓN PARA DEJAR LA RESEÑA*/
-.boton-dejar-resenia{
+.boton-dejar-resenia {
     border-radius: 20px;
-    background-color: #26b8b3 !important;
-    border: 1px solid #48325a;
-    color: #48325a;
+    background-color: #2A9D8F !important;
+    border: 1px solid #1A6B8A;
+    color: #ffffff;
 }
 
-.boton-dejar-resenia:hover{
-    background-color: #8ee5e9 !important;
-    border: 1px solid #48325a;
-    color: #48325a;
+.boton-dejar-resenia:hover {
+    background-color: #aee8e1 !important;
+    border: 1px solid #1A6B8A;
+    color: #1A6B8A;
+    box-shadow: 0 2px 8px rgba(42, 157, 143, 0.25);
 }
 
 /*TEXTO DE PRÓXIMA DISPONIBILIDAD EN LOS HISTORIALES*/
 .prox-dispo{
     display: inline-block;
     padding: 5px;
-    border: 1px solid #48325a;
+    border: 1px solid #1A6B8A;
     border-radius: 5px;
 }
 
 /*ESTILO PARA LAS ETIQUETAS DE LOS FILTROS*/
 .etiqueta-filtro{
     padding: 5px;
-    border: 1px solid #48325a;
+    border: 1px solid #1A6B8A;
+    color: #1A6B8A;
     border-radius: 5px;
-}
-
-.boton-cuadrado-sin-hover{
-    border: 2px solid #48325a;
-    border-radius: 20px;
-    background-color: #8A729C !important;
-    color: #48325a;
-}
-
-.boton-cuadrado-sin-hover:hover{
-    border: 2px solid #48325a;
-    border-radius: 20px;
-    background-color: #8A729C !important;
-    color: #48325a;
 }
 
 /*TARJETA DE LAS NOTIFICACIONES*/
 .tarjeta-notificaciones{
-    background-color: #e8f1ac;
-    color: #48325A;
+    color: #1A6B8A;
     padding: 20px;
+    border: 0.5px solid rgba(1, 73, 124, 0.10);
     border-radius: 10px;
     max-width: 1200px;
     margin: 0 auto;
-    box-shadow: 0 0 20px #bfb501;
     transition: transform 0.2s ease;
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px rgba(1, 73, 124, 0.06);
+    border-left: 3px solid #1A6B8A;
 }
 
 .tarjeta-notificaciones:hover{
     background-color: #f5c3b2;
-    box-shadow: 0 0 20px #D47B5E;
+    border-left-color: #D47B5E;
     transform: scale(1.05);
 }
 
 .tarjeta-contenedor-notificaciones{
-    background: transparent !important;
+    background-color: #E0F4F1 !important;
     padding: 20px;
     border-radius: 10px;
     max-width: 1200px;
     margin: 0 auto;
-    box-shadow: 0 0 20px #a066cf;
+    box-shadow: 0 1px 4px rgba(1, 73, 124, 0.10);
+    border: 1px solid rgba(1, 73, 124, 0.12);
 }
 
 /*BOTÓN DE LEER LA NOTIFICIÓN*/
 .boton-leida{
-    max-width: 100%;
-    border: 2px solid #226a10;
+    background-color: #2A9D8F;
+    border-color: #2A9D8F;
+    box-shadow: 0 2px 6px rgba(42, 157, 143, 0.30);
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    color: white;
     border-radius: 20px;
-    background-color: #93dd3e !important;
-    color: #48325a;
 }
 
 .boton-leida:hover{
-    background-color: #d7ffa9 !important;
-    color: #48325a;
+    background-color: #a5e3dc;
+    border-color: #228a7d;
+    box-shadow: 0 4px 12px rgba(42, 157, 143, 0.40);
+    color: #228a7d;
 }
 
 /*ESTILO PARA LA FECHA DE LA NOTIFICACIÓN*/
 .fecha-notificacion{
-    border: 2px solid #48325a;
+    border: 2px solid #1A6B8A;
     padding: 5px;
     border-radius: 5px;
 }
 
 /*ESTILOS PARA LOS FIELDSET DE LOS AJUSTES DE PERFIL CON TRANSFORM Y TRANSITION*/
 .borde-fieldset-ajustes-perfil{
-    border: 1px solid #48325a !important;
+    border: 1px solid rgba(1, 73, 124, 0.10) !important;
     transition: transform 0.4s ease;
 }
 
-.borde-fieldset-ajustes-perfil:hover {
-    background-color: #d5c3e3;
-    border: 1px solid #9200bf !important;
-    box-shadow: 0 4px 10px 2px #D47B5E;
+.borde-fieldset-ajustes-perfil:hover{
+    background-color: #F0F9F8;
+    box-shadow: 0 4px 10px 2px rgba(1, 73, 124, 0.10);
+    border: 1px solid rgba(1, 73, 124, 0.12);
     transform: scale(1.05);
 }
 
 .borde-fieldset-ajustes-perfil-eliminar{
-    border: 1px solid #873223 !important;
     transition: transform 0.4s ease;
 }
 
 .borde-fieldset-ajustes-perfil-eliminar:hover{
     background-color: #f1acac;
     border: 1px solid #e35b5b !important;
-    box-shadow: 0 4px 10px 2px #fc2b2b;
     transform: scale(1.05);
 }
 
@@ -802,119 +765,141 @@ b{
 }
 
 .tarjeta1{
-    background-color: #ede8f5;
-    box-shadow: 0 0 15px rgba(106, 51, 151, 0.2);
+    background-color: #E0F4F1;
+    box-shadow: 0 1px 4px rgba(1, 73, 124, 0.10);
+    border: 1px solid rgba(1, 73, 124, 0.12);
 }
 
 .tarjeta2{
-    background-color: #ede8f5;
-    box-shadow: 0 0 15px rgba(106, 51, 151, 0.2);
+    background-color: #E0F4F1;
+    box-shadow: 0 1px 4px rgba(1, 73, 124, 0.10);
+    border: 1px solid rgba(1, 73, 124, 0.12);
 }
 
 .tarjeta3{
-    background-color: #ede8f5;
-    box-shadow: 0 0 15px rgba(106, 51, 151, 0.2);
+    background-color: #E0F4F1;
+    box-shadow: 0 1px 4px rgba(1, 73, 124, 0.10);
+    border: 1px solid rgba(1, 73, 124, 0.12);
 }
 
 .tarjeta4{
-    background-color: #ede8f5;
-    box-shadow: 0 0 15px rgba(106, 51, 151, 0.2);
+    background-color: #E0F4F1;
+    box-shadow: 0 1px 4px rgba(1, 73, 124, 0.10);
+    border: 1px solid rgba(1, 73, 124, 0.12);
 }
 
 .tarjeta5{
-    background-color: #ede8f5;
-    box-shadow: 0 0 15px rgba(106, 51, 151, 0.2);
+    background-color: #E0F4F1;
+    box-shadow: 0 1px 4px rgba(1, 73, 124, 0.10);
+    border: 1px solid rgba(1, 73, 124, 0.12);
 }
 
 .tarjeta6{
-    background-color: #ede8f5;
-    box-shadow: 0 0 15px rgba(106, 51, 151, 0.2);
+    background-color: #E0F4F1;
+    box-shadow: 0 1px 4px rgba(1, 73, 124, 0.10);
+    border: 1px solid rgba(1, 73, 124, 0.12);
 }
 
 .tarjeta7{
-    background-color: #ede8f5;
-    box-shadow: 0 0 15px rgba(106, 51, 151, 0.2);
+    background-color: #E0F4F1;
+    box-shadow: 0 1px 4px rgba(1, 73, 124, 0.10);
+    border: 1px solid rgba(1, 73, 124, 0.12);
 }
 
 .tarjeta8{
-    background-color: #ede8f5;
-    box-shadow: 0 0 15px rgba(106, 51, 151, 0.2);
+    background-color: #E0F4F1;
+    box-shadow: 0 1px 4px rgba(1, 73, 124, 0.10);
+    border: 1px solid rgba(1, 73, 124, 0.12);
 }
 
 .tarjeta1:hover{
-    box-shadow: 0 0 20px rgba(106, 51, 151, 0.4);
     transform: scale(1.05);
 }
 
 .tarjeta2:hover{
-    box-shadow: 0 0 20px rgba(106, 51, 151, 0.4);
     transform: scale(1.05);
 }
 
 .tarjeta3:hover{
-    box-shadow: 0 0 20px rgba(106, 51, 151, 0.4);
     transform: scale(1.05);
 }
 
 .tarjeta4:hover{
-    box-shadow: 0 0 20px rgba(106, 51, 151, 0.4);
     transform: scale(1.05);
 }
 
 .tarjeta5:hover{
-    box-shadow: 0 0 20px rgba(106, 51, 151, 0.4);
     transform: scale(1.05);
 }
 
 .tarjeta6:hover{
-    box-shadow: 0 0 20px rgba(106, 51, 151, 0.4);
     transform: scale(1.05);
 }
 
 .tarjeta7:hover{
-    box-shadow: 0 0 20px rgba(106, 51, 151, 0.4);
     transform: scale(1.05);
 }
 
 .tarjeta8:hover{
-    box-shadow: 0 0 20px rgba(106, 51, 151, 0.4);
     transform: scale(1.05);
 }
 
 .tarjeta9:hover{
-    box-shadow: 0 0 20px rgba(106, 51, 151, 0.4);
     transform: scale(1.05);
 }
 
 .nombre-medico-tarjeta-inicio-proxima-cita{
     display: inline-block;
     max-width: 100%;
-    border: 3px solid #48325A;
+    border: 3px solid #1A6B8A;
     border-radius: 5px;
     padding: 5px;
-    background-color: #ada0b7;
+    background-color: rgba(42, 157, 143, 0.15);
+    color: #1A6B8A;
 }
 
 /*MÁS ESTILOS PARA LA SECCIÓN DE LOS AJUSTES DE PERFIL*/
 .tarjeta-de-ajustes-perfil{
-    background: transparent !important;
+    background: #E0F4F1 !important;
     padding: 20px;
     border-radius: 10px;
     max-width: 1200px;
     margin: 0 auto;
-    box-shadow: 0 0 20px #a066cf;
 }
 
 .boton-eliminar-cuenta{
     border-radius: 20px;
-    border: 2px solid rgb(100, 29, 29);
+    border: 1px solid rgb(100, 29, 29);
     background-color: rgb(179, 41, 41) !important;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
     color: #D1FAE5;
 }
 
 .boton-eliminar-cuenta:hover{
     background-color: rgb(249, 160, 160) !important;
-    border: 2px solid rgb(100, 29, 29);
-    color: #48325A !important;
-    box-shadow: 0 0 20px rgb(100, 29, 29);
+    color: rgb(100, 29, 29) !important;
+}
+
+.titulo-tarjeta{
+    font-family: 'Cinzel', serif !important;
+    color: #1A6B8A;
+    font-size: 2.5rem;
+    word-break: break-word;
+    white-space: normal;
+}
+
+.titulo-tarjeta2{
+    font-family: 'Cinzel', serif !important;
+    color: #1A6B8A;
+    font-size: 1.8rem;
+    word-break: break-word;
+    white-space: normal;
+}
+
+.titulo-tarjeta3{
+    font-family: 'Cinzel', serif !important;
+    color: white;
+    font-size: 1.4rem;
+    word-break: break-word;
+    white-space: normal;
 }

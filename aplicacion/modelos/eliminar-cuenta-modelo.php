@@ -1,9 +1,8 @@
 <?php
+//FUNCIÓN PARA ELIMINAR LA CUENTA
 function eliminarCuenta($conexion, $id_usuario){
     $sql = "UPDATE usuarios SET nombre = 'Usuario eliminado', apellidos = 'Usuario eliminado', correo = CONCAT('eliminado_', ?, '@eliminado.com'),
-            telefono = NULL,
-            foto_perfil = NULL,
-            habilitado = 'no'
+            telefono = NULL, foto_perfil = NULL, habilitado = 'no'
             WHERE id_usuario = ?";
 
     $preparacion = mysqli_prepare($conexion, $sql);

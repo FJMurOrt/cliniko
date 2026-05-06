@@ -17,21 +17,21 @@ $inicio = ($pagina - 1) * $registros;
 
 //FILTROS
 $busqueda = "";
-if(isset($_GET["busqueda"])){
+if(isset($_GET["busqueda"]) && $_GET["busqueda"] !== ""){
     $busqueda = trim($_GET["busqueda"]);
 }
 
-$historial = null;
+$historial = "";
 if(isset($_GET["historial"]) && $_GET["historial"] !== ""){
     $historial = $_GET["historial"];
 }
 
-$orden = null;
+$orden = "";
 if(isset($_GET["orden"]) && $_GET["orden"] !== ""){
     $orden = $_GET["orden"];
 }
 
-$edad = null;
+$edad = "";
 if(isset($_GET["edad"]) && $_GET["edad"] !== ""){
     $edad = $_GET["edad"];
 }

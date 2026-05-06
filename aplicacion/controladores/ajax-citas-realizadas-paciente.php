@@ -1,5 +1,6 @@
 <?php
 header("Content-Type: application/json; charset=utf-8");
+require_once "../configuracion/config.php";
 require_once "../modelos/ajax-citas-realizadas-paciente-modelo.php";
 session_start();
 
@@ -14,24 +15,23 @@ if (!isset($_SESSION["id_usuario"])) {
 $id_paciente = $_SESSION["id_usuario"];
 
 //FILTROS
-$fecha = null;
-if(isset($_GET["fecha"])){
+$fecha = "";
+if(isset($_GET["fecha"]) && $_GET["fecha"] !== ""){
     $fecha = $_GET["fecha"];
 }
 
-$busqueda = null;
-if(isset($_GET["busqueda"])){
+$busqueda = "";
+if(isset($_GET["busqueda"]) && $_GET["busqueda"] !== ""){
     $busqueda = trim($_GET["busqueda"]);
 }
 
-if(isset($_GET["receta"])){
+$receta = "";
+if(isset($_GET["receta"]) && $_GET["receta"] !== ""){
     $receta = $_GET["receta"];
-}else{
-    $receta = null;
 }
 
-$especialidad = null;
-if(isset($_GET["especialidad"])){
+$especialidad = "";
+if(isset($_GET["especialidad"]) && $_GET["especialidad"] !== ""){
     $especialidad = intval($_GET["especialidad"]);
 }
 

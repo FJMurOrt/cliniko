@@ -68,7 +68,7 @@
         </a>
     </li>
     <li class="nav-item">
-    <a class="nav-link" href="https://mis-anotaciones.infinityfreeapp.com/?i=1" target="_blank" rel="noopener">
+    <a class="nav-link" href="mis-notas.php">
         <i class="fas fa-sticky-note"></i>
         <span>¡Mis Notas!</span>
     </a>

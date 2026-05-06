@@ -16,6 +16,43 @@ $id_usuario = $_SESSION["id_usuario"];
 $contrasena_nueva = trim($_POST["contrasena_nueva"]);
 $contrasena_nueva_repetida = trim($_POST["contrasena_nueva_repetida"]);
 
+//VALIDACIONES
+if(empty($contrasena_nueva) || empty($contrasena_nueva_repetida)){
+    $_SESSION["error_contra"] = "Los campos de la contraseña no pueden estar vacíos.";
+    header("Location: ../vistas/medico/ajustes-perfil.php");
+    exit;
+}
+
+if(strlen($contrasena_nueva) < 8){
+    $_SESSION["error_contra"] = "La contraseña debe tener mínimo 8 caracteres.";
+    header("Location: ../vistas/medico/ajustes-perfil.php");
+    exit;
+}
+
+if(!preg_match("/[A-Z]/", $contrasena_nueva)){
+    $_SESSION["error_contra"] = "La contraseña debe contener al menos una letra mayúscula.";
+    header("Location: ../vistas/medico/ajustes-perfil.php");
+    exit;
+}
+
+if(!preg_match("/[a-z]/", $contrasena_nueva)){
+    $_SESSION["error_contra"] = "La contraseña debe contener al menos una letra minúscula.";
+    header("Location: ../vistas/medico/ajustes-perfil.php");
+    exit;
+}
+
+if(!preg_match("/[0-9]/", $contrasena_nueva)){
+    $_SESSION["error_contra"] = "La contraseña debe contener al menos un número.";
+    header("Location: ../vistas/medico/ajustes-perfil.php");
+    exit;
+}
+
+if(!preg_match("/[.\-_]/", $contrasena_nueva)){
+    $_SESSION["error_contra"] = "La contraseña debe contener al menos un carácter especial: '.', '-' o '_'";
+    header("Location: ../vistas/medico/ajustes-perfil.php");
+    exit;
+}
+
 //VERIFICOS QUE COINCIDAN
 if($contrasena_nueva !== $contrasena_nueva_repetida){
     $_SESSION["error_contra"] = "Las contraseñas no coinciden.";

@@ -37,4 +37,33 @@ function registrarUsuario($conexion, $nombre, $apellidos, $correo, $contrasena, 
     mysqli_stmt_close($consulta);
     return $resultado;
 }
+
+//FUNCIÓN PARA OBTENER LOS IDS DE LOS ADMINS Y EVNIARLES LA NOTIFICIACIÓN DE QUE SE HA REGISTRADO UN NUEVO USUARIO
+function obtenerIdsAdmins($conexion){
+    $sql = "SELECT id_administrador FROM administradores";
+
+    $preparacion = mysqli_prepare($conexion, $sql);
+    mysqli_stmt_execute($preparacion);
+    $resultado = mysqli_stmt_get_result($preparacion);
+
+    $admins = [];
+    while($fila = mysqli_fetch_assoc($resultado)){
+        $admins[] = $fila["id_administrador"];
+    }
+
+    mysqli_stmt_close($preparacion);
+
+    return $admins;
+}
+
+//Y LA FUNCIÓN PARA INSERTAR LA NOTIFICACIÓN EN LA TABLA DE NOTIFICACIONES
+function insertarNotificacionAdmin($conexion, $id_admin, $tipo, $mensaje){
+    $sql = "INSERT INTO notificaciones (id_usuario, tipo, mensaje) VALUES (?, ?, ?)";
+
+    $preparacion = mysqli_prepare($conexion, $sql);
+    mysqli_stmt_bind_param($preparacion, "iss", $id_admin, $tipo, $mensaje);
+    mysqli_stmt_execute($preparacion);
+
+    mysqli_stmt_close($preparacion);
+}
 ?>

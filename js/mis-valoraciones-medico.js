@@ -57,7 +57,7 @@ function mostrarValoraciones(pagina){
             var informacion_de_la_valoracion = "";
 
             if(respuesta.valoraciones.length === 0){
-                informacion_de_la_valoracion = "<div class='col-12 text-center'><p style='color: #064635;'>No tienes valoraciones aún.</p></div>";
+                informacion_de_la_valoracion = "<div class='col-12 text-center'><p style='color: #013d69;'>No tienes valoraciones aún.</p></div>";
             }else{
                 respuesta.valoraciones.forEach(function(valoracion){
                     var foto = "../../../uploads/perfiles/por_defecto.png";
@@ -78,6 +78,13 @@ function mostrarValoraciones(pagina){
                         }
                     }
 
+                    var boton_reportar = "";
+                    if(valoracion.estado === "reportada"){
+                        boton_reportar = "<p style='color: red;'>Ya reportada. Nuestros administradores se harán cargo en las próximas 24/48h.</p>";
+                    }else{
+                        boton_reportar = "<button class='btn boton-cuadrado-eliminar btn-form' onclick='reportarValoracion("+valoracion.id_valoracion+")'>Reportar</button>";
+                    }
+
                     informacion_de_la_valoracion +=
                         "<div class='col-12 mb-4'>"+
                             "<div class='card tarjeta-paciente'>"+
@@ -93,7 +100,7 @@ function mostrarValoraciones(pagina){
                                             "<p class='mt-2'>"+fecha_formateada+"</p>"+
                                         "</div>"+
                                         "<div class='col-md-3 text-md-end text-center mt-3 mt-md-0'>"+
-                                            "<button class='btn boton-cuadrado-eliminar btn-form' onclick='reportarValoracion("+valoracion.id_valoracion+")'>Reportar</button>"+
+                                            boton_reportar+
                                         "</div>"+
                                     "</div>"+
                                 "</div>"+
@@ -101,7 +108,6 @@ function mostrarValoraciones(pagina){
                         "</div>";
                 });
             }
-
             document.getElementById("contenedor-valoraciones").innerHTML = informacion_de_la_valoracion;
 
             var botones = "";
@@ -116,7 +122,24 @@ function mostrarValoraciones(pagina){
 
 //FUNICÓN QUE USARÉ PARA REPORTAR (TODAVÍA NO LA HE HECHO)
 function reportarValoracion(id_valoracion){
-    alert("Aún no la he hechoooooooooo.");
+    var peticion = crearObjetoPeticion();
+
+    if(!peticion){
+       return; 
+    }
+
+    peticion.open("GET", "../../controladores/ajax-reportar-valoracion.php?id_valoracion="+id_valoracion, true);
+
+    peticion.onreadystatechange = function(){
+        if(peticion.readyState === 4 && peticion.status === 200){
+            var respuesta = JSON.parse(peticion.responseText);
+            if(respuesta.reportada){
+                document.getElementById("mensaje-valoraciones").innerHTML = "<p style='color: green;'>La valoración fue reportada correctamente.</p>";
+                mostrarValoraciones();
+            }
+        }
+    };
+    peticion.send();
 }
 
 //EVENTOS Y FUNCIONES DE LOS FILTROS

@@ -31,7 +31,7 @@ function mostrarNotificaciones(){
             var informacion_de_la_notificacion = "";
 
             if(respuesta.notificaciones.length === 0){
-                informacion_de_la_notificacion = "<p class='text-center' style='color: #48325A;'>No tienes más notificaciones por leer.</p>";
+                informacion_de_la_notificacion = "<p class='text-center' style='color: #1A6B8A;'>No tienes más notificaciones por leer.</p>";
             }else{
                 respuesta.notificaciones.forEach(function(notificacion){
                     var partes_fecha = notificacion.fecha.split(" ");
@@ -86,6 +86,27 @@ function marcarLeida(id_notificacion){
             var respuesta = JSON.parse(peticion.responseText);
             if(respuesta.leida){
                 document.getElementById("notificacion"+id_notificacion).remove();
+                mostrarNotificaciones();
+            }
+        }
+    };
+    peticion.send();
+}
+
+//FUNCIÓN PARA MARCARLAS TODAS COMO LEÍDAS
+function marcarTodasLeidas(){
+    var peticion = crearObjetoPeticion();
+
+    if(!peticion){
+        return;
+    }
+
+    peticion.open("GET", "../../controladores/ajax-marcar-todas-leidas.php", true);
+
+    peticion.onreadystatechange = function(){
+        if(peticion.readyState === 4 && peticion.status === 200){
+            var respuesta = JSON.parse(peticion.responseText);
+            if(respuesta.leidas){
                 mostrarNotificaciones();
             }
         }

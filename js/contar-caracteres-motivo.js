@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function(){
         }else if(caracteres >= mitad){
             contador.style.color = "orange";
         }else{
-            contador.style.color = "#48325A";
+            contador.style.color = "#1A6B8A";
         }
     });
 });

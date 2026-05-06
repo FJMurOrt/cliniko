@@ -19,22 +19,22 @@ $registros = 5;
 $inicio = ($pagina - 1) * $registros;
 
 //FILTROS
-$fecha = null;
+$fecha = "";
 if(isset($_GET["fecha"]) && $_GET["fecha"] !== ""){
     $fecha = $_GET["fecha"];
 }
 
-$turno = null;
+$turno = "";
 if(isset($_GET["turno"]) && $_GET["turno"] !== ""){
     $turno = $_GET["turno"];
 }
 
-$busqueda = null;
+$busqueda = "";
 if(isset($_GET["busqueda"]) && $_GET["busqueda"] !== ""){
     $busqueda = trim($_GET["busqueda"]);
 }
 
-$orden = null;
+$orden = "";
 if(isset($_GET["orden"]) && $_GET["orden"] !== ""){
     $orden = $_GET["orden"];
 }

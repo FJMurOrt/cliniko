@@ -58,7 +58,7 @@ function mostrarPacientes(pagina){
             var info_del_paciente = "";
 
             if(respuesta.pacientes.length === 0){
-                info_del_paciente = "<div class='col-12 text-center'><p style='color: #064635;'>No se encotraron pacientes.</p></div>";
+                info_del_paciente = "<div class='col-12 text-center'><p style='color: #013d69;'>No se encotraron pacientes.</p></div>";
             }else{
                 respuesta.pacientes.forEach(function(paciente){
                     var nombre_completo = paciente.nombre+" "+paciente.apellidos;
@@ -74,11 +74,11 @@ function mostrarPacientes(pagina){
                         foto = "../../../uploads/perfiles/"+paciente.foto;
                     }
 
-                    var boton_descarga = "";
+                    var boton_ver_historial = "";
 
-                    var boton_descarga = "";
+                    var boton_ver_historial = "";
                     if(paciente.archivo_pdf){
-                        boton_descarga = "<button class='btn boton-ver-historial btn-form' onclick='verHistorial("+'"'+paciente.archivo_pdf+'"'+")'>Ver historial</button>";
+                        boton_ver_historial = "<button class='btn boton-cuadrado btn-form' onclick='verHistorial("+'"'+paciente.archivo_pdf+'"'+")'>Ver historial</button>";
                     }
 
                     info_del_paciente += 
@@ -95,7 +95,8 @@ function mostrarPacientes(pagina){
                                         "</div>"+
                                         "<div class='col-md-4 text-md-end text-center mt-3 mt-md-0'>"+
                                             "<button class='btn boton-cuadrado btn-form mb-2' onclick='subirHistorialMedico("+paciente.id_paciente+")'>Subir historial médico</button>"+
-                                            boton_descarga+
+                                            "<button class='btn boton-cuadrado btn-form mb-2' onclick='generarHistorialPDF("+paciente.id_paciente+", "+'"'+paciente.nombre+" "+paciente.apellidos+'"'+")'>Generar historial</button>"+
+                                            boton_ver_historial+
                                         "</div>"+
                                     "</div>"+
                                 "</div>"+
@@ -111,6 +112,102 @@ function mostrarPacientes(pagina){
                 botones += "<button class='btn btn-sm boton-pagina mr-1' onclick='mostrarPacientes("+i+")'>"+i+"</button>";
             }
             document.getElementById("paginacion-pacientes").innerHTML = botones;
+        }
+    };
+    peticion.send();
+}
+
+//FUNCIÓN PARA GENERAR EL HISTORIAL MÉDICO
+function generarHistorialPDF(id_paciente, nombre_paciente){
+    var peticion = crearObjetoPeticion();
+
+    if(!peticion){
+        return;
+    }
+
+    peticion.open("GET", "../../controladores/ajax-generar-historial-pdf.php?id_paciente="+id_paciente, true);
+
+    peticion.onreadystatechange = function(){
+        if(peticion.readyState === 4 && peticion.status === 200){
+            var datos = JSON.parse(peticion.responseText);
+
+            var hoy = new Date();
+            var fecha_emision = ("0"+hoy.getDate()).slice(-2)+"/"+("0"+(hoy.getMonth()+1)).slice(-2)+"/"+hoy.getFullYear();
+
+            var partes_nacimiento = datos.paciente.fecha_nacimiento.split("-");
+            var fecha_nacimiento = partes_nacimiento[2]+"/"+partes_nacimiento[1]+"/"+partes_nacimiento[0];
+
+            var nss = "No proporcionado";
+            if (datos.paciente.nss && datos.paciente.nss !== "El usuario no lo introdujo") {
+                nss = datos.paciente.nss;
+            }
+
+            var documento_pdf = new PDF24Doc();
+            documento_pdf.setCharset("UTF-8");
+            documento_pdf.setFilename("Historial_Medico_"+nombre_paciente.replace(/ /g, "_"));
+            documento_pdf.setPageSize(210, 297);
+
+            var contenido_pdf = new PDF24Element();
+            contenido_pdf.setTitle("Clíniko - Historial Médico");
+            contenido_pdf.setAuthor("Clíniko");
+
+            var informacion_del_pdf = "<div style='margin: 30px; font-family: Roboto, sans-serif;'>";
+            informacion_del_pdf += "<h2 style='text-align: center; color: #01497C;'><u>Historial Médico</u></h2>";
+
+            informacion_del_pdf += "<hr style='border-color: #D47B5E;'>";
+            informacion_del_pdf += "<div style='text-align: center;'><h4 style='color: #01497C;'>Datos del Paciente</h4></div>";
+            informacion_del_pdf += "<p><b style='color: #01497C;'>Nombre:</b> "+datos.paciente.nombre+" "+datos.paciente.apellidos+"</p>";
+            informacion_del_pdf += "<p><b style='color: #01497C;'>Fecha de nacimiento:</b> "+fecha_nacimiento+"</p>";
+            informacion_del_pdf += "<p><b style='color: #01497C;'>Dirección:</b> "+datos.paciente.direccion+"</p>";
+            informacion_del_pdf += "<p><b style='color: #01497C;'>Teléfono:</b> "+datos.paciente.telefono+"</p>";
+            informacion_del_pdf += "<p><b style='color: #01497C;'>NSS:</b> "+nss+"</p>";
+            informacion_del_pdf += "<hr style='border-color: #D47B5E;'>";
+
+            informacion_del_pdf += "<div style='text-align: center;'><h4 style='color: #01497C;'>Citas Realizadas</h4></div>";
+
+            if(datos.citas.length === 0){
+                informacion_del_pdf += "<p style ='color: #01497C;'>No hay citas realizadas con este paciente.</p>";
+            }else{
+                informacion_del_pdf += "<table style='width:100%; border-collapse: collapse;'>";
+                informacion_del_pdf += "<thead>";
+                informacion_del_pdf += "<tr style='background-color: #01497C; color: white;'>";
+                informacion_del_pdf += "<th style='padding: 8px; border: 1px solid #01497C;'>Fecha</th>";
+                informacion_del_pdf += "<th style='padding: 8px; border: 1px solid #01497C;'>Hora</th>";
+                informacion_del_pdf += "<th style='padding: 8px; border: 1px solid #01497C;'>Motivo</th>";
+                informacion_del_pdf += "</tr>";
+                informacion_del_pdf += "</thead>";
+                informacion_del_pdf += "<tbody>";
+
+                datos.citas.forEach(function(cita){
+                    var partes = cita.fecha_cita.split(" ");
+                    var fecha_partes = partes[0].split("-");
+                    var fecha = fecha_partes[2]+"/"+fecha_partes[1]+"/"+fecha_partes[0];
+                    var hora = partes[1].substring(0, 5);
+                    
+                    var motivo = "No se especifica";
+                    if(cita.motivo){
+                        motivo = cita.motivo;
+                    }
+
+                    informacion_del_pdf += "<tr>";
+                    informacion_del_pdf += "<td style='padding: 8px; border: 1px solid #01497C;'>"+fecha+"</td>";
+                    informacion_del_pdf += "<td style='padding: 8px; border: 1px solid #01497C;'>"+hora+"</td>";
+                    informacion_del_pdf += "<td style='padding: 8px; border: 1px solid #01497C;'>"+motivo+"</td>";
+                    informacion_del_pdf += "</tr>";
+                });
+                informacion_del_pdf += "</tbody></table>";
+            }
+
+            informacion_del_pdf += "<hr style='border-color: #D47B5E;'>";
+            informacion_del_pdf += "<div style='text-align: center;'><h4 style='color: #01497C;'>Datos del Médico</h4></div>";
+            informacion_del_pdf += "<p><b style='color: #01497C;'>Nombre:</b> "+datos.medico.nombre+" "+datos.medico.apellidos+"</p>";
+            informacion_del_pdf += "<p><b style='color: #01497C;'>Especialidad:</b> "+datos.medico.especialidad+"</p>";
+            informacion_del_pdf += "<p><b style='color: #01497C;'>Fecha de emisión:</b> "+fecha_emision+"</p>";
+            informacion_del_pdf += "</div>";
+
+            contenido_pdf.setBody(informacion_del_pdf);
+            documento_pdf.addElement(contenido_pdf);
+            documento_pdf.create();
         }
     };
     peticion.send();
@@ -161,7 +258,7 @@ function subirHistorialMedico(id_paciente){
 //FUNCIÓN PARA VER EL HISTORIAL EN EL VISUALIZADOR DEL PDF
 function verHistorial(nombre_del_pdf){
     var url_pdf = window.location.origin + "/uploads/historiales/"+nombre_del_pdf;
-    var url_final = "https://docs.google.com/viewer?url=" + encodeURIComponent(url_pdf)+"&embedded=true";
+    var url_final = "https://docs.google.com/viewer?url=" + encodeURIComponent(url_pdf);
     window.open(url_final, "_blank");
 }
 

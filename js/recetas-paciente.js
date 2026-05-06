@@ -69,7 +69,7 @@ function mostrarCitas(pagina){
             var informacion_cita = "";
 
             if(respuesta.citas.length === 0){
-                informacion_cita = "<div class='col-12'><div class='d-flex justify-content-center'><p style='color: #48325A;'>No se encontraron citas realizadas.</p></div>";
+                informacion_cita = "<div class='col-12'><div class='d-flex justify-content-center'><p style='color: #1A6B8A;'>No se encontraron citas realizadas.</p></div>";
             }else{
                 respuesta.citas.forEach(function(cita){
                     var nombre = cita.nombre+" "+cita.apellidos;
@@ -89,10 +89,13 @@ function mostrarCitas(pagina){
                     //SI HAY UN PDF SUBIDO, PONGO UN BOTÓN PARA PODER VERLO
                     var boton_ver = "";
                     var boton_descargar = "";
+                    var mensaje_no_hay_receta = "";
 
                     if(cita.archivo_pdf){
-                        boton_ver = "<button class='btn boton-ver-receta btn-form mb-2' onclick='verReceta("+'"'+cita.archivo_pdf+'"'+")'>Ver receta</button>";
-                        boton_descargar = "<a class='btn boton-descargar-receta btn-form mb-2' href='../../../uploads/recetas/"+cita.archivo_pdf+"' download>Descargar receta</a>";
+                        boton_ver = "<button class='btn boton-cuadrado btn-form mb-2' onclick='verReceta("+'"'+cita.archivo_pdf+'"'+")'>Ver receta</button>";
+                        boton_descargar = "<a class='btn boton-cuadrado btn-form mb-2' href='../../../uploads/recetas/"+cita.archivo_pdf+"' download>Descargar receta</a>";
+                    }else{
+                        mensaje_no_hay_receta = "<p style='color: #1A6B8A;'>Tu médico no te ha subido la receta aún para esta cita.</p>";
                     }
 
                     //SI HAY NOTA DE OBSERVAICIONES, LA MUESTRO
@@ -121,6 +124,7 @@ function mostrarCitas(pagina){
                                         "<div class='col-md-4 text-md-end text-center mt-3 mt-md-0'>"+
                                             boton_ver+
                                             boton_descargar+
+                                            mensaje_no_hay_receta+
                                         "</div>"+
                                     "</div>"+
                                     div_nota+

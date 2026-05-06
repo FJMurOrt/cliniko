@@ -86,6 +86,6 @@ if(!empty($errores)){
 actualizarDisponibilidad($conexion, $hora_inicio, $hora_fin, $id_disponibilidad);
 
 $_SESSION["actualizado"] = "La disponibilidad fue actualizada correctamente.";
-header("Location: ../vistas/medico/ver-horarios.php");
+header("Location: ../vistas/medico/editar-horario.php?id=$id_disponibilidad");
 exit;
 ?>

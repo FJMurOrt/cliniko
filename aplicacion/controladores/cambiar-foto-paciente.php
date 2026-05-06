@@ -14,8 +14,8 @@ $id_usuario = $_SESSION["id_usuario"];
 
 //EMPIEZO CON LA VALIDACIÓN DE LA FOTO VERIFICANDO SI SE HA SELECCIONADO UNA.
 if(!isset($_FILES["foto"]) || $_FILES["foto"]["error"] !== UPLOAD_ERR_OK){
-    $_SESSION["error_foto"] = "No se pudo subir la foto.";
-    header("Location: ../vistas/ajustes-perfil.php");
+    $_SESSION["error_foto"] = "No se seleccionó ninguna foto.";
+    header("Location: ../vistas/paciente/ajustes-perfil.php");
     exit;
 }
 
@@ -26,14 +26,14 @@ $formatos_permitidos = ["jpg", "jpeg", "png"];
 
 if(!in_array($formato, $formatos_permitidos)){
     $_SESSION["error_foto"] = "Solo se permiten imágenes JPG o PNG.";
-    header("Location: ../vistas/ajustes-perfil.php");
+    header("Location: ../vistas/paciente/ajustes-perfil.php");
     exit;
 }
 
 //TAMBIÉN QUE NO PESE MÁS DE 2MB
 if($archivo["size"] > 2 * 1024 * 1024){
     $_SESSION["error_foto"] = "La foto no puede superar 2MB.";
-    header("Location: ../vistas/ajustes-perfil.php");
+    header("Location: ../vistas/paciente/ajustes-perfil.php");
     exit;
 }
 

@@ -7,17 +7,20 @@
         <div class="container-fluid">
             <div class="card mb-4 tarjeta-lista-medicos">
                 <div class="card-body">
-                    <div style="text-align: center;">
-                        <img class="mb-4" src="../../../img/solicitar-cita.png" style="width: 340px; max-width: 100%; height: auto;">
-                    </div>
+                    <h4 class="titulo-tarjeta text-center">Médicos Disponibles</h4>
+                    <hr>
                     <div class="row justify-content-center mb-3">
-                        <div class="col-12 col-md-4 mb-2">
+                        <div class="col-12 col-md-3 mb-2">
+                            <label for="filtro-busqueda-medico" class="etiqueta-filtro">Médico</label>
+                            <input type="text" id="filtro-busqueda-medico" class="form-control" placeholder="Por nombre o apellido...">
+                        </div>
+                        <div class="col-12 col-md-3 mb-2">
                             <label for="filtro-especialidad-citas" class="etiqueta-filtro">Especialidad</label>
                             <select id="filtro-especialidad-citas" class="form-control">
                                 <option value="">Todas</option>
                             </select>
                         </div>
-                        <div class="col-12 col-md-4 mb-2">
+                        <div class="col-12 col-md-3 mb-2">
                             <label for="orden-nombre-medico" class="etiqueta-filtro">Ordenar por nombre</label>
                             <select id="orden-nombre-medico" class="form-control">
                                 <option value="" selected disabled>Ordenar</option>

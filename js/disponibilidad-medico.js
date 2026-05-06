@@ -26,6 +26,8 @@ function mostrarDisponibilidad(pagina){
 
     var fecha = document.getElementById("filtro-fecha").value;
     var id_medico = document.getElementById("id-medico").value;
+    var turno = document.getElementById("filtro-turno").value;
+
     var peticion = crearObjetoPeticion();
 
     if(!peticion){
@@ -36,6 +38,10 @@ function mostrarDisponibilidad(pagina){
 
     if(fecha !== ""){
         url += "&fecha="+fecha;
+    }
+
+    if(turno !== ""){
+        url += "&turno="+encodeURIComponent(turno);
     }
 
     peticion.open("GET", url, true);
@@ -56,7 +62,7 @@ function mostrarDisponibilidad(pagina){
 
             if(respuesta.disponibilidad.length === 0){
                 tabla += "<tr>"+
-                         "<td colspan='4' class='text-center'>No existe ninguna disponibilidad para esta fecha.</td>"+
+                         "<td colspan='4' class='text-center' style='color: #1A6B8A;'>No hay ninguna disponibilidad para esta fecha.</td>"+
                          "</tr>";
             }
 
@@ -89,10 +95,14 @@ function mostrarDisponibilidad(pagina){
     peticion.send();
 }
 
-function verTodasDisponibilidades(){
-    document.getElementById("filtro-fecha").value = "";
+//EVENTOS Y FUNCIONES
+document.getElementById("filtro-fecha").addEventListener("change", function(){
     mostrarDisponibilidad();
-}
+});
+
+document.getElementById("filtro-turno").addEventListener("change", function(){
+    mostrarDisponibilidad();
+});
 
 //CARGAR DATOS AL ABRIR PAGINA
 document.addEventListener("DOMContentLoaded", function(){

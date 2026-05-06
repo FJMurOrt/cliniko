@@ -1,13 +1,15 @@
 <?php
 //FUNCIÓN PARA CONTAR CUANTAS VALORACIONES HAY PARA PODER CREAR LA PAGINACIÓN
-function contarValoracionesMedico($conexion, $id_medico, $busqueda = null){
+function contarValoracionesMedico($conexion, $id_medico, $busqueda){
     $sqlbusqueda = "";
     if($busqueda){
         $sqlbusqueda = " AND (u.nombre LIKE '%$busqueda%' OR u.apellidos LIKE '%$busqueda%')";
     }
 
-    $sql = "SELECT COUNT(*) as total FROM valoraciones 
-            WHERE id_medico = ?";
+    $sql = "SELECT COUNT(*) as total FROM valoraciones v
+            INNER JOIN usuarios u ON v.id_paciente = u.id_usuario
+            WHERE v.id_medico = ?
+            $sqlbusqueda";
 
     $preparacion = mysqli_prepare($conexion, $sql);
     mysqli_stmt_bind_param($preparacion, "i", $id_medico);
@@ -22,7 +24,7 @@ function contarValoracionesMedico($conexion, $id_medico, $busqueda = null){
 }
 
 //FUNCIÓN APRA OBTENER LA INFORMACIÓN DE LAS VALORACIONES
-function obtenerValoracionesMedico($conexion, $id_medico, $inicio, $registros, $busqueda = null, $puntuacion = null, $orden = null, $fecha = null){
+function obtenerValoracionesMedico($conexion, $id_medico, $inicio, $registros, $busqueda, $puntuacion, $orden, $fecha){
     $sqlbusqueda = "";
     if($busqueda) $sqlbusqueda = " AND (u.nombre LIKE '%$busqueda%' OR u.apellidos LIKE '%$busqueda%')";
 
@@ -46,7 +48,7 @@ function obtenerValoracionesMedico($conexion, $id_medico, $inicio, $registros, $
         $sqlorden = "ORDER BY v.fecha ASC";
     }
 
-    $sql = "SELECT v.id_valoracion, v.puntuacion, v.comentario, v.fecha, u.nombre, u.apellidos, u.foto_perfil FROM valoraciones v
+    $sql = "SELECT v.id_valoracion, v.puntuacion, v.comentario, v.fecha, v.estado, u.nombre, u.apellidos, u.foto_perfil FROM valoraciones v
             INNER JOIN usuarios u ON v.id_paciente = u.id_usuario
             WHERE v.id_medico = ?
             $sqlbusqueda

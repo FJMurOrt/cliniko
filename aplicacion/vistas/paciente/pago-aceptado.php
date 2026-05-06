@@ -7,9 +7,7 @@
         <div class="container-fluid">
             <div class="card mb-4 tarjeta-lista-medicos" style="max-width: 500px; margin: 0 auto;">
                 <div class="card-body">
-                    <div style="text-align: center;">
-                        <img class="mb-4" src="../../../img/pago-realizado.png" style="width: 340px; max-width: 100%; height: auto;">
-                    </div>
+                    <h4 class="titulo-tarjeta text-center">¡Pago realizado con éxito!</h4>
                     <hr>
                     <div style="text-align: center;">
                         <img class="mb-4 medico-contento" src="../../../img/medico-contento.png" style="width: 240px; max-width: 100%; height: auto;">

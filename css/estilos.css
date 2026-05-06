@@ -1,22 +1,13 @@
 /*COLOR DEL FONDO DEL BODY DE LA PÁGINA, QUE SE APLIQUE LA MISMA FUENTE A TODO Y QUE EL BODY SEPA QUE TIENE QUE OCUPAR EL 100% DE LA PÁGINA Y SIN MÁRGENES*/
 body, html{
-  height: 100%;
-  margin: 0;
-  background-color: #AED0DE;
-  font-family: 'Roboto', sans-serif;
-}
-
-/*LE PONGO ESTE CSS AL BODY OTRA VEZ POR SEPARADO PARA DECIRLE QUE LA DESTRIBUCCIÓN ES FLEX Y DE TIPO COLUMNA, ES DECIR, DE ARRIBA A ABAJO. Y LA ALTURA MINIMA ES PARA QUE SIEMPRE OCUPE EL 100% DE LA ALTURA
-PÁGINA Y EL FOOTER NO SE ME SUBA HACIA ARRIBA*/
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-/*TIPO DE LETRA MONTSERRAT PARA LOS TITULOS*/
-h1, h2, h3, h4, h5 {
-  font-family: 'Montserrat', sans-serif;
+    height: 100%;
+    background-color: #dee8ed;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 /*FONDO DE LA BARRA DE MENÚ*/
@@ -30,8 +21,13 @@ h1, h2, h3, h4, h5 {
     color: #D47B5E !important;
 }
 
+/*POR SI HICIERA FALTA QUE SE ENCOGIERA MUCHÍSIMO EL BOTÓN DEL COLLAPSE DEL MENU EN PANTALLAS MUY PEQUEÑAS*/
+.navbar-toggler {
+    max-width: 100%;
+}
+
 /*ES LA CASE DONDE ESTAN METIDOS LOS CONTENIDOS DE LAS SECCIONES PARA QUE TENGA BASTANTE ANCHURA Y NO SE QUEDE CORTO Y QUE ESTÉ CENTADO TAMBIÉN*/
-.contenedor {
+.contenedor{
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
@@ -64,11 +60,6 @@ footer{
   width: 100%;
 }
 
-/*CON FLEX 1 0 MANTENEMOS EL FOOTER SIEMPRE ABAJO DEL TODO PORQUE A VECES CUANDO EL CONTENIDO DEL BODY NO ERA TANTO, SE ME VENÍA PARA ARRIBA*/
-.contenedor_principal {
-  flex: 1 0 auto;
-}
-
 /*ESTILO DE HOVER PARA TODOS LOS ENLACES*/
   a:hover{
   color: #D47B5E !important;
@@ -90,20 +81,20 @@ footer{
 }
 
 /*ESTILO PARA EL DIFUMINADO DE LAS IMAGENES DE LOS SERVICIOS DISPONIBLES*/
-.imagen-servicio {
+.imagen-servicio{
   border: 3px solid #446a8f;
   border-radius: 20px;
 }
 
 /*DIFUMINADO SUPERIOR DEL BANNER DE ABAJO DEL TODO DEL INDEX. TENGO QUE PONER DOS VECES LA LÍNEA PARA ASEGURARME DE LA COMPATIBILIDAD DEL ESITLO DE WEBKIT EN NAVEGADORES ANTIGUOS*/
-.banner_final {
+.banner_final{
   width: 100%;
   -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 30%);
   mask-image: linear-gradient(to bottom, transparent 0%, black 30%);
 }
 
 /*COLOR PARA EL SELECCIONAR DEL RATÓN, PARA QUE NO SE EL AZUL POR DEFECTO*/
-::selection {
+::selection{
   background-color: #D47B5E;
   color: #FFFFFF;
 }
@@ -123,7 +114,7 @@ footer{
     background-color: #F5F5F5;
     padding: 20px;
     border-radius: 10px;
-    max-width: 500px;
+    max-width: 700px;
     margin: 0 auto;
     box-shadow: 0 0 20px #D47B5E;
 }
@@ -162,7 +153,7 @@ footer{
   background-color: #F5F5F5;
   padding: 20px;
   border-radius: 10px;
-  max-width: 500px;
+  max-width: 600px;
   margin: 0 auto;
   box-shadow: 0 0 20px #D47B5E;
 }
@@ -216,7 +207,7 @@ footer{
   background-color: #F5F5F5;
   padding: 20px;
   border-radius: 10px;
-  max-width: 500px;
+  max-width: 700px;
   margin: 0 auto;
   box-shadow: 0 0 20px #D47B5E;
 }
@@ -236,7 +227,7 @@ footer{
   background-color: #F5F5F5;
   padding: 20px;
   border-radius: 10px;
-  max-width: 500px;
+  max-width: 600px;
   margin: 0 auto;
   box-shadow: 0 0 20px #D47B5E;
 }
@@ -262,4 +253,20 @@ footer{
   white-space: normal;
   word-break: break-word;
   text-align: center;
+}
+
+.titulo-tarjeta{
+    font-family: 'Cinzel', serif !important;
+    color: #1F3A5F;
+    font-size: 2.5rem;
+    word-break: break-word;
+    white-space: normal;
+}
+
+.titulo-tarjeta2{
+    font-family: 'Cinzel', serif !important;
+    color: #1F3A5F;
+    font-size: 1.8rem;
+    word-break: break-word;
+    white-space: normal;
 }

@@ -7,9 +7,7 @@
         <div class="container-fluid">
             <div class="card mb-4 tarjeta-pacientes-valoraciones">
                 <div class="card-body">
-                    <div style="text-align: center;">
-                        <img class="mb-2" src="../../../img/mis-valoraciones-medico.png" style="width: 400px; max-width: 100%; height: auto;">
-                    </div>
+                    <h4 class="titulo-tarjeta2 text-center">Mis Valoraciones</h4>
                     <hr>
                     <div class="row justify-content-center mb-3">
                         <div class="col-12 col-md-3 mb-2">
@@ -42,6 +40,8 @@
                         </div>
                     </div>
                     <hr>
+                    <div id="mensaje-valoraciones" class="text-center mt-2">
+                    </div>
                     <div id="contenedor-valoraciones" class="row">
                     </div>
                     <div id="paginacion-valoraciones" class="text-center mt-4">

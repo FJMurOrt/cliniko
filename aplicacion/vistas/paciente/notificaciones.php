@@ -7,12 +7,11 @@
         <div class="container-fluid">
             <div class="card mb-4 tarjeta-contenedor-notificaciones">
                 <div class="card-body">
-                    <div style="text-align: center;">
-                        <div style="text-align: center;">
-                            <img class="mb-2" src="../../../img/notificaciones-paciente.png" style="width: 350px; max-width: 100%; height: auto;">
-                        </div>
-                    </div>
+                    <h4 class="titulo-tarjeta text-center">Notificaciones</h4>
                     <hr>
+                    <div class="d-flex justify-content-end mb-3">
+                        <button class="btn boton-cuadrado" onclick="marcarTodasLeidas()">Marcar todas como leídas</button>
+                    </div>
                     <div id="contenedor-notificaciones">
                     </div>
                 </div>

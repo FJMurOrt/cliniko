@@ -1,11 +1,10 @@
 <?php require_once 'aplicacion/vistas/plantillas/cabecera.php'; //DE NUEVO LLAMO A LA CABECERA PARA QUE CARGUE EN ESTA PÁGINA TAMBIÉN.?>
 
 <!-- SECCIÓN DONDE SE EXPLICA BREVEMENTE QUÉ ES CLÍNIKO-->
-<section class="seccion-que-es py-5">
+<section class="py-5">
     <div class="contenedor">
-        <div style="text-align: center;">
-            <img src="img/somos.png" style="width: 340px; max-width: 100%; height: auto;">
-        </div>
+        <h4 class="titulo-tarjeta text-center">¿Qué somos?</h4>
+        <hr>
         <p class="descripcion-secundaria mt-3" style="color: #333333; text-align: justify;">
             Nuestra plataforma fue diseñada con el objeto de facilitar el encuentro entre personas que buscan asistencia médica y personas que puedan ofrecer dicha asistencia,
             todo esto, bajo un entorno sencillo, intuitivo y seguro donde los usarios puedan organizar sus agendas sin necesidad de ningún tipo de proceso complejo o lento.
@@ -26,19 +25,15 @@
     </div>
 </section>
 
-<hr></hr>
-
 <!-- DE NUEVO, METO LA SECCIÓN PARA QUE EL USUARIO QUIERA REGISTRARSE -->
-<section class="seccion-para-llamar-al-registro text-center py-5">
+<section class="text-center py-5">
     <div class="contenedor">
-        <div style="text-align: center;">
-            <img src="img/unes.png" style="width: 340px; max-width: 100%; height: auto;">
-        </div>
-        <p class="descripcion-accion mt-3" style="color: #333333;">
+        <h4 class="titulo-tarjeta">¿Te unes?</h4>
+        <hr>
+        <p class="descripcion-accion" style="color: #333333;">
             ¡Si necesitas atención o la puedas dar, puedes registrarte ya!
         </p>
         <a href="registro.php" class="btn boton-cuadrado mt-3" style="background-color: #FF7F50; color:white;">Registrarse</a>
     </div>
 </section>
-
 <?php require_once 'aplicacion/vistas/plantillas/pie.php'; //IGUALMENTE, LLAMO AL PIE DE PÁGINA PARA QUE TAMBIÉN CARGUE EN ESTA PÁGINA?>

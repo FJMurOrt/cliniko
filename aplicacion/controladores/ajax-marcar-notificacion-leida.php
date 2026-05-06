@@ -5,7 +5,6 @@ require_once "../modelos/ajax-marcar-notificacion-leida-modelo.php";
 session_start();
 
 if(!isset($_SESSION["id_usuario"])){
-    echo json_encode(["ok" => false]);
     exit;
 }
 

@@ -24,22 +24,22 @@ $registros = 6;
 $inicio = ($pagina - 1) * $registros;
 
 //FILTROS
-$especialidad = null;
+$especialidad = "";
 if(isset($_GET["especialidad"]) && $_GET["especialidad"] !== ""){
     $especialidad = intval($_GET["especialidad"]);
 }
 
-$busqueda = null;
+$busqueda = "";
 if(isset($_GET["busqueda"]) && $_GET["busqueda"] !== ""){
     $busqueda = trim($_GET["busqueda"]);
 }
 
-$valoracion = null;
+$valoracion = "";
 if(isset($_GET["valoracion"]) && $_GET["valoracion"] !== ""){
     $valoracion = $_GET["valoracion"];
 }
 
-$orden = null;
+$orden = "";
 if(isset($_GET["orden"]) && $_GET["orden"] !== ""){
     $orden = $_GET["orden"];
 }

@@ -12,9 +12,7 @@ $paciente = obtenerPaciente($conexion, $id_paciente);
         <div class="container-fluid">
             <div class="card mb-4 info-paciente">
                 <div class="card-body">
-                    <div style="text-align: center;">
-                        <img class="mb-2" src="../../../img/info-paciente.png" style="width: 600px; max-width: 100%; height: auto;">
-                    </div>
+                    <h4 class="titulo-tarjeta2 text-center">Información del Paciente</h4>
                     <hr>
                     <?php
                     if ($paciente){
@@ -22,11 +20,11 @@ $paciente = obtenerPaciente($conexion, $id_paciente);
                         <div class="text-center">
                             <img src="../../../uploads/perfiles/<?php echo $paciente["foto_perfil"];?>" class="foto-info-paciente mb-5 ">
                         </div>
-                        <p class="info-paciente-contenido"><span class="dato-info-paciente">Nombre:</span> <?php echo $paciente["nombre"]." " .$paciente["apellidos"];?></p>
-                        <p class="info-paciente-contenido"><span class="dato-info-paciente">Email:</span> <?php echo $paciente["correo"];?></p>
-                        <p class="info-paciente-contenido"><span class="dato-info-paciente">Teléfono:</span> <?php echo $paciente["telefono"];?></p>
-                        <p class="info-paciente-contenido"><span class="dato-info-paciente">Dirección:</span> <?php echo $paciente["direccion"];?></p>
-                        <p class="info-paciente-contenido"><span class="dato-info-paciente">Seguridad Social:</span> <?php echo $paciente["nss"];?></p>
+                        <p class="info-paciente-contenido"><span class="dato-info-paciente">Nombre</span> <?php echo $paciente["nombre"]." " .$paciente["apellidos"];?></p>
+                        <p class="info-paciente-contenido"><span class="dato-info-paciente">Email</span> <?php echo $paciente["correo"];?></p>
+                        <p class="info-paciente-contenido"><span class="dato-info-paciente">Teléfono</span> <?php echo $paciente["telefono"];?></p>
+                        <p class="info-paciente-contenido"><span class="dato-info-paciente">Dirección</span> <?php echo $paciente["direccion"];?></p>
+                        <p class="info-paciente-contenido"><span class="dato-info-paciente">Seguridad Social</span> <?php echo $paciente["nss"];?></p>
                     <?php
                     }else{
                     ?>

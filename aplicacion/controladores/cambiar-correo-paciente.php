@@ -16,6 +16,28 @@ $id_usuario = $_SESSION["id_usuario"];
 $correo = trim($_POST["correo"]);
 $correo_repetido = trim($_POST["correo_repetido"]);
 
+//VALIDACIONES
+if(empty($correo) || empty($correo_repetido)){
+    $_SESSION["error_correo"] = "Los campos del correo no pueden estar vacíos.";
+    header("Location: ../vistas/paciente/ajustes-perfil.php");
+    exit;
+}
+
+if(!filter_var($correo, FILTER_VALIDATE_EMAIL)){
+    $_SESSION["error_correo"] = "El correo no cumple con el formato válido.";
+    header("Location: ../vistas/paciente/ajustes-perfil.php");
+    exit;
+}
+
+$partes = explode("@", $correo);
+$usuario = $partes[0];
+
+if(!preg_match("/^[A-Za-z0-9._-]+$/", $usuario)){
+    $_SESSION["error_correo"] = "El correo solo puede contener letras, números, '.', '-' o '_'";
+    header("Location: ../vistas/paciente/ajustes-perfil.php");
+    exit;
+}
+
 //SI NO COINCIDEN LANZO UN ERROR
 if($correo !== $correo_repetido){
     $_SESSION["error_correo"] = "Los correos no coinciden.";

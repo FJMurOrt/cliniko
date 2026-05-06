@@ -24,26 +24,24 @@ $registros = 5;
 $inicio = ($pagina - 1) * $registros;
 
 //FILTROS
-$fecha = null;
-if (isset($_GET["fecha"]) && $_GET["fecha"] !== ""){
+$fecha = "";
+if(isset($_GET["fecha"]) && $_GET["fecha"] !== ""){
     $fecha = $_GET["fecha"];
 }
 
-$estado = null;
-if (isset($_GET["estado"]) && $_GET["estado"] !== ""){
+$estado = "";
+if(isset($_GET["estado"]) && $_GET["estado"] !== ""){
     $estado = $_GET["estado"];
 }
 
-if (isset($_GET["orden"])){
+$orden = "";
+if(isset($_GET["orden"]) && $_GET["orden"] !== ""){
     $orden = $_GET["orden"];
-}else{
-    $orden = "";
 }
 
-if(isset($_GET['turno'])){
-    $turno = $_GET['turno'];
-}else{
-    $turno = null;
+$turno = "";
+if(isset($_GET["turno"]) && $_GET["turno"] !== ""){
+    $turno = $_GET["turno"];
 }
 
 //PARA SABER CUANTAS PÁGINAS HARÁ FALTA PARA LAS CITAS

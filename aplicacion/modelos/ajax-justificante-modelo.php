@@ -17,6 +17,7 @@ function obtener_datos_cita($conexion, $id_cita, $id_paciente){
     $cita = mysqli_fetch_assoc($resultado);
 
     mysqli_stmt_close($sql_preparacion);
+    
     return $cita;
 }
 ?>

@@ -55,6 +55,14 @@ if($fecha_actual > $registro["fecha_caduca"]){
     exit;
 }
 
+//COMPROBAMOS QUE NO SEA LA MISMA CONTRSEÑA QUE TIENE YA
+$contrasena_actual = obtenerContrasenaActual($conexion, $registro["id_usuario"]);
+if(password_verify($contrasena1, $contrasena_actual)){
+    $_SESSION["errores"] = ["La nueva contraseña no puede ser igual a la actual."];
+    header("Location: ../../cambiar-contrasena.php?token=$token");
+    exit;
+}
+
 //ACTUALIZAMOS LA CONTRASEÑA HASHEANDOLA ANTES
 $hash = password_hash($contrasena1, PASSWORD_DEFAULT);
 $actualizado = actualizarContrasena($conexion, $registro["id_usuario"], $hash);

@@ -14,6 +14,9 @@ session_start();
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
+    <!-- PARA LA FUENTE DE CINZEL -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+
     <!-- SB Admin 2 CSS -->
     <link href="../../../panel-medico/css/sb-admin-2.min.css" rel="stylesheet">
 

@@ -13,13 +13,13 @@
 <!-- Logout Modal-->
 <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
-        <div class="modal-content text-white">
+        <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title mx-auto">¿Estás seguro de que quieres salir?</h5>
+                <h5 class="modal-title mx-auto titulo-tarjeta3 w-100 text-center">¿Estás seguro de que quieres salir?</h5>
             </div>
-            <div class="mx-auto mt-3 mb-3">
-                <button class="btn boton-cancelar btn-form mb-2" type="button" data-dismiss="modal">No, aún no.</button>
-                <a class="btn boton-cuadrado btn-form" href="../../controladores/cerrar-sesion.php">Sí, quiero salir.</a>
+            <div class="mx-auto mt-3 mb-3 w-100 px-3 d-flex flex-column">
+                <button class="btn boton-cuadrado btn-form mb-2" onclick="cerrarSesion()">Sí, quiero salir.</button>
+                <button class="btn boton-eliminar-cuenta" type="button" data-dismiss="modal">No, aún no.</button>
             </div>
         </div>
     </div>
@@ -43,7 +43,7 @@
 <script src="../../../js/quitar-efecto-focus-botones.js"></script>
 <script src="../../../js/reloj-panel-de-usuarios.js"></script>
 <script src="../../../js/ajax-lista-medicos-y-filtro-espe.js"></script>
-<script src="../../../panel-paciente/js/sb-admin-2.min.js"></script>
+<script src="../../../panel-paciente/js/sb-admin-2.js"></script>
 <script src="../../../js/ajax-lista-med-citas.js"></script>
 <script src="../../../js/disponibilidad-medico.js"></script>
 <script src="../../../js/solicitar-cita.js"></script>
@@ -57,7 +57,8 @@
 <script src="../../../js/validaciones-ajustes-de-perfil.js"></script>
 <script src="../../../js/patalla-inicio-paciente.js"></script>
 <script src="../../../js/eliminar-cuenta-confirmacion.js"></script>
-
+<script src="../../../js/cerrar-sesion.js"></script>
+<script src="//code.tidio.co/k8bttcfjy5k0eyedkj3ipozs5youpo1b.js" async></script>
 
 <!--JS DEL STRIPE-->
 <script src="https://js.stripe.com/v3/"></script>

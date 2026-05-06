@@ -18,6 +18,7 @@ function crearObjetoPeticion(){
 
 function cargarTarjetasInicio(){
     var peticion = crearObjetoPeticion();
+    
     if(!peticion){
         return;
     }
@@ -49,12 +50,12 @@ function cargarTarjetasInicio(){
                     "<p class='nombre-medico-tarjeta-inicio-proxima-cita ml-2'>"+cita.nombre+" "+cita.apellidos+"</p>"+
                     "<p class='fecha-cita-receta mt-3'>Tu próxima cita la tienes el día "+fecha+" a las "+hora+". ¡Que no se te olvide!</p>";
             }else{
-                document.getElementById("proxima-cita").innerHTML = "<p>No tienes citas por atender en los próximos días por ahora.</p>";
+                document.getElementById("proxima-cita").innerHTML = "<p style='color: #013d69;'>No tienes citas por atender en los próximos días por ahora.</p>";
             }
 
             //LA TARJETA PARA MOSTRAR CUÁNTAS CITAS QUE EL MÉDICO HA ATENDIDO HOY
             if(respuesta.citas_hoy === 0){
-                document.getElementById("citas-hoy").innerHTML = "<p>Hoy no has atendido ninguna cita durante el día de hoy.</p>";
+                document.getElementById("citas-hoy").innerHTML = "<p style='color: #013d69;'>Hoy no has atendido ninguna cita durante el día de hoy.</p>";
             }else{
                 document.getElementById("citas-hoy").innerHTML = "<p class='fecha-cita-receta'>¡Hoy has atendido un total de <span style='font-size: 5vw'>"+respuesta.citas_hoy+"</span> citas!</p>";
             }
@@ -100,10 +101,10 @@ function cargarTarjetasInicio(){
                     }
                 }
                 document.getElementById("puntuacion-media").innerHTML =
-                    "<p style='width:100px; font-size: 50px; height:100px; border-radius:50%; border: 2px solid #064635; display:flex; align-items:center; justify-content:center; margin: 0 auto;' class='mb-3'>"+respuesta.puntuacion_media+"</p>"+
+                    "<p style='width:100px; font-size: 50px; height:100px; border-radius:50%; border: 2px solid #013d69; display:flex; align-items:center; justify-content:center; margin: 0 auto; color: #013d69;' class='mb-3'>"+respuesta.puntuacion_media+"</p>"+
                     "<div>"+estrellas+"</div>";
             }else{
-                document.getElementById("puntuacion-media").innerHTML = "<p>Aún no te han dejado ninguna valoración.</p>";
+                document.getElementById("puntuacion-media").innerHTML = "<p style='color: #013d69;'>Aún no te han dejado ninguna valoración.</p>";
             }
 
             //PARA VER LAS ÚLTIMAS VALORACIONES QUE HA RECIBIDO
@@ -118,22 +119,22 @@ function cargarTarjetasInicio(){
                             estrellas_val += '<i class="far fa-star" style="color: #f4c542;"></i>';
                         }
                     }
-                    valoraciones_recibidas += "<span>Lo que dijo </span><p class='nombre-medico-tarjeta-inicio-proxima-cita'>"+valoracion.nombre+" "+valoracion.apellidos+"</p> sobre ti:"+"<p>"+estrellas_val+"</p>"+"<p class='etiqueta-filtro mt-2'>"+valoracion.comentario+"</p><hr>";
+                    valoraciones_recibidas += "<span style='color: #013d69;'>Lo que dijo </span><p class='nombre-medico-tarjeta-inicio-proxima-cita'>"+valoracion.nombre+" "+valoracion.apellidos+"</p><span style='color: #013d69;'> sobre ti:</span>"+"<p>"+estrellas_val+"</p>"+"<p class='etiqueta-filtro mt-2'>"+valoracion.comentario+"</p><hr>";
                 });
                 document.getElementById("total-valoraciones").innerHTML = valoraciones_recibidas;
             }else{
-                document.getElementById("total-valoraciones").innerHTML = "<p>Aún no te han dejado ninguna valoración.</p>";
+                document.getElementById("total-valoraciones").innerHTML = "<p style='color: #013d69;'>Aún no te han dejado ninguna valoración.</p>";
             }
 
             //Y POR ÚLTIMO, PARA LA TARJETA DE LAS NOTIFICACIONES
             if(respuesta.notificaciones.length > 0){
                 var contenido_tarjeta_notificaciones = "";
                 respuesta.notificaciones.forEach(function(notifica){
-                    contenido_tarjeta_notificaciones += "<p>"+notifica.mensaje+"</p><hr>";
+                    contenido_tarjeta_notificaciones += "<p style='color: #013d69;'>"+notifica.mensaje+"</p><hr>";
                 });
                 document.getElementById("notificaciones-inicio").innerHTML = contenido_tarjeta_notificaciones;
             }else{
-                document.getElementById("notificaciones-inicio").innerHTML = "<p>No tienes más notificaciones por ahora.</p>";
+                document.getElementById("notificaciones-inicio").innerHTML = "<p style='color: #013d69;'>No tienes más notificaciones por ahora.</p>";
             }
         }
     };

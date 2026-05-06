@@ -16,6 +16,19 @@ $id_usuario = $_SESSION["id_usuario"];
 $telefono = trim($_POST["telefono"]);
 $telefono_repetido = trim($_POST["telefono_repetido"]);
 
+//VALIDACIONES
+if(empty($telefono) || empty($telefono_repetido)){
+    $_SESSION["error_telef"] = "Los campos del teléfono no pueden estar vacíos.";
+    header("Location: ../vistas/paciente/ajustes-perfil.php");
+    exit;
+}
+
+if(!preg_match("/^[0-9]{9}$/", $telefono)){
+    $_SESSION["error_telef"] = "El teléfono debe contener exactamente 9 números.";
+    header("Location: ../vistas/paciente/ajustes-perfil.php");
+    exit;
+}
+
 //SI NO COINCIDEN, LANZO UN ERRROR
 if($telefono !== $telefono_repetido){
     $_SESSION["error_telef"] = "Los teléfonos no coinciden.";

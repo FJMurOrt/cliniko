@@ -56,7 +56,7 @@ function mostrarCitas(pagina){
             var informacion_de_la_cita = "";
 
             if(respuesta.citas.length === 0){
-                informacion_de_la_cita = "<div class='col-12 text-center'><p style='color: #064635;'>No hay citas realizadas.</p></div>";
+                informacion_de_la_cita = "<div class='col-12 text-center'><p style='color: #013d69;'>No hay citas realizadas.</p></div>";
             }else{
                 respuesta.citas.forEach(function(cita){
                     var nombre = cita.nombre+" "+cita.apellidos;
@@ -76,7 +76,7 @@ function mostrarCitas(pagina){
                     //BOTÓN PARA PODER VER RECETA
                     var boton_ver = "";
                     if(cita.archivo_pdf){
-                        boton_ver = "<button class='btn boton-ver-receta btn-form' onclick='verReceta("+'"'+cita.archivo_pdf+'"'+")'>Ver receta</button>";
+                        boton_ver = "<button class='btn boton-cuadrado btn-form' onclick='verReceta("+'"'+cita.archivo_pdf+'"'+")'>Ver receta</button>";
                     }
 
                     //EN CASO DE QUE HAYA NOTA PARA LA CITA, SE MUESTRA EN UN DIV.
@@ -84,7 +84,7 @@ function mostrarCitas(pagina){
                     if(cita.nota){
                         div_para_la_nota = 
                                     "<div class='alert mt-3 mb-0 bordes-observaciones text-center'>"+
-                                        "<span class='observaciones'>Observaciones</span> "+
+                                        "<span class='observaciones'>Información Adicional</span> "+
                                         "<div class='mt-3' style='min-height:50px;'>"+cita.nota+"</div>"+
                                         "<br><button class='btn boton-cuadrado-eliminar mt-2' style='max-width: 100%;' onclick='eliminarNota("+cita.id_cita+")'>Eliminar nota</button>"+
                                     "</div>";
@@ -103,8 +103,9 @@ function mostrarCitas(pagina){
                                             "<p class='mb-0 fecha-cita-receta d-inline-block' style='max-width: 100%;'>"+fecha_formato_bueno+" - "+hora_sin_segundos+"</p>"+
                                         "</div>"+
                                         "<div class='col-md-4 text-md-end text-center mt-3 mt-md-0'>"+
-                                            "<button class='btn boton-subir-receta btn-form mb-2' onclick='subirReceta("+cita.id_cita+")'>Subir receta</button>"+
-                                            "<button class='btn boton-agregar-nota btn-form mb-2' onclick='agregarNota("+cita.id_cita+")'>Añadir nota</button>"+
+                                            "<button class='btn boton-cuadrado btn-form mb-2' onclick='subirReceta("+cita.id_cita+")'>Subir receta</button>"+
+                                            "<button class='btn boton-cuadrado btn-form mb-2' onclick='agregarNota("+cita.id_cita+")'>Añadir nota</button>"+
+                                            "<button class='btn boton-cuadrado btn-form mb-2' onclick='abrirModalGenerarReceta("+cita.id_cita+")'>Generar receta</button>"+
                                             boton_ver+
                                         "</div>"+
                                     "</div>"+
@@ -172,16 +173,97 @@ function subirReceta(id_cita){
     subir_receta.click();
 }
 
-//FUNCIÓN PARA AGREGAR LA NOTA DE OBSERVACIONES
-var id_cita_actual = null;
+function abrirModalGenerarReceta(id_cita){
+    document.getElementById("id-cita-receta-pdf").value = id_cita;
+    document.getElementById("medicamento-receta").value = "";
+    document.getElementById("dosis-receta").value = "";
+    document.getElementById("frecuencia-receta").value = "";
+    document.getElementById("duracion-receta").value = "";
+    document.getElementById("observaciones-receta").value = "";
+    
+    $("#modal-generar-receta").modal("show");
+}
+
+function generarRecetaPDF(){
+    var id_cita = document.getElementById("id-cita-receta-pdf").value;
+    var medicamento = document.getElementById("medicamento-receta").value.trim();
+    var dosis = document.getElementById("dosis-receta").value.trim();
+    var frecuencia = document.getElementById("frecuencia-receta").value.trim();
+    var duracion = document.getElementById("duracion-receta").value.trim();
+    var observaciones = document.getElementById("observaciones-receta").value.trim();
+
+    if(medicamento === "" || dosis === "" || frecuencia === "" || duracion === ""){
+        document.getElementById("mensaje-generar-receta").innerHTML = "<p style='color: red;'>Necesitas rellenar los campos obligatorios.</p>";
+        return;
+    }
+
+    var peticion = crearObjetoPeticion();
+
+    if(!peticion){
+       return; 
+    }
+
+    peticion.open("GET", "../../controladores/ajax-datos-receta-pdf.php?id_cita="+id_cita, true);
+
+    peticion.onreadystatechange = function(){
+        if(peticion.readyState === 4 && peticion.status === 200){
+            var datos = JSON.parse(peticion.responseText);
+
+            var partes = datos.fecha_cita.split(" ");
+            var fecha_partes = partes[0].split("-");
+            var fecha = fecha_partes[2]+"/"+fecha_partes[1]+"/"+fecha_partes[0];
+            var hora = partes[1].substring(0,5);
+
+            var hoy = new Date();
+            var fecha_emision = ("0"+hoy.getDate()).slice(-2)+"/"+("0"+(hoy.getMonth()+1)).slice(-2)+"/"+hoy.getFullYear();
+
+            var documento_pdf = new PDF24Doc();
+            documento_pdf.setCharset("UTF-8");
+            documento_pdf.setFilename("Receta_Medica_Cliniko");
+            documento_pdf.setPageSize(210, 297);
+
+            var contenido_pdf = new PDF24Element();
+            contenido_pdf.setTitle("Clíniko - Receta Médica");
+            contenido_pdf.setAuthor("Clíniko");
+
+            var html = "<div style='margin: 30px; font-family: Roboto, sans-serif;'>";
+            html += "<h2 style='text-align: center; color: #01497C;'><u>Receta Médica</u></h2>";
+            html += "<hr style='border-color: #D47B5E;'>";
+            html += "<p><b style='color: #01497C;'>Fecha de emisión:</b> "+fecha_emision+"</p>";
+            html += "<p><b style='color: #01497C;'>Nombre del médico que le atendió:</b> "+datos.nombre_medico+" "+datos.apellidos_medico+"</p>";
+            html += "<p><b style='color: #01497C;'>Nombre del paciente atendido:</b> "+datos.nombre_paciente+" "+datos.apellidos_paciente+"</p>";
+            html += "<p><b style='color: #01497C;'>Fecha de la cita:</b> "+fecha+" a las "+hora+"</p>";
+            html += "<hr style='border-color: #D47B5E;'>";
+            html += "<h4 style='color: #01497C;'>Prescripción</h4>";
+            html += "<p><b style='color: #01497C;'>Medicamento:</b> "+medicamento+"</p>";
+            html += "<p><b style='color: #01497C;'>Dosis que se debe seguir del medicamento:</b> "+dosis+"</p>";
+            html += "<p><b style='color: #01497C;'>Frecuencia por cada toma:</b> "+frecuencia+"</p>";
+            html += "<p><b style='color: #01497C;'>Tiempo:</b> "+duracion+"</p>";
+            if(observaciones !== ""){
+                html += "<p><b style='color: #01497C;'>Observaciones:</b> "+observaciones+"</p>";
+            }
+            html += "<hr style='border-color: #D47B5E;'>";
+            html += "<p style='margin-top: 40px; text-align: right;'><b style='color: #01497C;'>Firmado:</b> "+datos.nombre_medico+" "+datos.apellidos_medico+"</p>";
+            html += "</div>";
+
+            contenido_pdf.setBody(html);
+            documento_pdf.addElement(contenido_pdf);
+            documento_pdf.create();
+
+            $("#modal-generar-receta").modal("hide");
+        }
+    };
+    peticion.send();
+}
 
 function agregarNota(id_cita){
-    id_cita_actual = id_cita;
+    document.getElementById("id-cita-nota").value = id_cita;
     document.getElementById("textarea-nota").value = "";
-    $("#modalNota").modal("show");
+    $("#modal-agregar-nota").modal("show");
 }
 
 function guardarNota(){
+    var id_cita_actual = document.getElementById("id-cita-nota").value;
     var texto = document.getElementById("textarea-nota").value.trim();
 
     if(texto === ""){
@@ -200,7 +282,7 @@ function guardarNota(){
             if(peticion.status === 200){
             var respuesta = JSON.parse(peticion.responseText);
             if(respuesta.la_nota_se_sube){
-                $("#modalNota").modal("hide");
+                $("#modal-agregar-nota").modal("hide");
                 document.getElementById("mensaje-nota").innerHTML = "<p style='color: green;'>Se agregaron las observaciones correctamente.</p>";
                 mostrarCitas();
             }else{
@@ -262,5 +344,10 @@ document.getElementById("filtro-receta-obervaciones").addEventListener("change",
 
 //CUANDO CARGA LA PÁGINA
 document.addEventListener("DOMContentLoaded", function(){
+    var hoy = new Date();
+    var mes = ("0"+(hoy.getMonth()+1)).slice(-2);
+    var dia = ("0"+hoy.getDate()).slice(-2);
+    var fecha_hoy = hoy.getFullYear()+"-"+mes+"-"+dia;
+    document.getElementById("filtro-fecha-recetas-medico").value = fecha_hoy;
     mostrarCitas();
 });

@@ -33,7 +33,7 @@ function mostrarNotificaciones(){
             var informacion_de_la_notificacion = "";
 
             if(respuesta.notificaciones.length === 0){
-                informacion_de_la_notificacion = "<div class='col-12 text-center'><p style='color: #064635;'>No tienes notificaciones.</p></div>";
+                informacion_de_la_notificacion = "<div class='col-12 text-center'><p style='color: #013d69;'>No tienes notificaciones.</p></div>";
             }else{
                 respuesta.notificaciones.forEach(function(notificacion){
                     var partes_fecha = notificacion.fecha.split(" ");
@@ -41,7 +41,7 @@ function mostrarNotificaciones(){
                     var fecha = partes[2]+"/"+partes[1]+"/"+partes[0];
                     var hora = partes_fecha[1].substring(0,5);
 
-                    var boton_leida = "<button class='btn boton-leida mt-2' onclick='marcarLeida("+notificacion.id_notificacion+")'>¡Leída!</button>";
+                    var boton_leida = "<button class='btn btn-sm boton-cuadrado mt-2 w-100' onclick='marcarLeida("+notificacion.id_notificacion+")'>¡Leída!</button>";
 
                     informacion_de_la_notificacion +=
                         "<div class='col-12 mb-3' id='notificacion"+notificacion.id_notificacion+"'>"+
@@ -52,7 +52,7 @@ function mostrarNotificaciones(){
                                             "<i class='fa fa-bell' style='font-size: 40px; color: #D47B5E;'></i>"+
                                         "</div>"+
                                         "<div class='col-md-7'>"+
-                                            "<p class='mb-1'>"+notificacion.mensaje+"</p>"+
+                                            "<p class='mb-1' style='color: #1F3A5F;'>"+notificacion.mensaje+"</p>"+
                                             "<span class='etiqueta-filtro'>"+fecha+" - "+hora+"</span>"+
                                         "</div>"+
                                         "<div class='col-md-3 text-md-end text-center mt-3 mt-md-0'>"+
@@ -84,6 +84,27 @@ function marcarLeida(id_notificacion){
             var respuesta = JSON.parse(peticion.responseText);
             if(respuesta.leida){
                 document.getElementById("notificacion"+id_notificacion).remove();
+            }
+        }
+    };
+    peticion.send();
+}
+
+//FUNCIÓN PARA MARCARLAS TODAS COMO LEÍDAS
+function marcarTodasLeidas(){
+    var peticion = crearObjetoPeticion();
+
+    if(!peticion){
+        return;
+    }
+
+    peticion.open("GET", "../../controladores/ajax-marcar-todas-leidas.php", true);
+
+    peticion.onreadystatechange = function(){
+        if(peticion.readyState === 4 && peticion.status === 200){
+            var respuesta = JSON.parse(peticion.responseText);
+            if(respuesta.leidas){
+                mostrarNotificaciones();
             }
         }
     };

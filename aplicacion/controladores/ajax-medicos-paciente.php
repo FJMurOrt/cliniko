@@ -22,22 +22,22 @@ if(isset($_GET["pagina"])){
 }
 
 //FILTROS
-$especialidad = null;
+$especialidad = "";
 if(isset($_GET["especialidad"]) && $_GET["especialidad"] !== ""){
     $especialidad = intval($_GET["especialidad"]);
 }
 
-$historial = null;
+$historial = "";
 if(isset($_GET["historial"]) && $_GET["historial"] !== ""){
     $historial = $_GET["historial"];
 }
 
-$busqueda = null;
+$busqueda = "";
 if(isset($_GET["busqueda"]) && $_GET["busqueda"] !== ""){
     $busqueda = trim($_GET["busqueda"]);
 }
 
-$orden = null;
+$orden = "";
 if(isset($_GET["orden"]) && $_GET["orden"] !== ""){
     $orden = $_GET["orden"];
 }

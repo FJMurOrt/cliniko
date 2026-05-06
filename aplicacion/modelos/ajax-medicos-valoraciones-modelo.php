@@ -1,6 +1,6 @@
 <?php
 //FUNCIÓN PARA CONTAR LOS MÉDICOS CON LOS QUE SE TIENEN CITAS YA REALIZADAS
-function contarMedicosConCitasRealizadas($conexion, $id_paciente, $especialidad = null, $busqueda = null){
+function contarMedicosConCitasRealizadas($conexion, $id_paciente, $especialidad, $busqueda){
     $sqlespecialidad = "";
     if($especialidad){
         $sqlespecialidad = " AND m.id_especialidad = $especialidad";
@@ -31,7 +31,7 @@ function contarMedicosConCitasRealizadas($conexion, $id_paciente, $especialidad 
 }
 
 //FUNCIÓN PARA OBTENER LOS MÉDICOS CON CITAS REALIZADAS
-function obtenerMedicosConCitasRealizadas($conexion, $id_paciente, $inicio, $registros, $especialidad = null, $busqueda = null, $valoracion = null, $orden = null){
+function obtenerMedicosConCitasRealizadas($conexion, $id_paciente, $inicio, $registros, $especialidad, $busqueda, $valoracion, $orden){
     $sqlespecialidad = "";
     if($especialidad){
         $sqlespecialidad = " AND m.id_especialidad = $especialidad";

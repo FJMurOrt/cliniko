@@ -7,9 +7,7 @@
         <div class="container-fluid">
             <div class="card mb-4 tarjeta-ajustes-perfil">
                 <div class="card-body">
-                    <div style="text-align: center;">
-                        <img class="mb-2" src="../../../img/ajustes-perfil-medico.png" style="width: 400px; max-width: 100%; height: auto;">
-                    </div>
+                    <h4 class="titulo-tarjeta2 text-center">Ajustes de Perfil</h4>
                     <hr>
                     <div class="row justify-content-center">
                         <div class="col-12 mb-4">
@@ -154,21 +152,22 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="modalEliminarCuenta">
+    <div class="modal fade" id="modal-eliminar-cuenta">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title text-center w-100" style='color: #bae5da;'>¿Eliminar cuenta?</h5>
+                    <h4 class="titulo-tarjeta-modal-salir w-100 text-center">¿Eliminar Cuenta?</h4>
+                    <hr>
                     <button type="button" class="close" data-dismiss="modal">
                         <span style='color: #D47B5E;'>X</span>
                     </button>
                 </div>
                 <div class="modal-body text-center">
-                    <p style='color: #bae5da;'>¿Estás seguro de que quieres eliminar tu cuenta? Una vez lo hagas, no podrás volver atrás.</p>
+                    <p style='color: rgba(255, 255, 255, 0.80);'>¿Estás seguro de que quieres eliminar tu cuenta? Una vez lo hagas, no podrás volver atrás.</p>
                 </div>
                 <div class="modal-footer">
-                    <a href="../../controladores/eliminar-cuenta.php" class="btn boton-cuadrado-eliminar">Sí, eliminar</a>
-                    <button type="button" class="btn boton-cuadrado" data-dismiss="modal">Cancelar</button>
+                    <a href="../../controladores/eliminar-cuenta.php" class="btn boton-cuadrado2 w-100">Sí, eliminar</a>
+                    <button type="button" class="btn boton-cuadrado-eliminar w-100" data-dismiss="modal">Cancelar</button>
                 </div>
             </div>
         </div>

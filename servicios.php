@@ -1,16 +1,12 @@
 <?php require_once 'aplicacion/vistas/plantillas/cabecera.php'; //IGUAL QUE CON EL INDEX.PHP, PARA QUE ESTA PÁGINA NO CARGUE SIN LA CABECERA. ?> 
-
 <!-- SECCIÓN DEL ENLANCE DE SERVICIOS DEL MENÚ PRINCIPAL-->
- <div class="contenedor_principal">
-<section class="seccion-servicios py-5">
+<section class="py-5">
     <div class="contenedor">
-        <div style="text-align: center;">
-            <img src="img/servicios.png" style="width: 340px; max-width: 100%; height: auto;">
-        </div>
-        <p class="descripcion-secundaria text-center mt-3" style="color: #333333;">
+        <h4 class="titulo-tarjeta text-center">Nuestros Servicios</h4>
+        <hr>
+        <p class="descripcion-secundaria text-center" style="color: #333333;">
             En Clíniko ofrecemos servicios para que pacientes y médicos se encuentren.
         </p>
-<hr></hr>
         <div class="row mt-5">
             <!-- INFORMAICÓN ACERCA DE CITAS -->
             <div class="col-md-4 mb-4">
@@ -52,6 +48,4 @@
         </div>
     </div>
 </section>
-</div>
-
 <?php require_once 'aplicacion/vistas/plantillas/pie.php'; //IGUAL QUE CON EL INDEX.PHP, PARA QUE ESTA PÁGINA NO CARGUE SIN EL PIE DE PÁGINA.?>

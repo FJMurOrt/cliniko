@@ -48,7 +48,7 @@ function cargarTarjetasInicioPagina(){
                 document.getElementById("proxima-cita").innerHTML =
                     "<img src='"+foto_cita+"' class='img-fluid rounded-circle imagen-perfil-info mb-2'>"+
                     "<p class='nombre-medico-tarjeta-inicio-proxima-cita ml-2'>"+cita.nombre+" "+cita.apellidos+"</p>"+
-                    "<p class='fecha-cita-receta'>Tu próxíma cita la tienes el "+fecha+" a las "+hora+". ¡Que no se te olvide!</p>";
+                    "<p class='etiqueta-filtro mt-4'>Tu próxíma cita la tienes el "+fecha+" a las "+hora+". ¡Que no se te olvide!</p>";
             }else{
                 document.getElementById("proxima-cita").innerHTML = "<p>No tienes ningúna cita próxima por ahora.</p>";
             }
@@ -57,11 +57,11 @@ function cargarTarjetasInicioPagina(){
             if(respuesta.notificaciones.length > 0){
                 var notificacion = "";
                 respuesta.notificaciones.forEach(function(noti){
-                    notificacion += "<p>"+noti.mensaje+"</p><hr>";
+                    notificacion += "<p style='color: #1A6B8A;'>"+noti.mensaje+"</p><hr>";
                 });
                 document.getElementById("notificaciones-inicio").innerHTML = notificacion;
             }else{
-                document.getElementById("notificaciones-inicio").innerHTML = "<p>No tienes ninguna notifiación pendiente por leer.</p>";
+                document.getElementById("notificaciones-inicio").innerHTML = "<p style='color: #1A6B8A;'>No tienes ninguna notifiación pendiente por leer.</p>";
             }
 
             //ÚLTIMO MÉDICO CON EL QUE SE TUVO UNA CITA
@@ -78,7 +78,7 @@ function cargarTarjetasInicioPagina(){
                     "<p class='nombre-medico-tarjeta-inicio-proxima-cita ml-2'>"+medico.nombre+" "+medico.apellidos+"</p>"+
                     "<p class='espe-tabla' style='max-width: 100%;'>"+medico.especialidad+"</p>";
             }else{
-                document.getElementById("ultimo-medico").innerHTML = "<p>No se encontraron citas realizadas.</p>";
+                document.getElementById("ultimo-medico").innerHTML = "<p style='color: #1A6B8A;'>No se encontraron citas realizadas.</p>";
             }
 
             //PARA EL MÉDICO FAVORITO
@@ -94,9 +94,9 @@ function cargarTarjetasInicioPagina(){
                     "<img src='"+foto_medico+"' class='img-fluid rounded-circle imagen-perfil-info mb-2' style='width:80px;height:80px;object-fit:cover;'>"+
                     "<p class='fecha-cita-receta nombre-medico-tarjeta-inicio-proxima-cita ml-2'>"+medico_favorito.nombre+" "+medico_favorito.apellidos+"</p>"+
                     "<p class='espe-tabla' style='max-width: 100%;'>"+medico_favorito.especialidad+"</p>"+
-                    "<p class='fecha-cita-receta'>¡Has tenido un total de "+medico_favorito.total+" citas con este médico!</p>";
+                    "<p class='etiqueta-filtro'>¡Has tenido un total de "+medico_favorito.total+" citas con este médico!</p>";
             }else{
-                document.getElementById("medico-favorito").innerHTML = "<p>Sin datos aún.</p>";
+                document.getElementById("medico-favorito").innerHTML = "<p style='color: #1A6B8A;'>Sin datos aún.</p>";
             }
 
             //ÚLTIMA RECETA QUE LE HAYAN SUBIDO AL PACIENTE
@@ -111,7 +111,7 @@ function cargarTarjetasInicioPagina(){
                     "<p class='fecha-cita-receta'>"+fecha_receta+"</p>"+
                     "<button class='btn boton-cuadrado btn-form' onclick='verReceta("+'"'+receta.archivo_pdf+'"'+")'>Ver receta</button>";
             }else{
-                document.getElementById("ultima-receta").innerHTML = "<p>No tienes recetas subidas.</p>";
+                document.getElementById("ultima-receta").innerHTML = "<p style='color: #1A6B8A;'>No tienes recetas subidas.</p>";
             }
 
             //ÚLTIMO HISTORIAL SUBIDO
@@ -126,12 +126,12 @@ function cargarTarjetasInicioPagina(){
                     "<p class='fecha-cita-receta'>"+fecha_historial+"</p>"+
                     "<button class='btn boton-cuadrado btn-form' onclick='verHistorial("+'"'+historial.archivo_pdf+'"'+")'>Ver historial</button>";
             }else{
-                document.getElementById("ultimo-historial").innerHTML = "<p>No tienes historiales subidos.</p>";
+                document.getElementById("ultimo-historial").innerHTML = "<p style='color: #1A6B8A;'>No tienes historiales subidos.</p>";
             }
 
             //TOTAL CITAS QUE LLEVA EL PACIENTE REALIZADAS
             document.getElementById("total-citas").innerHTML =
-                "<p class='fecha-cita-receta'>¡Total de citas desde que estás en Clíniko! <span style='font-size: 5vw'>"+respuesta.total_citas+"</span></p>";
+                "<p class='etiqueta-filtro'>¡Total de citas desde que estás en Clíniko! <span style='font-size: 5vw'>"+respuesta.total_citas+"</span></p>";
 
             //ÚLTIMAS VALORACIONES
             if(respuesta.valoraciones.length > 0){
@@ -147,11 +147,11 @@ function cargarTarjetasInicioPagina(){
                             estrellas += '<i class="far fa-star" style="color: #f4c542;"></i>';
                         }
                     }
-                    valoracion += "<p>Lo que dijiste sobre: "+"<span class='nombre-medico-tarjeta-inicio-proxima-cita'>"+valora.nombre+" "+valora.apellidos+"</span></p>"+estrellas+"<p class='fecha-cita-receta'>"+valora.comentario+"</p><hr>";
+                    valoracion += "<p style='color: #1A6B8A;'>Lo que dijiste sobre: "+"<span class='nombre-medico-tarjeta-inicio-proxima-cita'>"+valora.nombre+" "+valora.apellidos+"</span></p>"+estrellas+"<p class='etiqueta-filtro'>"+valora.comentario+"</p><hr>";
                 });
                 document.getElementById("ultimas-valoraciones").innerHTML = valoracion;
             }else{
-                document.getElementById("ultimas-valoraciones").innerHTML = "<p>Aún no has dejado ningúna valoración.</p>";
+                document.getElementById("ultimas-valoraciones").innerHTML = "<p style='color: #1A6B8A;'>Aún no has dejado ningúna valoración.</p>";
             }
         }
     };

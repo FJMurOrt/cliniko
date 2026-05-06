@@ -7,9 +7,7 @@
         <div class="container-fluid">
             <div class="card mb-4 tarjeta-pacientes-recetas">
                 <div class="card-body">
-                    <div style="text-align: center;">
-                        <img class="mb-2" src="../../../img/mis-recetas.png" style="width: 300px; max-width: 100%;">
-                    </div>
+                    <h4 class="titulo-tarjeta text-center">Recetas</h4>
                     <hr>
                     <div class="row justify-content-center mb-3">
                         <div class="col-12 col-md-3 mb-2">

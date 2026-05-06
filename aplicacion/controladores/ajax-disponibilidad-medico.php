@@ -1,5 +1,6 @@
 <?php
 header("Content-Type: application/json; charset=utf-8");
+require_once "../configuracion/config.php";
 require_once "../modelos/ajax-disponibilidad-medico-modelo.php";
 
 //COMPROBAR EL ID DEL MÉDICO
@@ -22,21 +23,26 @@ if (isset($_GET["pagina"])) {
     $pagina = intval($_GET["pagina"]);
 }
 
-$registros = 5;
+$registros = 4;
 $inicio = ($pagina - 1) * $registros;
 
 //PARA EL FILTRO DE LA FECHA
-$fecha = null;
+$fecha = "";
 if(isset($_GET["fecha"]) && $_GET["fecha"] != ""){
     $fecha = $_GET["fecha"];
 }
 
+$turno = "";
+if(isset($_GET["turno"]) && $_GET["turno"] !== ""){
+    $turno = $_GET["turno"];
+}
+
 //OBTENER TOTAL DE DISPONIBILIDAD PARA LA PAGINACIÓN
-$total = obtenerTotalDisponibilidad($conexion, $id_medico, $fecha);
+$total = obtenerTotalDisponibilidad($conexion, $id_medico, $fecha, $turno);
 $total_paginas = ceil($total / $registros);
 
 //OBTENER DISPONIBILIDAD
-$disponibilidad = obtenerDisponibilidad($conexion, $id_medico, $inicio, $registros, $fecha);
+$disponibilidad = obtenerDisponibilidad($conexion, $id_medico, $inicio, $registros, $fecha, $turno);
 
 //DEVOLVER JSON
 echo json_encode([

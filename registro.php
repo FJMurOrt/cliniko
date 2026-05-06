@@ -3,15 +3,11 @@
 <?php require_once "aplicacion/modelos/especialidades.php"; //LLAMANDO AL ARCHIVO ESPECIALDIADES, EJECUTAMOS LA CONSULTA QUE NOS DEVUELVE LOS RESULTADOS QUE ENCUENTRE Y LOS GUARDAMOS EN LA VARIABLE ESPECIALIDADES.
 $especialidades = buscar_especialidades($conexion);
 ?>
-
 <!--FORMULARIO PARA EL REGISTRO-->
-<div class=contenedor_principal>
-  <section class="seccion-registro py-5">
+  <section class="py-5">
     <div class="contenedor">
       <form id="form-registro" action="aplicacion/controladores/registro-controlador.php" method="post" enctype="multipart/form-data" class="formulario-registro mt-4" style="max-width: 700px; margin: auto;">
-        <div style="text-align: center;">
-            <img src="img/registro.png" style="width: 340px; max-width: 100%; height: auto;">
-        </div>
+        <h4 class="titulo-tarjeta text-center">Registro</h4>
         <hr>
         <?php
         //PARA MOSTRAR LOS ERRORES DE LAS VALIDACIONES DEL BACKEND.
@@ -105,8 +101,8 @@ $especialidades = buscar_especialidades($conexion);
               }
               ?>
               <input type="date" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento" value="<?php echo $fecha_nacimiento;?>">
+              <span id="error-fecha" style="color: red;"></span>
             </div>
-            <span id="error-fecha" style="color: red;"></span>
             <div class="mb-3 text-start">
               <label for="direccion" class="form-label">Dirección</label>
               <?php
@@ -116,10 +112,10 @@ $especialidades = buscar_especialidades($conexion);
               }
               ?>
               <input type="text" class="form-control" id="direccion" name="direccion" value="<?php echo $direccion;?>">
+              <span id="error-direccion" style="color: red;"></span>
             </div>
-            <span id="error-direccion" style="color: red;"></span>
             <div class="mb-3 text-start">
-              <label for="nss" class="form-label">Número de la Seguridad Social (NSS)</label>
+              <label for="nss" class="form-label">(Opcional) Número de la Seguridad Social (NSS)</label>
               <?php
               $nss = "";
               if (isset($_SESSION['valores']['nss'])) {
@@ -172,12 +168,4 @@ $especialidades = buscar_especialidades($conexion);
       ?>
     </div>
   </section>
-</div>
-
 <?php require_once 'aplicacion/vistas/plantillas/pie.php'; //PARA QUE VUELVA A IMPRIMIR EL PIE DE PÁGINA EN LA PÁGINA?>
-
-<!--CON JAVASCRIPT OCULTAMOS O MOSTRAMOS PARTE DEL FORMULARIO DEPENDIENDO QUÉ ROL SELECCIONE DE LA LISTA CON EL EVENTO ONCHANGE-->
-<script src = "js/mostrar-especialidades-select.js"></script>
-
-<!--SCRIPT PARA HACER LA VALIDACIÓN FRONTEND CON LAS EXPRESIONES REGULARES DE JS-->
-<script src="js/validaciones-form-registro.js"></script>

@@ -1,6 +1,6 @@
 <?php
 //FUNCIÓN PARA EL TOTAL DE MÉDICOS
-function obtenerTotalMedicos($conexion, $id_paciente, $especialidad = null, $historial = null, $busqueda = null){
+function obtenerTotalMedicos($conexion, $id_paciente, $especialidad, $historial, $busqueda){
     $sqlespecialidad = "";
     if($especialidad){
         $sqlespecialidad = " AND m.id_especialidad = $especialidad";
@@ -33,12 +33,14 @@ function obtenerTotalMedicos($conexion, $id_paciente, $especialidad = null, $his
     mysqli_stmt_execute($preparacion_sql);
     mysqli_stmt_bind_result($preparacion_sql, $total_medicos);
     mysqli_stmt_fetch($preparacion_sql);
+
     mysqli_stmt_close($preparacion_sql);
+
     return $total_medicos;
 }
 
 //FUNCIÓN PARA OBTENER LOS DATOS DEL MÉDICO
-function obtenerTotalMedicosPaciente($conexion, $id_paciente, $inicio, $registros, $especialidad = null, $historial = null, $busqueda = null, $orden = null){
+function obtenerTotalMedicosPaciente($conexion, $id_paciente, $inicio, $registros, $especialidad, $historial, $busqueda, $orden){
     $sqlespecialidad = "";
     if($especialidad){
         $sqlespecialidad = " AND m.id_especialidad = $especialidad";
@@ -65,14 +67,7 @@ function obtenerTotalMedicosPaciente($conexion, $id_paciente, $inicio, $registro
         $sqlorden = "ORDER BY u.apellidos DESC";
     }
 
-    $sql = "SELECT DISTINCT m.id_medico, u.nombre, u.apellidos, u.foto_perfil, e.nombre AS especialidad, h.archivo_pdf,
-                (SELECT CONCAT(d.fecha, ' ', d.hora_inicio)
-                 FROM disponibilidad_medicos d
-                 WHERE d.id_medico = m.id_medico
-                 AND d.fecha >= CURDATE()
-                 ORDER BY d.fecha ASC, d.hora_inicio ASC
-                 LIMIT 1) AS proxima_disponibilidad
-            FROM citas c
+    $sql = "SELECT DISTINCT m.id_medico, u.nombre, u.apellidos, u.foto_perfil, e.nombre AS especialidad, h.archivo_pdf FROM citas c
             INNER JOIN medicos m ON c.id_medico = m.id_medico
             INNER JOIN usuarios u ON m.id_medico = u.id_usuario
             INNER JOIN especialidades e ON m.id_especialidad = e.id_especialidad
@@ -98,8 +93,7 @@ function obtenerTotalMedicosPaciente($conexion, $id_paciente, $inicio, $registro
             "apellidos" => $fila["apellidos"],
             "foto" => $fila["foto_perfil"],
             "archivo_pdf" => $fila["archivo_pdf"],
-            "especialidad" => $fila["especialidad"],
-            "proxima_disponibilidad" => $fila["proxima_disponibilidad"]
+            "especialidad" => $fila["especialidad"]
         ];
     }
     mysqli_stmt_close($preparacion_sql);

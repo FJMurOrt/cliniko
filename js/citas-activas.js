@@ -63,7 +63,7 @@ function mostrarCitasActivas(pagina){
                         "<thead>"+
                         "<tr>"+
                             "<th>Contacto</th>"+
-                            "<th>Nombre del Paciente</th>"+
+                            "<th>Nombre del paciente</th>"+
                             "<th>Fecha</th>"+
                             "<th>Hora</th>"+
                             "<th>Motivo</th>"+
@@ -73,7 +73,7 @@ function mostrarCitasActivas(pagina){
                         "<tbody>";
 
             if(respuesta.citas.length === 0){
-                tabla += "<tr><td colspan='6' class='text-center' style='color: #064635;'>No hay citas activas.</td></tr>";
+                tabla += "<tr><td colspan='6' class='text-center' style='color: #013d69;'>No hay citas activas.</td></tr>";
             }else{
                 respuesta.citas.forEach(function(cita){
                     var partes_de_la_fecha = cita.fecha.split("-");
@@ -176,5 +176,11 @@ document.getElementById("filtro-orden-citas-activas").addEventListener("change",
 
 //PARA MOSTRAR LA TABLA POR DEFECTO
 document.addEventListener("DOMContentLoaded", function(){
+    var hoy = new Date();
+    var mes = ("0"+(hoy.getMonth()+1)).slice(-2);
+    var dia = ("0"+hoy.getDate()).slice(-2);
+    var fecha_hoy = hoy.getFullYear()+"-"+mes+"-"+dia;
+    document.getElementById("filtro-fecha").value = fecha_hoy;
+    
     mostrarCitasActivas();
 });

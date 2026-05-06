@@ -22,22 +22,22 @@ if(isset($_GET["pagina"])){
 }
 
 //FILTROS
-$busqueda = null;
+$busqueda = "";
 if(isset($_GET["busqueda"]) && $_GET["busqueda"] !== ""){
     $busqueda = trim($_GET["busqueda"]);
 }
 
-$puntuacion = null;
+$puntuacion = "";
 if(isset($_GET["puntuacion"]) && $_GET["puntuacion"] !== ""){
     $puntuacion = $_GET["puntuacion"];
 }
 
-$orden = null;
+$orden = "";
 if(isset($_GET["orden"]) && $_GET["orden"] !== ""){
     $orden = $_GET["orden"];
 }
 
-$fecha = null;
+$fecha = "";
 if(isset($_GET["fecha"]) && $_GET["fecha"] !== ""){
     $fecha = $_GET["fecha"];
 }

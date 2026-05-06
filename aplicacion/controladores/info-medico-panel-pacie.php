@@ -7,6 +7,7 @@ if(!isset($_GET["id"])){
     exit;
 }
 
+//LO GUARDAMOS EN UNA VARIABLE
 $id_medico = intval($_GET["id"]);
 
 //CON EL ID, VEMOS LOS DATOS DEL MEDICOS EN LA BASE DATOS PARA VER SU NOMBRE Y ESPECIALDIAD
@@ -16,9 +17,6 @@ if(!$medico){
     header("Location: ver-medicos.php");
     exit;
 }
-
-//Y LUEGO CON EL ID DEL MEDICO TAMBIEN CONSULTAMOS EN LA TABLA DE DISPONIBILDAD HORARIA, LOS HORARIOS QUE TIENE.
-$disponibilidad = obtener_disponibilidad_medico($conexion, $id_medico);
 
 //PARA GUARDAR LA MEDIA DEL MEDICO DE LAS VALORACIONES
 $valoracion = obtenerMediaValoracion($conexion, $id_medico);

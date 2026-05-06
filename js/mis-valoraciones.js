@@ -17,8 +17,6 @@ function crearObjetoPeticion(){
     return objeto_peticion;
 }
 
-var id_valoracion_actual = null;
-
 //FUNCIÓN PARA CARGAR LAS ESPEICALIDADES EN EL SELECT
 function cargarEspecialidadesValoraciones(){
     var peticion = crearObjetoPeticion();
@@ -104,7 +102,7 @@ function cargarMedicosValoraciones(pagina){
             var medicos = "";
 
             if(respuesta.medicos.length === 0){
-                medicos = "<div class='col-12'><div class='d-flex justify-content-center'><p style='color: #48325A;'>No tienes médicos para valorar.</p></div>";
+                medicos = "<div class='col-12'><div class='d-flex justify-content-center'><p style='color: #1A6B8A;'>No tienes médicos para valorar.</p></div>";
             }else{
                 respuesta.medicos.forEach(function (medico){
                     var nombre_completo = medico.nombre+" "+medico.apellidos;
@@ -129,11 +127,11 @@ function cargarMedicosValoraciones(pagina){
                         //SI EL MEDICO YA TIENE UNA VALORACIÓN HECHA, GENERO LAS ESTRELLA CON LA FUNCIÓN QUE HICE ANTES.
                         bloque_valoracion_existente =
                             "<div class='mt-2'>"+generarEstrellas(medico.puntuacion)+
-                            "<p class='mt-1 mb-0' style='color: #48325A;'>"+medico.comentario+"</p>"+
+                            "<p class='mt-1 mb-0' style='color: #1A6B8A;'>"+medico.comentario+"</p>"+
                             "</div>";
 
                         bloque_botones =
-                            "<div><button class='btn boton-editar-resenia btn-form' onclick='mostrarFormulario("+medico.id_medico+", "+medico.puntuacion+", "+JSON.stringify(medico.comentario)+", "+medico.id_valoracion+")'>Editar reseña</button></div>" +
+                            "<div><button class='btn boton-cuadrado btn-form' onclick='mostrarFormulario("+medico.id_medico+", "+medico.puntuacion+", "+JSON.stringify(medico.comentario)+", "+medico.id_valoracion+")'>Editar reseña</button></div>" +
                             "<div><button class='btn boton-cancelar-resenia btn-form mt-2' onclick='eliminarValoracion("+medico.id_valoracion+", "+medico.id_medico+")'>Eliminar reseña</button></div>";
                     }else{
                         //SI EL MÉDICO NO TIENE RESEÑA
@@ -147,13 +145,14 @@ function cargarMedicosValoraciones(pagina){
                                 "<div class='card-body'>"+
                                     "<div class='row align-items-center'>"+
                                         "<div class='col-md-2 text-center'>"+
-                                            "<img src='"+foto+"' class='img-fluid rounded-circle foto-medico-resenia' style='width:90px;height:90px;object-fit:cover;'>" +
+                                            "<img src='"+foto+"' class='img-fluid rounded-circle foto-medico-resenia' style='width:100px;height:100px;object-fit:cover;'>" +
                                         "</div>"+
                                         "<div class='col-md-7'>"+
                                             "<h6 class='mb-0'>"+nombre_completo+"</h6>"+
                                             "<span class='espe-tabla mt-2 d-inline-block' style='max-width:100%;'>"+especialidad+"</span>"+
                                             bloque_valoracion_existente+
                                             "<div id='form-valoracion-"+medico.id_medico+"' style='display:none;' class='mt-3 text-left'>"+
+                                             "<input type='hidden' id='id-valoracion-"+medico.id_medico+"' value=''>"+
                                                 "<div class='form-group mb-1'>"+
                                                     "<label class='mb-2'>Puntuación</label>"+
                                                     "<select class='form-control form-control-sm' id='puntuacion-"+medico.id_medico+"'>"+
@@ -169,7 +168,7 @@ function cargarMedicosValoraciones(pagina){
                                                     "<textarea id='comentario-"+medico.id_medico+"' class='form-control form-control-sm' maxlength='200' rows='3' placeholder='Escribe tu opinión...'></textarea>"+
                                                     "<span id='contador-"+medico.id_medico+"'>0 / 200</span>"+
                                                 "</div>"+
-                                                "<button class='btn btn-form boton-descargar-receta btn-block mt-1' onclick='guardarValoracion("+medico.id_medico+")'>Guardar</button>"+
+                                                "<button class='btn btn-form boton-cuadrado btn-block mt-1' onclick='guardarValoracion("+medico.id_medico+")'>Guardar</button>"+
                                                 "<button class='btn btn-form boton-cancelar-resenia btn-block mt-1' onclick='ocultarFormulario("+medico.id_medico+")'>Cancelar</button>"+
                                             "</div>"+
                                         "</div>"+
@@ -210,13 +209,20 @@ function cargarMedicosValoraciones(pagina){
 //LA FUNCIÓN PARA DEJAR LA RESEÑA, ES DECIR, PARA QUE SE MUESTRE EL FORMULARIO DEL TEXTAREA
 function mostrarFormulario(id_medico, puntuacion, comentario, id_valoracion){
     var formulario = document.getElementById("form-valoracion-"+id_medico);
+
     if (!formulario){
         return;
     }
 
     formulario.style.display = "block";
 
-    id_valoracion_actual = id_valoracion;
+    //RECOJO EL ID DE LA VALORACIÓN DEL MEDICO DEL HTML GENERADO ANTES QUE LO TENÍA EL INPUT
+    var elemento = document.getElementById("id-valoracion-"+id_medico);
+    if(id_valoracion){
+        elemento.value = id_valoracion;
+    }else{
+        elemento.value = "";
+    }
 
     //SI EL MEDICO YA TIENE UNA RESEÑA HECHA, MOSTRAMOS LA PUNTUACIÓN QUE TIENE EN EL SELECT Y EL COMENTARIO DE ANTES TAMBIÉN.
     if(puntuacion){
@@ -256,12 +262,8 @@ function guardarValoracion(id_medico) {
 
     var url = "../../controladores/ajax-guardar-valoracion.php";
 
-    var id_val;
-    if(id_valoracion_actual){
-        id_val = id_valoracion_actual;
-    }else{
-        id_val = "";
-    }
+    //RECOJO EL ID DE LA VALORACIÓN DEL MEDICO DEL HTML GENERADO ANTES QUE LO TENÍA EL INPUT
+    var id_val = document.getElementById("id-valoracion-"+id_medico).value;
 
     var parametrosurl = "id_medico="+id_medico+"&puntuacion="+puntuacion+"&comentario="+encodeURIComponent(comentario)+"&id_valoracion="+encodeURIComponent(id_val);
 

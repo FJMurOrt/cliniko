@@ -70,7 +70,7 @@ function mostrarMisCitas(pagina){
                         "</thead><tbody>";
 
             if(respuesta.citas.length === 0){
-                tabla += "<tr><td colspan='7' class='text-center' style='color: #48325A;'>No se encontraron citas.</td></tr>";
+                tabla += "<tr><td colspan='7' class='text-center' style='color: #1A6B8A;'>No se encontraron citas.</td></tr>";
             }else{
                 respuesta.citas.forEach(function(cita){
                     var partes_de_la_fecha = cita.fecha.split("-");

@@ -12,25 +12,28 @@ if(isset($_GET["pagina"])){
 $registros = 5;
 $inicio = ($pagina - 1) * $registros;
 
-//PARA LA ESPECIALIDAD
-$especialidad = null;
+//FILTROS
+$especialidad = "";
 if(isset($_GET["especialidad"]) && $_GET["especialidad"] !== ""){
     $especialidad = intval($_GET["especialidad"]);
 }
 
-//PARA EL ORDEN
-if (isset($_GET["orden"])){
+$orden = "";
+if(isset($_GET["orden"]) && $_GET["orden"] !== ""){
     $orden = $_GET["orden"];
-}else{
-    $orden = "";
+}
+
+$busqueda = "";
+if(isset($_GET["busqueda"]) && $_GET["busqueda"] !== ""){
+    $busqueda = trim($_GET["busqueda"]);
 }
 
 //EL TOTLA DE MÉDICOS
-$total = contarMedicos($conexion, $especialidad);
+$total = contarMedicos($conexion, $especialidad, $busqueda);
 $total_paginas = ceil($total / $registros);
 
 //LA LISTA DE MÉDICOS CON LA FUNCIÓN
-$medicos = obtenerMedicos($conexion, $inicio, $registros, $especialidad, $orden);
+$medicos = obtenerMedicos($conexion, $inicio, $registros, $especialidad, $orden, $busqueda);
 
 //DEVUELVO EL JSON
 echo json_encode([

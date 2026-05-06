@@ -1,20 +1,18 @@
-<?php require_once 'aplicacion/vistas/plantillas/cabecera.php'; //SE CARGA LA CABECERA?>
-
+<?php require_once 'aplicacion/vistas/plantillas/cabecera.php';?>
 <!-- SECCIÓN DONDE SE EXPLICA LA POLÍTICA DE PRIVACIDAD-->
-<section class="seccion-que-es py-5">
+<section class="py-5">
     <div class="contenedor">
         <!--METO UNA IMAGEN Y LE PONGO FLOAR RIGHT PARA QUE QUEDE A LA DERECHA AL INICIO Y DE TAMAÑO DE ANCHO LO PONGO AL 30%-->
-        <img class="imagen-como-se-usa" src="img/como_se_usa.png" alt="candado" style="float: right; width: 30%;">
-        <div style="text-align: center;">
-            <img src="img/como-funciona.png" style="width: 340px; max-width: 100%; height: auto;">
-        </div>
+        <img class="imagen-como-se-usa" src="img/como_se_usa.png" alt="médica-con-móvil" style="float: right; width: 30%;">
+        <h4 class="titulo-tarjeta text-center">¿Cómo funciona la plataforma?</h4>
+        <hr>
         <!--AQUÍ AHORA VOY HACIENDO PARRAFOS QUE SON CADA UNO DE LOS PUNTOS DEL CONTENIDO DE ESTA PÁGINA Y METO UNA BARRA HORIZONTAL CON HR PARA SEPARAR CADA PÁRRAFO-->
-        <p class="descripcion-secundaria mt-3" style="color: #333333; text-align: justify;">
+        <p style="color: #333333; text-align: justify;">
             Clíniko es una plataforma digital diseñada para facilitar la búsqueda de atención médica al momento, ofreciendo una comunicación rápida y segura. A continuación,
             explicamos cómo funciona:
         </p>
-        <p class="descripcion-secundaria mt-3" style="color: #333333; text-align: justify;">
-            <h4 style="color: #003366;"><u>Cíniko para pacientes</u></h4>
+        <p style="color: #333333; text-align: justify;">
+            <h4 class="titulo-tarjeta2"><u>Cíniko para pacientes</u></h4>
             <ul style = "list-style: none;">
                 <li>Registro y perfil: crea tu cuenta como paciente proporcionando tus datos personales, información de contacto y una foto de perfil. Esto te permitirá
                     acceder al panel de usuario como paciente.</li>
@@ -26,9 +24,8 @@
                 <li>Consultar historial médico: tu panel te permite acceder a tus historiales médicos, donde los médicos con los que has hayas tenido cita podrán añadir información al respecto de tu seguimiento.</li>
             </ul>
         </p>
-        <hr></hr>
-        <p class="descripcion-secundaria mt-3" style="color: #333333; text-align: justify;">
-            <h4 style="color: #003366;"><u>Cíniko para médicos</u></h4>
+        <p style="color: #333333; text-align: justify;">
+            <h4 class="titulo-tarjeta2"><u>Cíniko para médicos</u></h4>
             Sin embargo, si eres médico:
             <ul style = "list-style: none;">
                 <li>Registro y perfil profesional: los médicos crean su cuenta proporcionando datos profesionales como el número de colegiado y su especialidad.</li>
@@ -38,14 +35,12 @@
                 <li>Modificar información personal: pueden actualizar su perfil según sea necesario.</li>
             </ul>
         </p>
-        <hr></hr>
-        <p class="descripcion-secundaria mt-3" style="color: #333333; text-align: justify;">
-            <h4 style="color: #003366;"><u>Seguridad y notificaciones</u></h4>
+        <p style="color: #333333; text-align: justify;">
+            <h4 class="titulo-tarjeta2"><u>Seguridad y notificaciones</u></h4>
             Todos los datos están protegidos y se manejan de forma segura. Además, los usuarios reciben noticiaciones automáticas por correo electrónico sobre reservas, cancelaciones y cambios de cita.
         </p>
-        <hr></hr>
-        <p class="descripcion-secundaria mt-3" style="color: #333333; text-align: justify;">
-            <h4 style="color: #003366;"><u>¿Por qué deberías unirte?</u></h4>
+        <p style="color: #333333; text-align: justify;">
+            <h4 class="titulo-tarjeta2"><u>¿Por qué deberías unirte?</u></h4>
             <ul style = "list-style: none;">
                 <li>Ahorras tiempo en la búsqueda de atención médica.</li>
                 <li>Tienes un historial médico accesible.</li>
@@ -55,5 +50,4 @@
         </p>
     </div>
 </section>
-
-<?php require_once 'aplicacion/vistas/plantillas/pie.php'; //SE CARGA EL FOOTER.?> 
+<?php require_once 'aplicacion/vistas/plantillas/pie.php';?> 

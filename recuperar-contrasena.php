@@ -1,12 +1,8 @@
 <?php require_once 'aplicacion/vistas/plantillas/cabecera.php'; //EL REQUIRE_ONCE ES PARA QUE CUANDO CARGUE EL INDEX NO CARGUE SIN LA CABECERA.?>
-
-<div class="contenedor_principal">
-<section class="seccion-login py-5">
+<section class="py-5">
     <div class="contenedor">
         <form id="form-recuperar" action="aplicacion/controladores/recuperar-controlador.php" method="POST" class="mt-4 area-recuperar-contrasena">
-            <div style="text-align: center;">
-                <img src="img/recuperar-contra.png" style="width: 340px; max-width: 100%; height: auto;">
-            </div>
+            <h4 class="titulo-tarjeta text-center">Recuperar Contraseña</h4>
             <hr>
             <?php
             //PARA MOSTRAR LOS ERRORES DEL CONTROLADOR DE RECUPERAR LA CONTRASEÑA
@@ -31,9 +27,4 @@
         </form>
     </div>
 </section>
-</div>
-
-<!--JS PARA VALIDAR EL CAMPO DEL FORMULARIO-->
-<script src="js/validar-formulario-recuperar-contrasena.js"></script>
-
 <?php require_once 'aplicacion/vistas/plantillas/pie.php'; //LO MISMO QUE CON LA CABECERA, PARA QUE CUANDO CARGUE LA PÁGINA NO CARGUE SIN EL PIE DE PÁGINA.?> 

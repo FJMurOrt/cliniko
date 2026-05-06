@@ -39,60 +39,51 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     }
 
-    //PARA CARGAR LAS FECHAS EN EL SELECET DE LAS FECHAS
-    var peticion_fechas = crearObjetoPeticion();
+    //EVENTO CHANGE PARA EL INPUT DATE DE LAS FECHAS
+    select_fechas.addEventListener("change", function(){
+    select_turnos.innerHTML = "<option value='' selected disabled>Selecciona un turno</option>";
+    select_horas.innerHTML = "<option value='' selected disabled>Selecciona una hora</option>";
+    comprobarFormulario();
+    document.getElementById("mensaje-disponibilidad").innerHTML = "";
 
-    if(peticion_fechas){
-        //ABRIMOS LA PETICION
-        peticion_fechas.open("GET", "../../controladores/obtener-fechas.php?id_medico="+id_medico, true);
+    if(select_fechas.value === ""){
+        return;
+    }
 
-        //REVISAMOS EL ESTADOS Y OBTENEMOS LA RESPUESTA
-        peticion_fechas.onreadystatechange = function(){
-            if(peticion_fechas.readyState === 4 && peticion_fechas.status === 200){
-                var repuesta = JSON.parse(peticion_fechas.responseText);
-                for(var i = 0; i < repuesta.length; i++){
-                    var opcion = document.createElement("option");
-                    opcion.value = repuesta[i];
-                    var partes = repuesta[i].split("-");
-                    opcion.text = partes[2]+"/"+partes[1]+"/"+partes[0];
+    // VALIDACIÓN DE FECHA ANTERIOR A HOY
+    var hoy = new Date();
+    var fecha_seleccionada = new Date(select_fechas.value);
 
-                    select_fechas.appendChild(opcion);
+    if(fecha_seleccionada.getFullYear() < hoy.getFullYear() || (fecha_seleccionada.getFullYear() === hoy.getFullYear() && fecha_seleccionada.getMonth() < hoy.getMonth()) ||
+    (fecha_seleccionada.getFullYear() === hoy.getFullYear() && fecha_seleccionada.getMonth() === hoy.getMonth() && fecha_seleccionada.getDate() < hoy.getDate())){
+        document.getElementById("mensaje-disponibilidad").innerHTML = "<p style='color: red;'>No puedes seleccionar una fecha anterior a hoy.</p>";
+        select_fechas.value = "";
+        return;
+    }
+    
+    var peticion_turnos = crearObjetoPeticion();
+
+    if(peticion_turnos){
+        peticion_turnos.open("GET", "../../controladores/obtener-turnos.php?id_medico="+id_medico+"&fecha="+select_fechas.value, true);
+        
+        peticion_turnos.onreadystatechange = function(){
+            if(peticion_turnos.readyState === 4 && peticion_turnos.status === 200){
+                var repuesta = JSON.parse(peticion_turnos.responseText);
+                if(repuesta.length === 0){
+                    document.getElementById("mensaje-disponibilidad").innerHTML = "<p style='color: red;'>No hay disponibilidad para esta fecha.</p>";
+                }else{
+                    repuesta.forEach(function(turno){
+                        var opcion = document.createElement("option");
+                        opcion.value = turno;
+                        opcion.text = turno;
+                        select_turnos.appendChild(opcion);
+                    });
                 }
             }
         };
-        peticion_fechas.send();
+        peticion_turnos.send();
     }
-
-    //EVENTO CHANGE PARA CUANDO SELECCIONAMOS UNA FECHA DESPUÉS EN EL SELECT
-    select_fechas.addEventListener("change", function(){
-        select_turnos.innerHTML = "<option value='' selected disabled>Selecciona un turno</option>";
-        select_horas.innerHTML = "<option value='' selected disabled>Selecciona una hora</option>";
-        comprobarFormulario();
-
-        if(select_fechas.value === ""){
-            return;
-        }
-
-        var peticion_turnos = crearObjetoPeticion();
-        if(peticion_turnos){
-            //ABRIMOS LA PETICIÓN
-            peticion_turnos.open("GET", "../../controladores/obtener-turnos.php?id_medico="+id_medico+"&fecha="+select_fechas.value, true);
-            
-            //VEMOS EL ESTAMOS Y OBTENEMOS LOS RETUSLTADS
-            peticion_turnos.onreadystatechange = function(){
-                if(peticion_turnos.readyState === 4 && peticion_turnos.status === 200){
-                    var repuesta = JSON.parse(peticion_turnos.responseText);
-                    for(var i = 0; i < repuesta.length; i++){
-                        var opcion = document.createElement("option");
-                        opcion.value = repuesta[i];
-                        opcion.text = repuesta[i];
-                        select_turnos.appendChild(opcion);
-                    }
-                }
-            };
-            peticion_turnos.send();
-        }
-    });
+});
 
     //EVENTO PARA CUANDO SELECCIONAMOS EN EL SELECT DE LOS TURNOS
     select_turnos.addEventListener("change", function(){

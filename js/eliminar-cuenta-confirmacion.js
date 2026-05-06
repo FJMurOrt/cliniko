@@ -1,3 +1,3 @@
 function confirmarEliminarCuenta(){
-    $("#modalEliminarCuenta").modal("show");
+    $("#modal-eliminar-cuenta").modal("show");
 }

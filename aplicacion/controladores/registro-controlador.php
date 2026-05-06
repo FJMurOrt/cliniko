@@ -192,23 +192,27 @@ if(!isset($_POST["acepta_politica"])){
 
 //ELIMINAMOS LOS ESPACIOS O CUALQUIER OTRO CARACTER QUE NO SEA UN NÚMERO PARA PODER VALIDAR LOS 12 NÚMEROS DEL NÚMERO DE LA SEGURIDAD SOCIAL
 if($rol === "paciente"){
-    //BUSCAMOS CUALQUIER CARACTER QUE NO SEA UN NÚMERO Y LO SUSTITUIMOS POR NADA BÁSICAMENTE, ES DECIR, QUE NOS QUEDAMOS CON LO NÚMEROS SOLO.
-    $nss_sin_espacios = preg_replace("/\D/", "", $nss);
+    if(!empty($nss)){
+        $nss_sin_espacios = preg_replace("/\D/", "", $nss);
 
-    if(empty($nss)){
-        $errores[] = "El campo del número de la seguridad social (NSS) es obligatorio para los pacientes.";
-    }elseif (strlen($nss_sin_espacios) !== 12){
-        $errores[] = "El número de la seguridad social (NSS) debe tener exactamente 12 dígitos.";
-    }else{
-        //COMPROBAMOS QUE NO EXISTA EL NSS YA EN LA BASE DE DATOS.
-        $nss_limpio = mysqli_real_escape_string($conexion, $nss_sin_espacios);
-        $sql = "SELECT id_paciente FROM pacientes WHERE REPLACE(nss, ' ', '') = '$nss_limpio'";
-        $resultado = mysqli_query($conexion, $sql);
+        if(strlen($nss_sin_espacios) !== 12){
+            $errores[] = "El número de la seguridad social (NSS) debe tener exactamente 12 dígitos.";
+        }else{
+            $nss_limpio = mysqli_real_escape_string($conexion, $nss_sin_espacios);
 
-        if($resultado && mysqli_num_rows($resultado) > 0){
-            $errores[] = "Este número de la seguridad social (NSS) ya está existe en nuestro sistema.";
+            $sql = "SELECT id_paciente FROM pacientes WHERE REPLACE(nss, ' ', '') = '$nss_limpio'";
+            
+            $resultado = mysqli_query($conexion, $sql);
+
+            if($resultado && mysqli_num_rows($resultado) > 0){
+                $errores[] = "Este número de la seguridad social (NSS) ya está existe en nuestro sistema.";
+            }
         }
     }
+}
+
+if(empty($nss)){
+    $nss = "El usuario no lo introdujo";
 }
 
 if($rol === "paciente"){
@@ -228,7 +232,7 @@ if($rol === "paciente"){
 
     if(empty($direccion)){
         $errores[] = "El campo de la dirección es obligatoria para pacientes.";
-    }elseif(!preg_match("/^[A-ZÑa-zñ0-9 ]+$/", $direccion)){
+    }elseif(!preg_match("/^[A-ZÁÉÍÓÚÑa-záéíóúñ0-9 ]+$/", $direccion)){
         $errores[] = "La dirección solo puede contener letras y números.";
     }
 }
@@ -401,7 +405,7 @@ if(registrarUsuario($conexion, $nombre, $apellidos, $correo, $contrasena, $rol, 
     $admin = mysqli_fetch_assoc($resultado_correo_admin);
 
     // ENVIAMOS EL CORREO AL ADMINISTRADOR
-    $api = "CLAVE QUE NO PUEDO SUBIR A GITHUB";
+    $api = "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";
     $url_brevo = "https://api.brevo.com/v3/smtp/email";
 
     $asunto = "Nuevo usuario registrado en Clíniko";
@@ -436,6 +440,14 @@ if(registrarUsuario($conexion, $nombre, $apellidos, $correo, $contrasena, $rol, 
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
     curl_exec($curl);
     curl_close($curl);
+
+    //AQUÍ INSERTO LA NOTIFIACIÓN EN LA TABLA NOTIFICACIONES PARA QUE LE LLEGUE A TODOS LOS ADMINS
+    $admins = obtenerIdsAdmins($conexion);
+    $mensaje_noti = "Un nuevo usuario se ha registrado con el nombre de ".$nombre." ".$apellidos;
+    
+    foreach($admins as $id_admin){
+        insertarNotificacionAdmin($conexion, $id_admin, "nuevo_usuario", $mensaje_noti);
+    }
 
     //Y REDIRIJO A LA PÁGINA DE CONFIRMACIÓN DE REGISTRO
     header("Location: ../../despues-de-registro.php");

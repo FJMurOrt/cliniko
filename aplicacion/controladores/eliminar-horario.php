@@ -3,52 +3,64 @@ session_start();
 require_once "../configuracion/config.php";
 require_once "../modelos/eliminar-horario-modelo.php";
 
-//ARRAY DONDE VOY GUARDADO LOS ERRORES PARA LUEGO PASARLOS AL SESSION Y PODER MOSTRARLOS
-$errores = [];
+header("Content-Type: application/json; charset=utf-8");
 
-//PARA LA VERIFICACIÓN DE LOS DATOS QUE SE RECIBEN
+//RECOJO EL ID DEL HORARIO QUE ME LLEGA DEL JS QEU VOY A ELIMINAR
 $id = null;
 if(isset($_GET["id"])){
     $id = intval($_GET["id"]);
 }
-$id_medico = $_SESSION["id_medico"];
 
-if(!$id) {
-    $_SESSION["errores"][] = "El id no es válido";
-    header("Location: ../vistas/medico/ver-horarios.php");
+$id_medico = $_SESSION["id_usuario"];
+
+if(!$id){
+    echo json_encode([
+        "eliminado" => false, 
+        "eliminado_error" => "Hubo un problema al obtener el id del horario."
+        ]);
     exit;
 }
 
-if(!$id_medico) {
-    $_SESSION["errores"][] = "No se encontró el id del medico.";
-    header("Location: ../vistas/medico/ver-horarios.php");
+
+if(!$id_medico){
+    echo json_encode([
+        "eliminado" => false, 
+        "eliminado_error" => "Hubo un problema al intentar identificar al médico."
+        ]);
     exit;
 }
 
-//PARA OBTENER EL HORARIO
+//COMPROBAR QUE ESE HORARIO PERTENCE AL MÉDICO QUE LO ELIMINA
 $horario = obtenerHorario($conexion, $id, $id_medico);
-if(!$horario) {
-    $_SESSION["errores"][] = "No se pudo encontrar el horario.";
-    header("Location: ../vistas/medico/ver-horarios.php");
+if(!$horario){
+    echo json_encode([
+        "eliminado" => false, 
+        "eliminado_error" => "No se pudo encontrar el horario."
+        ]);
     exit;
 }
 
-//PARA VERIFICAR QUE NO HAY CITAS ACTIVAS EN EL HORARIO QUE SE VA A ELIMINAR
+//COMPROBAR QUE NO HAYA CITAS EN ESE HORARIO.
 $total_citas = contarCitasEnHorario($conexion, $id_medico, $horario["fecha"], $horario["hora_inicio"], $horario["hora_fin"]);
-if($total_citas > 0) {
-    $_SESSION["errores"][] = "No se puede eliminar porque ya existen citas activas en este horario.";
-    header("Location: ../vistas/medico/ver-horarios.php");
+if($total_citas > 0){
+    echo json_encode([
+        "eliminado" => false, 
+        "eliminado_error" => "No se puede eliminar porque ya existen citas activas en este horario."
+        ]);
     exit;
 }
 
 //PARA ELIMINAR EL HORARIO
 $eliminado = eliminarHorario($conexion, $id);
-if($eliminado) {
-    $_SESSION["eliminada"] = "¡Disponibilidad eliminada!";
-} else {
-    $_SESSION["errores"][] = "No se pudo eliminar el horario.";
+if($eliminado){
+    echo json_encode([
+        "eliminado" => true, 
+        "eliminado_error" => "El horario se eliminó correctamente."
+        ]);
+}else{
+    echo json_encode([
+        "eliminado" => false, 
+        "eliminado_error" => "No se pudo eliminar el horario."
+        ]);
 }
-
-header("Location: ../vistas/medico/ver-horarios.php");
-exit;
 ?>

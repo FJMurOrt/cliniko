@@ -2,22 +2,20 @@
 //FUNCIÓN PARA OBTENER EL RANGO DE DISPONIBILIAD DE UN MEDICO PARA UN DÍA EN UN TURNO
 function obtenerRangoDisponibilidad($conexion, $id_medico, $fecha, $turno){
     $sql = "SELECT hora_inicio, hora_fin FROM disponibilidad_medicos 
-            WHERE id_medico = ? AND fecha = ? AND turno = ?";
+            WHERE id_medico = ? 
+            AND fecha = ? 
+            AND turno = ?";
 
     $sql_preparacion = mysqli_prepare($conexion, $sql);
-    if(!$sql_preparacion){
-        return false;
-    }
-
     mysqli_stmt_bind_param($sql_preparacion, "iss", $id_medico, $fecha, $turno);
     mysqli_stmt_execute($sql_preparacion);
-
     $resultado = mysqli_stmt_get_result($sql_preparacion);
+
     $fila = mysqli_fetch_assoc($resultado);
 
     mysqli_stmt_close($sql_preparacion);
 
-    if ($fila){
+    if($fila){
         return $fila;
     }else{
         return false;
@@ -27,7 +25,9 @@ function obtenerRangoDisponibilidad($conexion, $id_medico, $fecha, $turno){
 //FUNCIÓN APRA OBTENER LAS HORAS YA RESERVADAS PARA UN DÍA
 function obtenerHorasReservadas($conexion, $id_medico, $fecha){
     $sql = "SELECT TIME(fecha_cita) as hora FROM citas 
-            WHERE id_medico = ? AND DATE(fecha_cita) = ? AND estado != 'cancelada'";
+            WHERE id_medico = ? 
+            AND DATE(fecha_cita) = ? 
+            AND estado != 'cancelada'";
 
     $sql_preparacion = mysqli_prepare($conexion, $sql);
     mysqli_stmt_bind_param($sql_preparacion, "is", $id_medico, $fecha);

@@ -3,16 +3,12 @@ session_start();
 require_once "../modelos/disponibilidad-horaria.php";
 
 //COGEMOS EL ID DEL MEDICO
-if(isset($_SESSION["id_medico"])){
-    $id_medico = $_SESSION["id_medico"];
-}else{
-    $id_medico = null;
+if(!isset($_SESSION["id_medico"])){
+    header("Location: ../../login.php");
+    exit;
 }
 
-//VERIFICAMOS QUE LOS RECIBIMOS
-if($id_medico === null){
-    die("Debe iniciar sesión como médico.");
-}
+$id_medico = $_SESSION["id_medico"];
 
 //RECOGEMOS LOS DATOS DEL FORMULARIO
 if(isset($_POST["fecha"])){
@@ -86,7 +82,7 @@ if(existeDisponibilidad($conexion, $id_medico, $fecha, $turno)){
 //LO GUARDAMOS
 $resultado = guardarDisponibilidad($conexion, $id_medico, $fecha, $turno, $hora_inicio, $hora_fin);
 
-if(guardarDisponibilidad($conexion, $id_medico, $fecha, $turno, $hora_inicio, $hora_fin)){
+if($resultado){
     $_SESSION["mensaje_disponibilidad"] = "Disponibilidad guardada correctamente.";
 }else{
     $_SESSION["errores_disponibilidad"] = ["No se pudo guardar la disponibilidad."];

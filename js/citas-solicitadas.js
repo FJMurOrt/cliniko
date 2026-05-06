@@ -60,7 +60,7 @@ function mostrarCitasSolicitadas(pagina){
 
             //SI NO HAY CITAS
             if(respuesta.citas.length === 0){
-                contenedor_de_las_citas.innerHTML = "<p style='text-align:center; color: #064635;'>No hay citas por confirmar.</p>";
+                contenedor_de_las_citas.innerHTML = "<p style='text-align:center; color: #013d69;'>No hay citas por confirmar.</p>";
             }else{
                 //SI HAY CITAS, MOSTRAMOS LA TABLA
                 var tabla = "<div class='table-responsive tabla-citas-solicitadas'>"+
@@ -156,5 +156,11 @@ document.getElementById("filtro-orden-solicitadas").addEventListener("change", f
 
 //PARA QUE CUANDO CARGUE EL DOM CARGUE LA LISTA
 document.addEventListener("DOMContentLoaded", function(){
+    var hoy = new Date();
+    var mes = ("0"+(hoy.getMonth()+1)).slice(-2);
+    var dia = ("0"+hoy.getDate()).slice(-2);
+    var fecha_hoy = hoy.getFullYear()+"-"+mes+"-"+dia;
+    document.getElementById("filtro-fecha-solicitadas").value = fecha_hoy;
+    
     mostrarCitasSolicitadas();
 });

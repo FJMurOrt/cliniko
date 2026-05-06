@@ -9,10 +9,14 @@
             <div class="card mb-4 tarjeta-editar">
                 <div class="card-body">
                     <form action="../../controladores/actualizar-horario-medico.php" method="post">
-                        <div style="text-align: center;">
-                            <img class="mb-2" src="../../../img/editar.png" style="width: 340px; max-width: 100%; height: auto;">
-                        </div>
+                        <h4 class="titulo-tarjeta2 text-center">Editar Horario</h4>
                         <hr>
+                        <?php
+                        if(!empty($_SESSION["actualizado"])){
+                            echo "<div class='text-center' style='color: green;'>".$_SESSION['actualizado']."</div>";
+                            unset($_SESSION["actualizado"]);
+                        }
+                        ?>
                         <?php
                         if(!empty($_SESSION["errores"])){
                             echo "<div class='text-center mt-3'>";
@@ -20,7 +24,6 @@
                                 echo "<p style='color: red;'>"."$error"."</p";
                             }
                             echo "</div>";
-                            echo "<hr>";
                             unset($_SESSION["errores"]);
                         }
                         ?>

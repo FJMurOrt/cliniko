@@ -34,7 +34,7 @@ if ($usuario_registro) {
     mysqli_stmt_close($consultaToken);
 
     //Y ENVIAMOS EL CORREO JUNTO CON EL TOKEN
-    $api = "CLAVE QUE NO PUEDO SUBIR A GITHUB"; 
+    $api = "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"; 
     $url = "https://api.brevo.com/v3/smtp/email";
     $enlace_recuperar = "http://localhost/cliniko_copia_con_datos_para_local-copia/cambiar-contrasena.php?token=$token";
 

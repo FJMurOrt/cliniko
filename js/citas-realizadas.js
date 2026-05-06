@@ -68,7 +68,7 @@ function mostrarCitasRealizadas(pagina){
                         "<tbody>";
 
             if(respuesta.citas.length === 0){
-                tabla += "<tr><td colspan='4' class='text-center' style='color: #064635'>No hay citas realizadas</td></tr>";
+                tabla += "<tr><td colspan='4' class='text-center' style='color: #013d69'>No hay citas realizadas</td></tr>";
             }else{
                 respuesta.citas.forEach(function(cita){
                     var partes_de_la_fecha = cita.fecha.split("-");
@@ -122,5 +122,11 @@ document.getElementById("filtro-orden-realizadas").addEventListener("change", fu
 
 //PARA CUANDO CARGUE EL DOM QUE SE EJECUTE LA FUNCIÓN
 document.addEventListener("DOMContentLoaded", function(){
+    var hoy = new Date();
+    var mes = ("0"+(hoy.getMonth()+1)).slice(-2);
+    var dia = ("0"+hoy.getDate()).slice(-2);
+    var fecha_hoy = hoy.getFullYear()+"-"+mes+"-"+dia;
+    document.getElementById("filtro-fecha-citas-realizadas").value = fecha_hoy;
+    
     mostrarCitasRealizadas();
 });

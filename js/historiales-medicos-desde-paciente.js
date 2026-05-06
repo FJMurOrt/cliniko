@@ -19,8 +19,8 @@ function crearObjetoPeticion(){
 //FUNCIÓN PARA CARGAR LAS ESPECIALIDADES
 function cargarEspecialidadesHistoriales(){
     var peticion = crearObjetoPeticion();
-    if(!peticion){ 
-        alert("El navegador no es compatible con AJAX"); 
+    
+    if(!peticion){
         return;
     }
 
@@ -70,7 +70,7 @@ function mostrarMedicos(pagina){
             var info_del_medico = "";
 
             if(respuesta.medicos.length === 0){
-                info_del_medico = "<div class='col-12 text-center'><p style='color: #48325A;'>No se encontraron médicos.</p></div>";
+                info_del_medico = "<div class='col-12 text-center'><p style='color: #1A6B8A;'>No se encontraron médicos.</p></div>";
             }else{
                 respuesta.medicos.forEach(function(medico){
                     var nombre_completo = medico.nombre+" "+medico.apellidos;
@@ -90,34 +90,14 @@ function mostrarMedicos(pagina){
 
                     if(medico.archivo_pdf){
                         boton_descarga = 
-                           "<button class='btn boton-ver-historial btn-form' onclick='verHistorial("+'"'+medico.archivo_pdf+'"'+")'>Ver mi historial</button>"+
-                           "<a class='btn boton-descargar-receta btn-form mt-2' href='../../../uploads/historiales/"+medico.archivo_pdf+"' download>Descargar historial</a>";
+                           "<button class='btn boton-cuadrado btn-form' onclick='verHistorial("+'"'+medico.archivo_pdf+'"'+")'>Ver mi historial</button>"+
+                           "<a class='btn boton-cuadrado btn-form mt-2' href='../../../uploads/historiales/"+medico.archivo_pdf+"' download>Descargar historial</a>";
                     }else{
-                        boton_descarga = "<p style='color: #48325A;'>Tu médico aún no ha subido tu historial</p>";
+                        boton_descarga = "<p style='color: #1A6B8A;'>Tu médico aún no ha subido tu historial</p>";
                     }
 
-                    //PRÓXIMA DISPONIBILIDAD QUE TENDRÍA EL MÉDICO
-                    var dispoprox = "";
-                    var dispoprox = "";
-                    if (medico.proxima_disponibilidad) {
-                        var partes = medico.proxima_disponibilidad.split(" ");
-                        var fechaPartes = partes[0].split("-");
-                        var fecha = fechaPartes[2] + "/" + fechaPartes[1] + "/" + fechaPartes[0];
-                        var hora = partes[1].substring(0,5);
-                        dispoprox = "<p class='prox-dispo' style='color: #48325A;'>Próxima disponibilidad: "+fecha+" a las "+hora+"</p>";
-                    }else{
-                        dispoprox = "<p style='color: #48325A;'>Sin disponibilidad próxima</p>";
-                    }
-
-                    //SI NO TIENE PRÓXIMA DISPONIBILIDAD, EL BOTÓN DE SOLCIITAR CITA LO PONGO DISABLED
-                    var boton_solicitar_cita = "";
-                    if(medico.proxima_disponibilidad){
-                        boton_solicitar_cita = "<a href='../paciente/solicitar-cita-lista.php'>" +
-                                                    "<button class='btn boton-cuadrado mt-2'>Solicitar cita</button>" +
-                                                "</a>";
-                    }else{
-                        boton_solicitar_cita = "<button class='btn boton-cuadrado-sin-hover mt-2' disabled>Solicitar cita</button>";
-                    }
+                    //UN BOTÓN QUE MANDA A LA PÁGINA DE SOLITICAR CITA
+                    var boton_solicitar_cita = "<a href='../paciente/solicitar-cita-lista.php'><button class='btn boton-cuadrado mt-2'>Solicitar cita</button></a>"
 
                     info_del_medico += 
                         "<div class='col-12 mb-4'>"+
@@ -130,7 +110,6 @@ function mostrarMedicos(pagina){
                                         "<div class='col-md-6'>"+
                                             "<h5 class='mb-1'>"+nombre_completo+"</h5>"+
                                             "<p class='mb-1 espe-tabla d-inline-block mr-2' style='max-width: 100%;'>"+especialidad+"</p>"+
-                                            "<div><span>"+dispoprox+"</span></div>"+
                                         "</div>"+
                                         "<div class='col-md-4 text-md-end text-center mt-3 mt-md-0'>"+
                                             boton_descarga+

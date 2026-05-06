@@ -1,13 +1,9 @@
 <?php require_once 'aplicacion/vistas/plantillas/cabecera.php'; //IGUAL QUE CON EL INDEX.PHP, PARA QUE ESTA PÁGINA NO CARGUE SIN LA CABECERA.?>
-
 <!--FORMULARIO DE INCIO DE SESIÓN--->
-<div class="contenedor_principal">
-<section class="seccion-login py-5" style="background-color: #AED0DE;;">
-    <div class="contenedor" style="max-width: 400px; margin: 0 auto;">
-        <form action="aplicacion/controladores/login-controlador.php" method="POST" id="form-login" class="formulario-login mt-4" style="max-width: 400px; margin: 0 auto;">
-            <div style="text-align: center;">
-                <img src="img/inicio-sesion.png" style="width: 340px; max-width: 100%; height: auto;">
-            </div>
+<section class="py-5" style="background-color: #dee8ed;;">
+    <div class="contenedor" style="max-width: 500px; margin: 0 auto;">
+        <form action="aplicacion/controladores/login-controlador.php" method="POST" id="form-login" class="formulario-login mt-4">
+            <h4 class="titulo-tarjeta text-center">Iniciar Sesión</h4>
             <hr>
             <?php
             session_start();
@@ -39,8 +35,4 @@
         </form>
     </div>
 </section>
-</div>
-
-<!---SCRIPT PARA VALIDAR LOS CAMPOS DESDE EL FRONTEND CON JS-->
-<script src="js/validacion-inicio-sesion.js"></script>
 <?php require_once 'aplicacion/vistas/plantillas/pie.php'; //LO MISMO QUE CON LA CABECERA, PARA QUE CUANDO CARGUE LA PÁGINA NO CARGUE SIN EL PIE DE PÁGINA.?>

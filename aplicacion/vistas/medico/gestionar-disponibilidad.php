@@ -6,9 +6,7 @@
         <?php require_once "../../../panel-medico/includes/topbar.php"; ?>
         <div class="container-fluid">
             <form id="form-disponibilidad" method="POST" action="../../controladores/guardar-disponibilidad.php" class="area-gestionar-disponibilidad-medico">
-                <div style="text-align: center;">
-                    <img class="mb-2" src="../../../img/disponibilidad.png" style="width: 340px; max-width: 100%; height: auto;">
-                </div>
+                <h4 class="titulo-tarjeta2 text-center">Gestionar Disponibilidad</h4>
                 <hr>
                 <?php
                 if(isset($_SESSION["errores_disponibilidad"])){
@@ -22,12 +20,12 @@
                 }
                 ?>
                 <div class="form-group">
-                    <label>Fecha:</label>
+                    <label style="color: #01497C;">Fecha:</label>
                     <input type="date" name="fecha" id="fecha" class="form-control"  min="<?php echo date('Y-m-d');?>">
                     <span id="error-fecha" style="color: red;"></span>
                 </div>
                 <div class="form-group">
-                    <label for="turno">Turno</label>
+                    <label style="color: #01497C;">Turno</label>
                     <select name="turno" id="turno" class="form-control">
                         <option value="" selected disabled>Selecciona turno</option>
                         <option value="mañana">Mañana</option>
@@ -36,14 +34,14 @@
                     <span id="error-turno" style="color: red;"></span>
                 </div>
                 <div class="form-group">
-                    <label>Hora de inicio:</label>
+                    <label style="color: #01497C;">Hora de inicio:</label>
                     <select name="hora_inicio" id="hora_inicio" class="form-control">
                         <option value="" selected disabled>Necesitas seleccionar un turno para ver las horas</option>
                     </select>
                     <span id="error-inicio" style="color: red;"></span>
                 </div>
                 <div class="form-group">
-                    <label>Hora de fin:</label>
+                    <label style="color: #01497C;">Hora de fin:</label>
                     <select name="hora_fin" id="hora_fin" class="form-control">
                         <option value="" selected disabled>Necesitas seleccionar un turno para ver las horas</option>
                     </select>

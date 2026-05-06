@@ -7,9 +7,7 @@
         <div class="container-fluid">
             <div class="card mb-4 tarjeta-pacientes-recetas">
                 <div class="card-body">
-                    <div style="text-align: center;">
-                        <img class="mb-2" src="../../../img/recetas.png" style="width: 220px; max-width: 100%; height: auto;">
-                    </div>
+                    <h4 class="titulo-tarjeta2 text-center">Recetas</h4>
                     <hr>
                     <div class="row justify-content-center mb-3">
                         <div class="col-12 col-md-3 mb-2">
@@ -38,8 +36,6 @@
                         </div>
                     </div>
                     <hr>
-                    <div id="mensaje-receta" class="text-center mt-2"></div>
-                    <div id="mensaje-nota" class="text-center mt-2"></div>
                     <div id="contenedor-citas" class="row">
                     </div>
                     <div id="paginacion" class="text-center mt-4">
@@ -48,22 +44,65 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="modalNota" tabindex="-1">
+    <div class="modal fade" id="modal-agregar-nota">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title text-center w-100" style='color: #D1FAE5;'>Añadir observaciones</h5>
+                    <h4 class="titulo-tarjeta-modal w-100 text-center">Agregar Nota</h4>
+                    <hr>
                     <button type="button" class="close" data-dismiss="modal">
                         <span style='color: #D47B5E;'>X</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <textarea id="textarea-nota" class="form-control" rows="4" placeholder="Escribe aquí tus obervaciones para la cita..." maxlength="200"></textarea>
-                     <span id="contador-nota" style='color: #D1FAE5'>0/200</span>
+                    <input type="hidden" id="id-cita-nota" value="">
+                    <textarea id="textarea-nota" class="form-control" rows="4" placeholder="Escribe aquí información adicional para la cita..." maxlength="200"></textarea>
+                     <span id="contador-nota" style="color: rgba(255, 255, 255, 0.80);">0/200</span>
+                     <div id="mensaje-nota" class="text-center mt-2"></div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn boton-subir-receta btn-form" onclick="guardarNota()">Guardar</button>
-                    <button type="button" class="btn boton-observaciones-eliminar btn-form" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn boton-cuadrado2 btn-form" onclick="guardarNota()">Guardar</button>
+                    <button type="button" class="btn boton-cuadrado-eliminar btn-form" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modal-generar-receta">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="titulo-tarjeta-modal text-center w-100">Generar Receta</h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span style="color: #D47B5E">X</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="id-cita-receta-pdf">
+                    <div class="form-group">
+                        <label style="color: rgba(255, 255, 255, 0.80);">Medicamento</label>
+                        <input type="text" id="medicamento-receta" class="form-control" placeholder="Nombre del medicamento recetado">
+                    </div>
+                    <div class="form-group">
+                        <label style="color: rgba(255, 255, 255, 0.80);">Dosis</label>
+                        <input type="text" id="dosis-receta" class="form-control" placeholder="Medicamento de 1g, 500mg, 600mg, etc.">
+                    </div>
+                    <div class="form-group">
+                        <label style="color: rgba(255, 255, 255, 0.80);">Frecuencia</label>
+                        <input type="text" id="frecuencia-receta" class="form-control" placeholder="¿Cada cuánto tiempo se tomará?">
+                    </div>
+                    <div class="form-group">
+                        <label style="color: rgba(255, 255, 255, 0.80);">Duración del tratamiento</label>
+                        <input type="text" id="duracion-receta" class="form-control" placeholder="¿Durante cuánto tiempo se tomará?">
+                    </div>
+                    <div class="form-group">
+                        <label style="color: rgba(255, 255, 255, 0.80);">Observaciones <span style="color: rgba(255, 255, 255, 0.80);">(opcional)</span></label>
+                        <textarea id="observaciones-receta" class="form-control" rows="3" placeholder="Observaciones que quieras dejar por escrito..."></textarea>
+                    </div>
+                </div>
+                <div id="mensaje-generar-receta" class="text-center mt-2"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn boton-cuadrado2 btn-form" onclick="generarRecetaPDF()">Generar</button>
+                    <button type="button" class="btn boton-cuadrado-eliminar btn-form" data-dismiss="modal">Cancelar</button>
                 </div>
             </div>
         </div>

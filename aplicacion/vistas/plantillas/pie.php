@@ -20,6 +20,19 @@
   </div>
 
   <div class="container text-center mt-3">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfwruEhtJZNHEvVgSWiaHVoGVLMWJUKGTHOVQLj26PkE7A2xA/viewform?usp=preview" target="_blank" style="color: white; text-decoration: none;">¡Dejanos saber tu opinión sobre Clíniko!</a>
+  </div>
+  <div class="container text-center mt-3">
     <p>&copy; 2026 Clíniko. Francisco Javier Muriel Orta. Desarrollo de Aplicaciones Web. IES La Arboleda.</p>
   </div>
 </footer>
+<!--LOS SCRIPTS DE LA LANDING PAGE-->
+  <script src = "js/aceptar_cookies.js"></script>
+  <script src = "js/boton_para_subir.js"></script>
+  <script src = "js/validacion-inicio-sesion.js"></script>
+  <script src = "js/validar-formulario-recuperar-contrasena.js"></script>
+  <script src = "js/mostrar-especialidades-select.js"></script>
+  <script src = "js/validaciones-form-registro.js"></script>
+  <script src = "js/validar-cambiar-contrasena.js"></script>
+</body>
+</html>

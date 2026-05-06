@@ -8,14 +8,14 @@
 
 /*CAMBIO DE COLORES A LA BARRA DE MENÚ LATERAL Y LOS ENLACES*/
 .sidebar{
-  background: #01497C !important;
+  background: #2C2C3E !important;
 }
 .sidebar .nav-link{
-  color: #cbd5e1 !important;
+  color: rgba(255, 255, 255, 0.80) !important;
 }
 .sidebar .nav-link:hover{
   background-color: rgb(225, 150, 58) !important;
-  color: white;
+  color: white !important;
 }
 
 /*APLICO LA FUENTE ROBOTO QUE ES LA QUE USO EN MI WEB PARA TODO EL PANEL*/
@@ -30,7 +30,7 @@ h1, h2, h3, h4, h5, h6,
 }
 /*EL FONDO DEL BODY SERÁ DEL MISMO COLOR QUE EL DEL CONTENIDO PARA EN CASO DE QE EL CONTENIDO SE QUEDE CORTO*/
 body{
-  background-color: #AED0DE;
+  background-color: #F6F6F9;
 }
 
 /*PARA QUE EL CONTENEDOR QUE ESTÁ DENTRO DEL BODY OCUPE TODA LA ALTURA Y COJA DEL COLOR DE FONDO QUE YA LE PUSE AL BODY (PORQUE SE ROMPÍA)*/
@@ -44,18 +44,10 @@ body{
     background-color: #AED0DE !important;
 }
 
-/*COLOR DE LA BARRA DE MENÚ HORIZONTAL*/
+/*BARRA DE MENÚ HORIZONTAL*/
 .navbar{
-    background-color: #E48062 !important;
+    background-color: transparent !important;
     color: white !important;
-    border-bottom: 3px solid #01497C;
-}
-
-/*CAMBIO DE COLOR AL FONDO DEL FOOTER*/
-footer.sticky-footer{
-    background-color: #E48062 !important;
-    color: white !important;
-    border-top: 3px solid #01497C;
 }
 
 /*ESTO PARA QUITAR EL ESPACIO DE MARGEN QUE VENÍA POR DEFECTO QUE ERA HORRIBLE LA VERDAD*/
@@ -63,8 +55,23 @@ footer.sticky-footer{
     margin-bottom: 0 !important;
 }
 
+
+/*CAMBIO DE COLOR AL FONDO DEL FOOTER*/
+footer.sticky-footer {
+    background-color: #F2F2F6 !important;
+    color: #2C2C3E !important;
+    border-top: 2px solid #2C2C3E;
+}
+
+/*ESTO PARA QUITAR EL ESPACIO DE MARGEN QUE VENÍA POR DEFECTO QUE ERA HORRIBLE LA VERDAD*/
+
+.navbar {
+    margin-bottom: 0 !important;
+}
+
 .content, .container-fluid{
-   padding: 20px;
+    margin-top: 20px;
+    padding: 20px;
 }
 
 /*ESTILOS PARA EL COLOR DE LOS ICONOS DE LA CAMPA Y EL DE CORREO DE LA BARRA DE MENU DE ARRIBA*/
@@ -79,33 +86,19 @@ footer.sticky-footer{
     color: #01497C !important;
 }
 
-/*PARA HACER EL ICONO DONDE APARECE LA FOTO DE PERFIL MÁS GRANDE Y METERLE TAMBIÉN UN BORDE*/
-.img-profile{
-    width: 50px !important;
-    height: 50px !important;
-    border: 3px solid #01497C;
-    box-sizing: border-box;
-}
-
-.nombre-usuario{
-    color: white !important;
-}
-
 /*CAMBIO DE COLOR AL BOTÓN PARA ESCONDER LA BARRA DE MENÚ LATERAL*/
 #sidebarToggle,
-#sidebarToggleTop{
-    background-color: #E48062 !important;
+#sidebarToggleTop {
+    background-color: #a1a1ae !important;
 }
 
-/*CAMBIO DE COLOR AL BOTÓN QUE ESCONDE LA BARRA DE MENÚ LATERAL CUANDO SE HACE HOVER*/
 #sidebarToggle:hover,
 #sidebarToggleTop:hover {
-    background-color: #FFC107 !important;
+    background-color: #c7c7cb !important;
 }
 
-/*ESTILO BOTON DE LA BARRA DE ARRIBA*/
 #sidebarToggleTop i {
-    color: #01497C !important;
+    color: #ffffff !important;
 }
 
 /*ESTILO DEL BOTON PARA SUBIR LA PÁGINA*/
@@ -121,7 +114,654 @@ footer.sticky-footer{
 }
 
 /*ESTILO EL COLOR DE LA SELECCIÓN CON EL RATÓN EN EL PANEL*/
-::selection{
-    background-color: #E48062;
+::selection {
+    background-color: rgba(44, 44, 62, 0.25);
+    color: #2C2C3E;
+}
+
+/*ESTILOS DEL FONDO*/
+#content-wrapper{
+    background-color: #F6F6F9;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#content-wrapper .container-fluid{
+    background-color: transparent !important;
+}
+
+/*NOMBRE DE USUARIO*/
+.nombre-usuario{
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border: 2px solid #2C2C3E;
+    border-radius: 6px;
+    color: #2C2C3E !important;
+}
+
+/*ESTILOS DEL MODAL PARA CERRAR LA SESIÓN Y LOS BOTONES*/
+.opcion-cerrar-sesion{
+    border: 2px solid #2C2C3E;
+    background-color: transparent;
+}
+
+.enlace-cerrar-sesion{
+    color: #2C2C3E;
+}
+
+.menu-foto-opcion:hover{
+    background-color: #D47B5E;
+    color: rgba(255, 255, 255, 0.80);
+}
+
+.pregunta-modal{
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    max-width: 100%;
+    color: #2C2C3E;
+}
+
+.modal-content{
+    border: 3px solid #D47B5E;
+    background-color: #e4e4eb;
+}
+
+.modal-header{
+    border-bottom: 3px solid #D47B5E;
+}
+
+.boton-cuadrado{
+    width: 100%;
+    max-width: 100%;
+    border: 1px solid #2C2C3E;
+    border-radius: 20px;
+    background-color: #2C2C3E !important;
+    color: #ffffff;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.boton-cuadrado:hover{
+    background-color: #EEEEF5 !important;
+    border: 1px solid #2C2C3E;
+    color: #2C2C3E;
+}
+
+.boton-cuadrado-ajustes{
+    max-width: 100%;
+    border: 1px solid #2C2C3E;
+    border-radius: 20px;
+    background-color: #2C2C3E !important;
+    color: #ffffff;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.boton-cuadrado-ajustes:hover{
+    background-color: #EEEEF5 !important;
+    border: 1px solid #2C2C3E;
+    color: #2C2C3E;
+}
+
+.boton-cuadrado-notificaciones{
+    max-width: 100%;
+    border: 1px solid #2C2C3E;
+    border-radius: 20px;
+    background-color: #2C2C3E !important;
+    color: #ffffff;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.boton-cuadrado-notificaciones:hover{
+    background-color: #EEEEF5 !important;
+    border: 1px solid #2C2C3E;
+    color: #2C2C3E;
+}
+
+.boton-crear-usuario{
+    max-width: 100%;
+    border: 1px solid #2C2C3E;
+    border-radius: 20px;
+    background-color: #2C2C3E !important;
+    color: #ffffff;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.boton-crear-usuario:hover{
+    background-color: #EEEEF5 !important;
+    border: 1px solid #2C2C3E;
+    color: #2C2C3E;
+}
+
+.boton-cuadrado-eliminar{
+    width: 100%;
+    border-radius: 20px;
+    border: 1px solid #a93226;
+    background-color: #C0392B !important;
+    color: #ffffff;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.boton-cuadrado-eliminar:hover{
+    background-color: #dea19b !important;
+    color: #a93226 !important;
+}
+
+/*ESTILOS DE LA FOTO DE PERFIL DE LA BARRA SUPERIOR*/
+.img-profile{
+    width: 65px !important;
+    height: 65px !important;
+    border: 2px solid rgb(44, 44, 62);
+    box-sizing: border-box;
+    object-fit: cover;
+    box-shadow: 0 4px 16px rgba(44, 44, 62, 0.22);
+    border-radius: 50%;
+}
+
+/*PARA EL COLOR DE LA BRRA DE AL LADOD E LA FOTO*/
+.barra-divide-foto{
+    border-left: 1px solid #2C2C3E;
+}
+
+/*ESTILO DE LA TARJETA PRINCIPAL CONTENDORA Y DE LAS TARJETTAS POR USUARIO*/
+.tarjeta-lista-medicos{
+    background: rgba(255, 255, 255, 0.60) !important;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 2px 12px rgba(44, 44, 62, 0.15);
+}
+
+.tarjeta-usuario-nuevo{
+    background-color: rgba(255, 255, 255, 0.60);
+    color: #2C2C3E;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 2px 12px rgba(44, 44, 62, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjeta-usuario-nuevo:hover{
+    background-color: rgb(230, 229, 229);
+    transform: scale(1.02);
+    box-shadow: 0 4px 16px rgba(44, 44, 62, 0.22);
+}
+
+/*PARA LOS BOTONES PARA CAMBIAR DE PÁGINA DE LAS TABLAS O LISTAS*/
+.boton-pagina{
+    border: 2px solid #2C2C3E;
+    border-radius: 15px;
+    background-color: #2C2C3E;
+    color: #EEEEF5;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.boton-pagina:hover{
+    background-color: #EEEEF5;
+    border-color: #2C2C3E;
+    color: #2C2C3E;
+    box-shadow: 0 2px 8px rgba(44, 44, 62, 0.30);
+}
+
+/*ESTILOS DEL BOTÓN CANCELAR*/
+.boton-cancelar{
+    border: 2px solid rgb(100, 29, 29);
+    border-radius: 20px;
+    background-color: rgb(229, 81, 81);
+    color: #D1FAE5;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.boton-cancelar:hover{
+    background-color: rgb(252, 151, 151) !important;
+    border: 2px solid rgb(100, 29, 29);
+    color: rgb(100, 29, 29);
+    box-shadow: 0 0 20px rgb(100, 29, 29);
+}
+/*BOTÓN VER USUARIO*/
+.boton-ver-usuario{
+    width: 100%;
+    max-width: 100%;
+    border: 2px solid #075d57;
+    border-radius: 20px;
+    background-color: #04a57d !important;
     color: #01497C;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.boton-ver-usuario:hover{
+    background-color: #7addc4 !important;
+    border: 2px solid #075d57;
+    color: #01497C;
+    box-shadow: 0 0 20px #075d57;
+    
+}
+
+/*ESTILO DE LA FOTO DEL USUARIO EN LA TARJETITA A LA HORA DE HABILITARLO*/
+.foto-usuario-habilitar {
+    border: 2px solid rgb(44, 44, 62);
+    box-shadow: 0 4px 16px rgba(44, 44, 62, 0.22),
+}
+
+/*ESTILO PARA LAS ETIQUETAS DE LOS FILTROS*/
+.etiqueta-filtro{
+    color: #2C2C3E;
+    padding: 5px;
+    border: 1px solid rgba(44, 44, 62, 0.40);
+    border-radius: 5px;
+    word-break: break-word;
+}
+
+/*MAS ESTILOS LA INFORMACIÓN QUE SE MUESTRA EN LA LISTA DE USUARIOS NUEVOS*/
+.tipo_usuario{
+    max-width: 100%;
+    color: #EEEEF5;
+    border: 3px solid rgba(44, 44, 62, 0.40);
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #737381;
+}
+
+/*ESTILOS PARA LA TARJETA DE MÁS INFORMACIÓN DEL USUARIO NUEVO*/
+.info-paciente-contenido{
+    color: #2C2C3E;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    word-break: break-word
+}
+
+.dato-info-paciente{
+    border: 3px solid #064635;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #D47B5E;
+}
+
+.tarjeta-ver-mas-datos{
+    background: rgba(255, 255, 255, 0.60) !important;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 700px;
+    margin: 0 auto;
+    box-shadow: 0 2px 12px rgba(44, 44, 62, 0.15);
+}
+
+.etiqueta_de_informacion{
+    max-width: 100%;
+    color: #EEEEF5;
+    border: 3px solid rgba(44, 44, 62, 0.40);
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #737381;
+}
+
+/*BOTÓN PARA EDITAR LA ESPECIALIDAD*/
+.boton-editar{
+    width: 100%;
+    max-width: 100%;
+    border: 2px solid #007988;
+    border-radius: 20px;
+    background-color: #3fbacb !important;
+    color: #d5e8f5;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.boton-editar:hover{
+    background-color: #a2d4db !important;
+    border: 2px solid #007988;
+    color: #007988;
+    box-shadow: 0 0 20px #007988;
+    
+}
+
+/*BOTÓN PARA GUARDAR LA ESPECIALIDAD*/
+.boton-guardar{
+    width: 100%;
+    max-width: 100%;
+    border: 2px solid #0b7d39;
+    border-radius: 20px;
+    background-color: #59c885 !important;
+    color: #D1FAE5;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.boton-guardar:hover{
+    background-color: #b1f7cd !important;
+    border: 2px solid #0b7d39;
+    color: #0b7d39;
+    box-shadow: 0 0 20px #0b7d39;
+    
+}
+
+
+/*BOTÓN PARA CANCELAR LA EDICIÓN DEL CAMBIO DE NOMBRE A LA ESPECIALIDAD*/
+.boton-cancelar-especialidad{
+    width: 100%;
+    max-width: 100%;
+    border: 2px solid #56605a;
+    border-radius: 20px;
+    background-color: #92a198 !important;
+    color: #D1FAE5;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.boton-cancelar-especialidad:hover{
+    background-color: #c0c5c2 !important;
+    border: 2px solid #56605a;
+    color: #56605a;
+    box-shadow: 0 0 20px #56605a;
+    
+}
+
+.opcion-cita{
+    color: #01497C !important;
+}
+
+.opcion-cita:hover{
+    background-color: rgb(225, 150, 58) !important;
+    color: white !important;
+}
+
+.desplegable-citas{
+    background-color: #aad3f0;
+}
+
+.tarjeta-valoracion{
+    background-color: #92c8ee;
+    color: #01497C;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 0 20px #D47B5E;
+    transition: transform 0.2s ease;
+}
+
+.tarjeta-valoracion:hover{
+    background-color: #c7e8ff;
+    box-shadow: 0 0 20px #D47B5E;
+    transform: scale(1.05);
+}
+
+.tarjeta-valoracion-reportada{
+    background-color: #e5b9b9;
+    color: #2C2C3E;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    transition: transform 0.2s ease;
+}
+
+.tarjeta-valoracion-reportada:hover{
+    background-color: #ffcbcb;
+    transform: scale(1.05);
+}
+
+.fotos-valoraciones{
+    width: 75px !important;
+    height: 75px !important;
+    border: 2px solid rgb(44, 44, 62);
+    box-sizing: border-box;
+    object-fit: cover;
+    box-shadow: 0 4px 16px rgba(44, 44, 62, 0.22);
+}
+
+.etiqueta_reportada{
+    max-width: 100%;
+    color: #720101;
+    border: 3px solid #720101;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #d36c6c;
+}
+
+.reloj{
+    border: 2px solid #2C2C3E;
+    color: #2C2C3E;
+    border-radius: 6px;
+    font-family: 'Cinzel', serif;
+    min-width: 85px;
+}
+
+.modal-footer{
+    border-top: 3px solid #D47B5E !important;
+}
+
+.modal-header{
+    border-bottom: 3px solid #D47B5E;
+}
+
+.estado_habilitado{
+    max-width: 100%;
+    color: #006a43;
+    border: 3px solid #006a43;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #7cd7b6;
+}
+
+.estado_no_habilitado{
+    max-width: 100%;
+    color: #720101;
+    border: 3px solid #720101;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #d36c6c;
+}
+
+/*TARJETA DE LAS NOTIFICACIONES*/
+.tarjeta-notificaciones{
+    color: #2C2C3E;
+    padding: 20px;
+    border: 0.5px solid rgba(1, 73, 124, 0.10);
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    transition: transform 0.2s ease;
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px rgba(1, 73, 124, 0.06);
+    border-left: 3px solid #2C2C3E;
+}
+
+.tarjeta-notificaciones:hover{
+    background-color: #f5c3b2;
+    border-left-color: #D47B5E;
+    transform: scale(1.05);
+}
+
+.tarjeta-lista-notificaciones{
+    background: rgba(255, 255, 255, 0.60) !important;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 2px 12px rgba(44, 44, 62, 0.15);
+}
+
+/*BOTÓN DE LEER LA NOTIFICIÓN*/
+.boton-leida{
+    max-width: 100%;
+    border: 2px solid #226a10;
+    border-radius: 20px;
+    background-color: #93dd3e !important;
+    color: #48325a;
+}
+
+.boton-leida:hover{
+    background-color: #d7ffa9 !important;
+    color: #48325a;
+}
+
+/*ESTILOS PARA LOS FIELDSET DE LOS AJUSTES DE PERFIL CON TRANSFORM Y TRANSITION*/
+.borde-fieldset-ajustes-perfil{
+    border: 1px solid #2C2C3E !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.borde-fieldset-ajustes-perfil:hover{
+    background-color: rgb(230, 229, 229);
+    border: 1px solid #2C2C3E !important;
+    box-shadow: 0 4px 16px rgba(44, 44, 62, 0.22);
+    transform: scale(1.02);
+}
+
+.tarjeta-informes{
+    background: rgba(255, 255, 255, 0.60) !important;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 2px 12px rgba(44, 44, 62, 0.15);
+}
+
+.titulo-tarjeta-inicio{
+    font-family: 'Cinzel', serif !important;
+    color: #2C2C3E;
+    font-size: 2.5rem;
+    word-break: break-word;
+    white-space: normal;
+}
+
+.titulo-tarjeta{
+    font-family: 'Cinzel', serif !important;
+    color: #2C2C3E;
+    font-size: 1.8rem;
+    word-break: break-word;
+    white-space: normal;
+}
+
+.titulo-tarjeta2{
+    font-family: 'Cinzel', serif !important;
+    color: #2C2C3E;
+    font-size: 2.0rem;
+    word-break: break-word;
+    white-space: normal;
+}
+
+.titulo-tarjeta-modal-salir{
+    font-family: 'Cinzel', serif !important;
+    color: #2C2C3E;
+    font-size: 1.4rem;
+    word-break: break-word;
+    white-space: normal;
+}
+
+.tarjeta1{
+    background-color: #ffffff;
+    border: 0.5px solid rgba(44, 44, 62, 0.12);
+    box-shadow: 0 1px 4px rgba(44, 44, 62, 0.10);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.tarjeta2{
+    background-color: #ffffff;
+    border: 0.5px solid rgba(44, 44, 62, 0.12);
+    box-shadow: 0 1px 4px rgba(44, 44, 62, 0.10);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.tarjeta3{
+    background-color: #ffffff;
+    border: 0.5px solid rgba(44, 44, 62, 0.12);
+    box-shadow: 0 1px 4px rgba(44, 44, 62, 0.10);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.tarjeta4{
+    background-color: #ffffff;
+    border: 0.5px solid rgba(44, 44, 62, 0.12);
+    box-shadow: 0 1px 4px rgba(44, 44, 62, 0.10);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.tarjeta5{
+    background-color: #ffffff;
+    border: 0.5px solid rgba(44, 44, 62, 0.12);
+    box-shadow: 0 1px 4px rgba(44, 44, 62, 0.10);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.tarjeta6{
+    background-color: #ffffff;
+    border: 0.5px solid rgba(44, 44, 62, 0.12);
+    box-shadow: 0 1px 4px rgba(44, 44, 62, 0.10);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.tarjeta7{
+    background-color: #ffffff;
+    border: 0.5px solid rgba(44, 44, 62, 0.12);
+    box-shadow: 0 1px 4px rgba(44, 44, 62, 0.10);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.tarjeta1:hover{
+    box-shadow: 0 4px 12px rgba(44, 44, 62, 0.18);
+    border-color: rgba(44, 44, 62, 0.25);
+    transform: scale(1.05);
+}
+
+.tarjeta2:hover{
+    box-shadow: 0 4px 12px rgba(44, 44, 62, 0.18);
+    border-color: rgba(44, 44, 62, 0.25);
+    transform: scale(1.05);
+}
+
+.tarjeta3:hover{
+    box-shadow: 0 4px 12px rgba(44, 44, 62, 0.18);
+    border-color: rgba(44, 44, 62, 0.25);
+    transform: scale(1.05);
+}
+
+.tarjeta4:hover{
+    box-shadow: 0 4px 12px rgba(44, 44, 62, 0.18);
+    border-color: rgba(44, 44, 62, 0.25);
+    transform: scale(1.05);
+}
+
+.tarjeta5:hover{
+    box-shadow: 0 4px 12px rgba(44, 44, 62, 0.18);
+    border-color: rgba(44, 44, 62, 0.25);
+    transform: scale(1.05);
+}
+
+.tarjeta6:hover{
+    box-shadow: 0 4px 12px rgba(44, 44, 62, 0.18);
+    border-color: rgba(44, 44, 62, 0.25);
+    transform: scale(1.05);
+}
+
+.tarjeta7:hover{
+    box-shadow: 0 4px 12px rgba(44, 44, 62, 0.18);
+    border-color: rgba(44, 44, 62, 0.25);
+    transform: scale(1.05);
 }

@@ -1,28 +1,25 @@
 <?php require_once 'aplicacion/vistas/plantillas/cabecera.php'; //SE CARGA LA CABECERA?>
-
 <!-- SECCIÓN DONDE SE EXPLICA LA POLÍTICA DE PRIVACIDAD-->
-<section class="seccion-que-es py-5">
+<section class="py-5">
     <div class="contenedor">
         <!--METO UNA IMAGEN Y LE PONGO FLOAR RIGHT PARA QUE QUEDE A LA DERECHA AL INICIO Y DE TAMAÑO DE ANCHO LO PONGO AL 30%-->
-        <img class="imagen-pagos" src="img/pagos.png" alt="candado" style="float: right; width: 30%;">
-        <div style="text-align: center;">
-            <img src="img/pago.png" style="width: 340px; max-width: 100%; height: auto;">
-        </div>
+        <img class="imagen-pagos" src="img/pagos.png" alt="mano-con-tarjeta-banco" style="float: right; width: 30%;">
+        <h4 class="titulo-tarjeta text-center">Métodos de Pago</h4>
+        <hr>
         <!--AQUÍ AHORA VOY HACIENDO PARRAFOS QUE SON CADA UNO DE LOS PUNTOS DEL CONTENIDO DE ESTA PÁGINA Y METO UNA BARRA HORIZONTAL CON HR PARA SEPARAR CADA PÁRRAFO-->
-        <p class="descripcion-secundaria mt-3" style="color: #333333; text-align: justify;">
+        <p style="color: #333333; text-align: justify;">
            En Clíniko también nos ofrecemos a proporcionar un proceso de pago seguro, transparente y cómodo para todos nuestros pacientes. Actualmente, todas las citas médicas reservas a través
            de nuestra plataforma se realizan tras efectuar un pago mediante tarjeta bancaria, garantizando así la máxima seguridad de la transacción.
         </p>
-        <p class="descripcion-secundaria mt-3" style="color: #333333; text-align: justify;">
+        <p style="color: #333333; text-align: justify;">
             La protección de tus datos es nuestra prioridad. Todas las operaciones de pago se realizan a través de plataofrmas certificadas y seguras, cumpliendo así con los estándareres de
             seguridad bancaria y evitando el acceso no autorizado a la información de tus tarjetas. De esta forma, tus datos personales y financieros permanecen confidenciales en todo momento.
         </p>
-        <p class="descripcion-secundaria mt-3" style="color: #333333; text-align: justify;">
+        <p style="color: #333333; text-align: justify;">
             Cuando reservas una cita médcia en Clíniko, será dirigido al proceso de pago. Solo necesitas proporcionar los datos de tu tarjeta para completar la reserva. Una vez finalizado el pago, recibiriás
             una notidicación a tu correo electrónico como confirmación de tu cita y de la transacción.
         </p>
-        <hr></hr>
-        <p class="descripcion-secundaria mt-3" style="color: #333333; text-align: justify;">
+        <p style="color: #333333; text-align: justify;">
             Las condiciones de pago a tener en cuenta son las siguientes:
                 <ul style = "list-style: none;">
                     <li>El pago se realiza de manera anticipada, garantizando la disponibilidad de la cita.</li>
@@ -34,5 +31,4 @@
         </p>
     </div>
 </section>
-
 <?php require_once 'aplicacion/vistas/plantillas/pie.php'; //SE CARGA EL FOOTER.?> 

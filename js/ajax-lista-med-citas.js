@@ -21,8 +21,7 @@ function crearObjetoPeticion(){
 function cargarEspecialidadesCitas(){
     var peticion = crearObjetoPeticion();
 
-    if(!peticion){ 
-        alert("El navegador no es compatible con AJAX"); 
+    if(!peticion){
         return; 
     }
 
@@ -54,11 +53,11 @@ function mostrarMedicosCitas(pagina){
 
     var filtro = document.getElementById("filtro-especialidad-citas").value;
     var orden = document.getElementById("orden-nombre-medico").value;
+    var busqueda = document.getElementById("filtro-busqueda-medico").value.trim();
 
     var peticion = crearObjetoPeticion();
 
     if(!peticion){
-        alert("El navegador no es compatible con AJAX");
         return;
     }
 
@@ -72,6 +71,10 @@ function mostrarMedicosCitas(pagina){
         url += "&orden="+orden;
     }
 
+    if(busqueda !== ""){
+        url += "&busqueda="+encodeURIComponent(busqueda);
+    }
+
     peticion.open("GET", url, true);
 
     peticion.onreadystatechange = function(){
@@ -81,7 +84,7 @@ function mostrarMedicosCitas(pagina){
             var contenedor_donde_meto_la_tabla = document.getElementById("tabla-medicos-citas");
 
             if(respuesta.medicos.length === 0){
-                contenedor_donde_meto_la_tabla.innerHTML = "<p style='text-align:center;'>No hay médicos disponibles.</p>";
+                contenedor_donde_meto_la_tabla.innerHTML = "<p style='text-align:center; color: #1A6B8A;'>No hay médicos disponibles.</p>";
             }else{
                 var tabla = "<div class='table-responsive'>"+
                     "<table class='table table-borderless' id='tabla-medicos-citas-tabla'>"+
@@ -108,14 +111,13 @@ function mostrarMedicosCitas(pagina){
                                 "</td>"+
                                 "<td><span class='espe-tabla'>"+especialidad+"</span></td>"+
                                 "<td>"+
-                                    "<a class='btn boton-solicitar' href='solicitar-cita.php?id_medico="+medico.id_usuario+"'>Solicitar</a>"+
+                                    "<a class='btn boton-cuadrado w-100' href='solicitar-cita.php?id_medico="+medico.id_usuario+"'>Solicitar</a>"+
                                 "</td>"+
                              "</tr>";
                 });
                 tabla += "</tbody></table></div>";
                 contenedor_donde_meto_la_tabla.innerHTML = tabla;
             }
-
             var botones = "";
             for(var i = 1; i <= respuesta.total_paginas; i++){
                 botones += "<button class='btn btn-sm boton-pagina mr-1' onclick='mostrarMedicosCitas("+i+")'>"+i+"</button>";
@@ -126,15 +128,20 @@ function mostrarMedicosCitas(pagina){
     peticion.send();
 }
 
+//EVENTOS Y FUNCIONES
 document.getElementById("filtro-especialidad-citas").addEventListener("change", function(){
+    mostrarMedicosCitas();
+});
+
+document.getElementById("filtro-busqueda-medico").addEventListener("input", function(){
+    mostrarMedicosCitas();
+});
+
+document.getElementById("orden-nombre-medico").addEventListener("change", function(){
     mostrarMedicosCitas();
 });
 
 document.addEventListener("DOMContentLoaded", function(){
     cargarEspecialidadesCitas();
-    mostrarMedicosCitas();
-});
-
-document.getElementById("orden-nombre-medico").addEventListener("change", function(){
     mostrarMedicosCitas();
 });

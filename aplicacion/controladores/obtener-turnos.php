@@ -12,6 +12,13 @@ if(!isset($_GET["id_medico"]) || !isset($_GET["fecha"])){
 $id_medico = intval($_GET["id_medico"]);
 $fecha = $_GET["fecha"];
 
+//VALIDO QUE LA FECHA NO SEA ANTERIOR A HOY
+$hoy = date("Y-m-d");
+if($fecha < $hoy){
+    echo json_encode([]);
+    exit;
+}
+
 //PARA OBTENER LSO TURNOS PARA LA FECHA SELECCIOANDA
 $turnos = obtenerTurnosPorFecha($conexion, $id_medico, $fecha);
 

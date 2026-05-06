@@ -68,7 +68,7 @@ function mostrarCitasCanceladas(pagina){
                         "<tbody>";
 
             if(respuesta.citas.length === 0){
-                tabla += "<tr><td colspan='4' class='text-center' style='color: #064635;'>No hay citas canceladas.</td></tr>";
+                tabla += "<tr><td colspan='4' class='text-center' style='color: #013d69;'>No hay citas canceladas.</td></tr>";
             }else{
                 respuesta.citas.forEach(function(cita){
 
@@ -123,5 +123,11 @@ document.getElementById("filtro-orden-canceladas").addEventListener("change", fu
 
 //PARA CARGAR LA TABLA POR DEFECTO
 document.addEventListener("DOMContentLoaded", function(){
+    var hoy = new Date();
+    var mes = ("0"+(hoy.getMonth()+1)).slice(-2);
+    var dia = ("0"+hoy.getDate()).slice(-2);
+    var fecha_hoy = hoy.getFullYear()+"-"+mes+"-"+dia;
+    document.getElementById("filtro-fecha-canceladas").value = fecha_hoy;
+    
     mostrarCitasCanceladas();
 });

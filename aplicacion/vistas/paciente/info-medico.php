@@ -7,7 +7,7 @@
     <?php require_once "../../../panel-paciente/includes/topbar.php";?>
         <div class="container-fluid">
             <input type="hidden" id="id-medico" value="<?php echo $id_medico?>">
-            <div class="card mb-4 tarjeta-lista-medicos">
+            <div class="card mb-4 tarjeta-medico">
                 <div class="card-body">
                     <div class="row align-items-center mb-4">
                         <div class="col-md-3">
@@ -20,11 +20,12 @@
                             ?>
                         </div>
                         <div class="col-md-9">
-                            <h3 class="mb-4">
+                            <h4 class="mb-4">
                                 <?php echo $medico["nombre"]." ".$medico["apellidos"];?>
-                            </h3>
-                            <p>
-                                <b>Especialidad</b>
+                            </h4>
+                            <p style="color: #1A6B8A">
+                                Especialidad
+                                <span class="espe-tabla">
                                 <?php 
                                 if(isset($medico["especialidad"]) && $medico["especialidad"] != ""){
                                     echo $medico["especialidad"];
@@ -32,6 +33,7 @@
                                     echo "Aún por definir.";
                                 }
                                 ?>
+                                </span>
                             </p>
                             <p>
                                 <?php
@@ -48,21 +50,28 @@
                                     }
                                     echo " ".$total_valoraciones." comentario(s)";
                                 }else{
-                                    echo "Este médico aún no ha sido valorado.";
+                                    echo "<p style='color: #1A6B8A'>Este médico aún no ha sido valorado.</p>";
                                 }
                                 ?>
                             </p>
                         </div>
                     </div>
                     <hr>
-                    <div style="text-align: center;">
-                        <img class="mb-4" src="../../../img/dispo-med.png" style="width: 340px; max-width: 100%; height: auto;">
-                    </div>
-                    <div class="text-center mb-3">
-                        <label class="etiqueta-filtro mr-2">Fecha</label>
-                        <input type="date" id="filtro-fecha" class="form-control d-inline-block" style="width:30%;">
-                        <button class="btn boton-pagina mt-2 mb-1" onclick="mostrarDisponibilidad()">Ver</button>
-                        <button class="btn boton-pagina mt-2 mb-1" onclick="verTodasDisponibilidades()">Todos</button>
+                    <h4 class="titulo-tarjeta text-center">Disponibilidad</h4>
+                    <hr>
+                    <div class="row justify-content-center mb-3">
+                        <div class="col-12 col-md-3 mb-2">
+                            <label for="filtro-fecha" class="etiqueta-filtro">Fecha</label>
+                            <input type="date" id="filtro-fecha" class="form-control" min="<?php echo date('Y-m-d');?>">
+                        </div>
+                        <div class="col-12 col-md-3 mb-2">
+                            <label for="filtro-turno" class="etiqueta-filtro">Turno</label>
+                            <select id="filtro-turno" class="form-control">
+                                <option value="">Todos</option>
+                                <option value="mañana">Mañana</option>
+                                <option value="tarde">Tarde</option>
+                            </select>
+                        </div>
                     </div>
                     <hr>
                     <div id="tabla-disponibilidad">

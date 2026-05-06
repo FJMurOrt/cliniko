@@ -8,6 +8,9 @@
   <!-- DIRECCIÓN PARA ACCEDER A LA FUENTE DE GOOGLE DE POPPINS, MONTSERRAT Y RBOTO -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+  <!-- PARA LA FUENTE DE CINZEL -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+
   <!-- EL ENLACE PARA EL FUNCIONAMIENTO DE BOOTSTRAP -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -22,7 +25,7 @@
 <nav class="navbar navbar-expand-lg">
     <div class="container">
         <a class="navbar-brand text-white" href="index.php">
-          <img src="img/logo2.png" alt="Logo Clíniko" style="width: 120px;">
+          <img src="img/logo2.png" alt="Logo Clíniko" style="width: 120px; max-width: 100%;">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>

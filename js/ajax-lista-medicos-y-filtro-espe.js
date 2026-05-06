@@ -20,6 +20,7 @@ function crearObjetoPeticion(){
 //FUNCIÓN PARA CARGAR LAS ESPECIALIDADES
 function cargarEspecialidadesVerMedicos(){
     var peticion = crearObjetoPeticion();
+
     if(!peticion){
         return;
     }
@@ -54,11 +55,11 @@ function mostrarTablaMedicos(pagina){
 
     var peticion = crearObjetoPeticion();
     if(!peticion){
-        alert("El navegador no es compatible con AJAX");
         return;
     }
 
     var url = "../../controladores/ajax-lista-medicos.php?pagina="+pagina;
+    
     if(filtro !== ""){
         url += "&especialidad="+filtro;
     }
