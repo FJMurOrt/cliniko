@@ -49,7 +49,7 @@ El proyecto está en desarrollo pero se puede acceder a ella ^^
 
 # Demo
 Puedes ver la aplicación en funcionamiento en el siguiente enlace:
-[Ver Clíniko](TU_URL_DE_INFINITYFREE)
+[Clíniko](TU_URL_DE_INFINITYFREE)
 
 
 
