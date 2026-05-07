@@ -41,6 +41,7 @@ Gestión completa de citas médicas (CRUD), sistema de roles, envío de notifica
 - Brevo API (envío de correos)
 - Tidio (chatbot)
 - pdf24.js (generación de PDFs)
+- Canva.com
 - Imágenes obtenidas de [Freepik](https://www.freepik.com)
   
 # Estado del proyecto
