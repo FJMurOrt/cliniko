@@ -39,6 +39,7 @@
 <section class="text-center py-5">
     <div class="contenedor">
         <h4 class="titulo-tarjeta">¿A qué esperas?</h4>
+        <hr>
         <p style="color: #333333;" >
            ¡Regístrate como paciente o médico!
         </p>
