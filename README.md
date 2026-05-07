@@ -22,11 +22,34 @@ Gestión completa de citas médicas (CRUD), sistema de roles, envío de notifica
 
 # Tecnologías utilizadas
 
-PHP, mysql con  Mysql Query Browser para la base de datos, HTML5, CSS3 y Bootstrap para el diseño, AJAX con javaScript para la recarga de la página, Xampp para el servidor local, git y github para el repositorio remoto y trello para la planificación de proyecto. 
+### Backend
+- PHP (procedural)
+- MySQL con phpMyAdmin
 
+### Frontend
+- HTML5
+- CSS3
+- Bootstrap 5
+- JavaScript vanilla
+- AJAX con XMLHttpRequest
+
+### Más herramientas emlpeadas.
+- XAMPP (servidor local)
+- InfinityFree (hosting)
+- Git y GitHub (control de versiones)
+- Trello (planificación del proyecto)
+- Brevo API (envío de correos)
+- Tidio (chatbot)
+- pdf24.js (generación de PDFs)
+- Imágenes obtenidas de [Freepik](https://www.freepik.com)
+  
 # Estado del proyecto
 
-El proyecto está en desarrollo.
+El proyecto está en desarrollo pero se puede acceder a ella ^^
+
+# Demo
+Puedes ver la aplicación en funcionamiento en el siguiente enlace:
+[Clíniko](https://cliniko.infinityfreeapp.com/)
 
 
 
