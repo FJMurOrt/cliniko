@@ -22,8 +22,25 @@ Gestión completa de citas médicas (CRUD), sistema de roles, envío de notifica
 
 # Tecnologías utilizadas
 
-PHP, mysql con  Mysql Query Browser para la base de datos, HTML5, CSS3 y Bootstrap para el diseño, AJAX con javaScript para la recarga de la página, Xampp para el servidor local, git y github para el repositorio remoto y trello para la planificación de proyecto. 
+### Backend
+- PHP (procedural)
+- MySQL con phpMyAdmin
 
+### Frontend
+- HTML5
+- CSS3
+- Bootstrap 5
+- JavaScript vanilla
+- AJAX con XMLHttpRequest
+
+### Herramientas
+- XAMPP (servidor local)
+- InfinityFree (hosting)
+- Git y GitHub (control de versiones)
+- Trello (planificación del proyecto)
+- Brevo API (envío de correos)
+- Tidio (chatbot)
+- pdf24.js (generación de PDFs)
 # Estado del proyecto
 
 El proyecto está en desarrollo.
