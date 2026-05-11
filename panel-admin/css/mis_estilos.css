@@ -254,11 +254,20 @@ footer.sticky-footer {
     background-color: #C0392B !important;
     color: #ffffff;
     transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .boton-cuadrado-eliminar:hover{
     background-color: #dea19b !important;
     color: #a93226 !important;
+}
+
+.etiqueta-modal-crear-usuario{
+    display: block;
+    width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 /*ESTILOS DE LA FOTO DE PERFIL DE LA BARRA SUPERIOR*/

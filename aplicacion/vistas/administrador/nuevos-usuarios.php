@@ -68,33 +68,33 @@
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label style="color: #2C2C3E">Nombre</label>
+                        <div class="col-12 col-md-6 mb-3">
+                            <label class="etiqueta-modal-crear-usuario" style="color: #2C2C3E">Nombre</label>
                             <input type="text" id="crear-nombre" class="form-control" placeholder="Introduce el nombre...">
                             <span id="error-crear-nombre" style="color: red;"></span>
                         </div>
-                        <div class="col-md-6 mb-3">
-                            <label style="color: #2C2C3E">Apellidos</label>
+                        <div class="col-12 col-md-6 mb-3">
+                            <label class="etiqueta-modal-crear-usuario" style="color: #2C2C3E">Apellidos</label>
                             <input type="text" id="crear-apellidos" class="form-control" placeholder="Introduce los apellidos...">
                             <span id="error-crear-apellidos" style="color: red;"></span>
                         </div>
-                        <div class="col-md-6 mb-3">
-                            <label style="color: #2C2C3E">Correo electrónico</label>
+                        <div class="col-12 col-md-6 mb-3">
+                            <label class="etiqueta-modal-crear-usuario" style="color: #2C2C3E">Correo electrónico</label>
                             <input type="email" id="crear-correo" class="form-control" placeholder="Introduce un correo...">
                             <span id="error-crear-correo" style="color: red;"></span>
                         </div>
-                        <div class="col-md-6 mb-3">
-                            <label style="color: #2C2C3E">Vuelve a introducir el correo</label>
+                        <div class="col-12 col-md-6 mb-3">
+                            <label class="etiqueta-modal-crear-usuario" style="color: #2C2C3E">Vuelve a introducir el correo</label>
                             <input type="email" id="crear-correo2" class="form-control" placeholder="Vuelve a introducir el correo...">
                             <span id="error-crear-correo2" style="color: red;"></span>
                         </div>
-                        <div class="col-md-6 mb-3">
-                            <label style="color: #2C2C3E">Teléfono</label>
+                        <div class="col-12 col-md-6 mb-3">
+                            <label class="etiqueta-modal-crear-usuario" style="color: #2C2C3E">Teléfono</label>
                             <input type="text" id="crear-telefono" class="form-control" placeholder="Introduce un teléfono...">
                             <span id="error-crear-telefono" style="color: red;"></span>
                         </div>
-                        <div class="col-md-6 mb-3">
-                            <label style="color: #2C2C3E">Tipo de Usuario</label>
+                        <div class="col-12 col-md-6 mb-3">
+                            <label class="etiqueta-modal-crear-usuario" style="color: #2C2C3E">Tipo de Usuario</label>
                             <select id="crear-rol" class="form-control">
                                 <option value="" disabled selected>Selecciona un rol</option>
                                 <option value="paciente">Paciente</option>
@@ -102,13 +102,13 @@
                             </select>
                             <span id="error-crear-rol" style="color: red;"></span>
                         </div>
-                        <div class="col-md-6 mb-3">
-                            <label style="color: #2C2C3E">Contraseña</label>
+                        <div class="col-12 col-md-6 mb-3">
+                            <label class="etiqueta-modal-crear-usuario" style="color: #2C2C3E">Contraseña</label>
                             <input type="password" id="crear-contrasena" class="form-control" placeholder="Introduce una contraseña...">
                             <span id="error-crear-contrasena" style="color: red;"></span>
                         </div>
-                        <div class="col-md-6 mb-3">
-                            <label style="color: #2C2C3E">Vuelve a introducir la contraseña</label>
+                        <div class="col-12 col-md-6 mb-3">
+                            <label class="etiqueta-modal-crear-usuario" style="color: #2C2C3E">Vuelve a introducir la contraseña</label>
                             <input type="password" id="crear-contrasena2" class="form-control" placeholder="Vuelve a introducir la contraseña...">
                             <span id="error-crear-contrasena2" style="color: red;"></span>
                         </div>
@@ -116,18 +116,18 @@
                     <div id="campos-paciente-modal" style="display:none;">
                         <hr>
                         <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label style="color: #2C2C3E">Fecha de nacimiento</label>
+                            <div class="col-12 col-md-6 mb-3">
+                                <label class="etiqueta-modal-crear-usuario" style="color: #2C2C3E">Fecha de nacimiento</label>
                                 <input type="date" id="crear-fecha" class="form-control">
                                 <span id="error-crear-fecha" style="color: red;"></span>
                             </div>
-                            <div class="col-md-6 mb-3">
-                                <label style="color: #2C2C3E">Dirección</label>
+                            <div class="col-12 col-md-6 mb-3">
+                                <label class="etiqueta-modal-crear-usuario" style="color: #2C2C3E">Dirección</label>
                                 <input type="text" id="crear-direccion" class="form-control" placeholder="Introduce una dirección...">
                                 <span id="error-crear-direccion" style="color: red;"></span>
                             </div>
                             <div class="col-12 mb-3">
-                                <label style="color: #2C2C3E">NSS <span style="color: #2C2C3E">(opcional)</span></label>
+                                <label class="etiqueta-modal-crear-usuario" style="color: #2C2C3E">NSS <span style="color: #2C2C3E">(opcional)</span></label>
                                 <input type="text" id="crear-nss" class="form-control" placeholder="Introduce el NSS si fuera necesario...">
                                 <span id="error-crear-nss" style="color: red;"></span>
                             </div>
@@ -136,13 +136,13 @@
                     <div id="campos-medico-modal" style="display:none;">
                         <hr>
                         <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label style="color: #2C2C3E">Número de colegiado</label>
+                            <div class="col-12 col-md-6 mb-3">
+                                <label class="etiqueta-modal-crear-usuario" style="color: #2C2C3E">Número de colegiado</label>
                                 <input type="text" id="crear-colegiado" class="form-control" placeholder="Introduce el número de colegiado...">
                                 <span id="error-crear-colegiado" style="color: red;"></span>
                             </div>
-                            <div class="col-md-6 mb-3">
-                                <label style="color: #2C2C3E">Especialidad</label>
+                            <div class="col-12 col-md-6 mb-3">
+                                <label class="etiqueta-modal-crear-usuario" style="color: #2C2C3E">Especialidad</label>
                                 <select id="crear-especialidad" class="form-control">
                                     <option value="" disabled selected>Selecciona una especialidad</option>
                                 </select>
@@ -171,33 +171,33 @@
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label style="color: #2C2C3E">Nombre</label>
+                        <div class="col-12 col-md-6 mb-3">
+                            <label class="etiqueta-modal-crear-usuario" style="color: #2C2C3E">Nombre</label>
                             <input type="text" id="admin-nombre" class="form-control" placeholder="Nombre...">
                             <span id="error-admin-nombre" style="color: red;"></span>
                         </div>
-                        <div class="col-md-6 mb-3">
-                            <label style="color: #2C2C3E">Apellidos</label>
+                        <div class="col-12 col-md-6 mb-3">
+                            <label class="etiqueta-modal-crear-usuario" style="color: #2C2C3E">Apellidos</label>
                             <input type="text" id="admin-apellidos" class="form-control" placeholder="Apellidos...">
                             <span id="error-admin-apellidos" style="color: red;"></span>
                         </div>
-                        <div class="col-md-6 mb-3">
-                            <label style="color: #2C2C3E">Teléfono</label>
+                        <div class="col-12 col-md-6 mb-3">
+                            <label class="etiqueta-modal-crear-usuario" style="color: #2C2C3E">Teléfono</label>
                             <input type="text" id="admin-telefono" class="form-control" placeholder="Teléfono...">
                             <span id="error-admin-telefono" style="color: red;"></span>
                         </div>
-                        <div class="col-md-6 mb-3">
-                            <label style="color: #2C2C3E">Correo electrónico</label>
+                        <div class="col-12 col-md-6 mb-3">
+                            <label class="etiqueta-modal-crear-usuario" style="color: #2C2C3E">Correo electrónico</label>
                             <input type="email" id="admin-correo" class="form-control" placeholder="Correo electrónico...">
                             <span id="error-admin-correo" style="color: red;"></span>
                         </div>
-                        <div class="col-md-6 mb-3">
-                            <label style="color: #2C2C3E">Contraseña</label>
+                        <div class="col-12 col-md-6 mb-3">
+                            <label class="etiqueta-modal-crear-usuario" style="color: #2C2C3E">Contraseña</label>
                             <input type="password" id="admin-contrasena" class="form-control" placeholder="Contraseña...">
                             <span id="error-admin-contrasena" style="color: red;"></span>
                         </div>
-                        <div class="col-md-6 mb-3">
-                            <label style="color: #2C2C3E">Vuelve a introducir la contraseña</label>
+                        <div class="col-12 col-md-6 mb-3">
+                            <label class="etiqueta-modal-crear-usuario" style="color: #2C2C3E">Vuelve a introducir la contraseña</label>
                             <input type="password" id="admin-contrasena2" class="form-control" placeholder="Vuelve a introducir la contraseña...">
                             <span id="error-admin-contrasena2" style="color: red;"></span>
                         </div>
