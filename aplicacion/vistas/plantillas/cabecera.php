@@ -38,7 +38,7 @@
                 <a class="btn boton-cuadrado me-2" href="registro.php">Registrarse</a>
               </li>
               <li class="nav-item">
-                <a class="btn boton-cuadrado" href="login.php">Iniciar sesión</a>
+                <a class="btn boton-cuadrado mt-2 mt-lg-0" href="login.php">Iniciar sesión</a>
               </li>
             </ul>
         </div>
