@@ -136,6 +136,8 @@ footer.sticky-footer{
     box-shadow: 0 2px 6px rgba(1, 73, 124, 0.30);
     transition: background-color 0.2s ease, box-shadow 0.2s ease;
     border-radius: 20px;
+    word-break: break-word;
+    white-space: normal;
 }
 
 .boton-cuadrado:hover{
@@ -665,7 +667,9 @@ label,a{
 }
 
 /*PARA LOS LABELS DE LOS FILTROS*/
-.etiqueta-filtro {
+.etiqueta-filtro{
+    display: inline-block;
+    max-width: 100%;
     padding: 5px;
     border: 1px solid #1F3A5F;
     border-radius: 5px;

@@ -366,15 +366,17 @@ footer.sticky-footer {
 
 /*ESTILO PARA LAS ETIQUETAS DE LOS FILTROS*/
 .etiqueta-filtro{
+    display: inline-block;
+    max-width: 100%;
     color: #2C2C3E;
     padding: 5px;
     border: 1px solid rgba(44, 44, 62, 0.40);
     border-radius: 5px;
-    word-break: break-word;
 }
 
 /*MAS ESTILOS LA INFORMACIÓN QUE SE MUESTRA EN LA LISTA DE USUARIOS NUEVOS*/
 .tipo_usuario{
+    display: inline-block;
     max-width: 100%;
     color: #EEEEF5;
     border: 3px solid rgba(44, 44, 62, 0.40);
@@ -536,6 +538,7 @@ footer.sticky-footer {
 }
 
 .etiqueta_reportada{
+    display: inline-block;
     max-width: 100%;
     color: #720101;
     border: 3px solid #720101;
@@ -561,8 +564,9 @@ footer.sticky-footer {
 }
 
 .estado_habilitado{
-    max-width: 100%;
+    display: inline-block;
     color: #006a43;
+    max-width: 100%;
     border: 3px solid #006a43;
     border-radius: 5px;
     padding: 5px;
@@ -570,8 +574,9 @@ footer.sticky-footer {
 }
 
 .estado_no_habilitado{
-    max-width: 100%;
+    display: inline-block;
     color: #720101;
+    max-width: 100%;
     border: 3px solid #720101;
     border-radius: 5px;
     padding: 5px;

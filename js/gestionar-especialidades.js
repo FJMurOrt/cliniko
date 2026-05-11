@@ -50,7 +50,7 @@ function cargarEspecialidades(){
                                 "<div id='formulario-para-editar-la-especialidad-"+especialidad.id_especialidad+"' style='display:none;' class='card-body'>"+
                                     "<div>"+
                                         "<label class='etiqueta-filtro mr-2'>Introduce un nuevo nombre</label>"+
-                                        "<input class='mb-1' type='text' id='campo-para-el-nuevo-nombre-de-la-especialidad"+especialidad.id_especialidad+"' class='form-control'>"+
+                                        "<input class='mb-1 form-control' type='text' id='campo-para-el-nuevo-nombre-de-la-especialidad"+especialidad.id_especialidad+"'>"+
                                         "<div>"+
                                             "<button class='btn boton-cuadrado btn-sm mb-1' style='max-width: 100%;' onclick='guardarNombreNuevo("+especialidad.id_especialidad+")'>Guardar cambios</button>"+
                                             "<button class='btn boton-cuadrado-eliminar btn-sm' onclick='cancelarEditarLaEspecialidad("+especialidad.id_especialidad+")'>Cancelar</button>"+

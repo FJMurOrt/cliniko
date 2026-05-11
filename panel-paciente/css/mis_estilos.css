@@ -133,12 +133,15 @@ footer.sticky-footer{
 }
 /*ESTILOS DE LOS BOTONES*/
 .boton-cuadrado{
+    max-width: 100%;
     background-color: #2A9D8F;
     border-color: #2A9D8F;
     box-shadow: 0 2px 6px rgba(42, 157, 143, 0.30);
     transition: background-color 0.2s ease, box-shadow 0.2s ease;
     color: white;
     border-radius: 20px;
+    word-break: break-word;
+    white-space: normal;
 }
 
 .boton-cuadrado:hover{
@@ -717,6 +720,8 @@ table, th, td, thead{
 
 /*ESTILO PARA LA FECHA DE LA NOTIFICACIÓN*/
 .fecha-notificacion{
+    display: inline-block;
+    max-width: 100%;
     border: 2px solid #1A6B8A;
     padding: 5px;
     border-radius: 5px;
