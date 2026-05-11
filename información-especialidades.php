@@ -1,7 +1,6 @@
 <?php require_once 'aplicacion/vistas/plantillas/cabecera.php'; //SE CARGA LA CABECERA?>
-
 <!-- SECCIÓN DONDE SE EXPLICA LA POLÍTICA DE PRIVACIDAD-->
-<section class="py-5">
+<section class="py-5 contenedor_principal">
     <div class="contenedor">
         <!--METO UNA IMAGEN Y LE PONGO FLOAR RIGHT PARA QUE QUEDE A LA DERECHA AL INICIO Y DE TAMAÑO DE ANCHO LO PONGO AL 30%-->
         <img src="img/especialidades.png" alt="grupo-de-medicos" style="float: right; width: 30%;">
@@ -24,5 +23,4 @@
         </p>
     </div>
 </section>
-
 <?php require_once 'aplicacion/vistas/plantillas/pie.php'; //SE CARGA EL FOOTER.?> 

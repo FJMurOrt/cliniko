@@ -1,6 +1,6 @@
 <?php require_once 'aplicacion/vistas/plantillas/cabecera.php'; //DE NUEVO LLAMO A LA CABECERA PARA QUE CARGUE EN ESTA PÁGINA TAMBIÉN.?>
 <!-- DE NUEVO, METO LA SECCIÓN PARA QUE EL USUARIO QUIERA REGISTRARSE -->
-<section class="text-center py-5">
+<section class="text-center py-5 contenedor_principal">
     <div class="contenedor esperar-registro">
         <h4 class="titulo-tarjeta text-center">¡Gracias por Unirte!</h4>
         <hr>

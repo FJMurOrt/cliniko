@@ -79,7 +79,7 @@ $mensaje .= "<p>Recuerda que la cancelación gratuita solo es posible si se real
 $mensaje .= "<p>Saludos cordiales,</p>";
 $mensaje .= "<p>El equipo de Clíniko</p>";
 
-$api = "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";
+$api = "CLAVE_API_BREVO";
 $url = "https://api.brevo.com/v3/smtp/email";
 
 //SINTAXIS PREDERTERMINADA DE BREVO PAR APODER ENVIAR EL CORREO

@@ -1,7 +1,7 @@
 <?php require_once 'aplicacion/vistas/plantillas/cabecera.php'; //DE NUEVO LLAMO A LA CABECERA PARA QUE CARGUE EN ESTA PÁGINA TAMBIÉN.?>
 
 <!-- SECCIÓN DONDE SE EXPLICA BREVEMENTE QUÉ ES CLÍNIKO-->
-<section class="py-5">
+<section class="py-5 contenedor_principal">
     <div class="contenedor">
         <h4 class="titulo-tarjeta text-center">¿Qué somos?</h4>
         <hr>
@@ -26,7 +26,7 @@
 </section>
 
 <!-- DE NUEVO, METO LA SECCIÓN PARA QUE EL USUARIO QUIERA REGISTRARSE -->
-<section class="text-center py-5">
+<section class="text-center py-5 contenedor_principal">
     <div class="contenedor">
         <h4 class="titulo-tarjeta">¿Te unes?</h4>
         <hr>

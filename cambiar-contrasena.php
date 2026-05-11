@@ -1,5 +1,5 @@
 <?php require_once 'aplicacion/vistas/plantillas/cabecera.php'; //EL REQUIRE_ONCE ES PARA QUE CUANDO CARGUE EL INDEX NO CARGUE SIN LA CABECERA.?>
-<section class="py-5">
+<section class="py-5 contenedor_principal">
     <div class="contenedor">
         <form id="form-nueva-contrasena" action="aplicacion/controladores/nueva-contrasena-controlador.php" method="POST" class="mt-4 area-cambiar-contrasena">
             <h4 class="titulo-tarjeta text-center">Cambiar Contraseña</h4>

@@ -1,6 +1,6 @@
 <?php require_once 'aplicacion/vistas/plantillas/cabecera.php'; //SE CARGA LA CABECERA?>
 <!-- SECCIÓN DONDE SE EXPLICA LA POLÍTICA DE PRIVACIDAD-->
-<section class="py-5">
+<section class="py-5 contenedor_principal">
     <div class="contenedor">
         <!--METO UNA IMAGEN Y LE PONGO FLOAR RIGHT PARA QUE QUEDE A LA DERECHA AL INICIO Y DE TAMAÑO DE ANCHO LO PONGO AL 30%-->
         <img src="img/balanza_justicia.png" alt="balanza-justicia" style="float: right; width: 30%;">

@@ -19,7 +19,7 @@ $usuario = obtenerDatosUsuario($conexion, $id_usuario);
 habilitarUsuario($conexion, $id_usuario);
 
 //ENVIO EL CORREO AL USUARIO DE QUE SE LE HA HABILITADO
-$api = "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";
+$api = "CLAVE_API_BREVO";
 $url_brevo = "https://api.brevo.com/v3/smtp/email";
 
 $asunto = "Tu cuenta en Clíniko ha sido activada";

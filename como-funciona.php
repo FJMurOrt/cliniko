@@ -1,6 +1,6 @@
 <?php require_once 'aplicacion/vistas/plantillas/cabecera.php';?>
 <!-- SECCIÓN DONDE SE EXPLICA LA POLÍTICA DE PRIVACIDAD-->
-<section class="py-5">
+<section class="py-5 contenedor_principal">
     <div class="contenedor">
         <!--METO UNA IMAGEN Y LE PONGO FLOAR RIGHT PARA QUE QUEDE A LA DERECHA AL INICIO Y DE TAMAÑO DE ANCHO LO PONGO AL 30%-->
         <img class="imagen-como-se-usa" src="img/como_se_usa.png" alt="médica-con-móvil" style="float: right; width: 30%;">

@@ -4,7 +4,7 @@
 $especialidades = buscar_especialidades($conexion);
 ?>
 <!--FORMULARIO PARA EL REGISTRO-->
-  <section class="py-5">
+  <section class="py-5 contenedor_principal">
     <div class="contenedor">
       <form id="form-registro" action="aplicacion/controladores/registro-controlador.php" method="post" enctype="multipart/form-data" class="formulario-registro mt-4" style="max-width: 700px; margin: auto;">
         <h4 class="titulo-tarjeta text-center">Registro</h4>

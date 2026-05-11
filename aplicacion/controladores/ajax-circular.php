@@ -25,7 +25,7 @@ if($asunto === "" || $mensaje === ""){
 //USO LA FUNCIÓN DE OBTENER LOS CORREOS DE LOS USUARIOS QUE SÓLO ESTÉN HABILITADOS
 $usuarios = obtenerCorreosTodosUsuarios($conexion);
 
-$api = "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";
+$api = "CLAVE_API_BREVO";
 $url_brevo = "https://api.brevo.com/v3/smtp/email";
 
 $destinatarios = [];

@@ -1,5 +1,5 @@
 <?php require_once 'aplicacion/vistas/plantillas/cabecera.php'; ?>
-    <section class="py-5">
+    <section class="py-5 contenedor_principal">
         <div class="area-mensaje-recuperacion text-center">
             <h4 class="titulo-tarjeta text-center">Solicitud Enviada</h4>
             <hr>

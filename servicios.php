@@ -1,6 +1,6 @@
 <?php require_once 'aplicacion/vistas/plantillas/cabecera.php'; //IGUAL QUE CON EL INDEX.PHP, PARA QUE ESTA PÁGINA NO CARGUE SIN LA CABECERA. ?> 
 <!-- SECCIÓN DEL ENLANCE DE SERVICIOS DEL MENÚ PRINCIPAL-->
-<section class="py-5">
+<section class="py-5 contenedor_principal">
     <div class="contenedor">
         <h4 class="titulo-tarjeta text-center">Nuestros Servicios</h4>
         <hr>

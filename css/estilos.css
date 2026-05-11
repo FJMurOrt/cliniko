@@ -33,6 +33,10 @@ body, html{
   padding: 20px;
 }
 
+.contenedor_principal{
+    flex: 1 0 auto;
+}
+
 /*ESTILOS PARA LOS BOTONES QUE SON NARANJAS CON HOVER MÁS CLARO. LE METO !IMPORTANT PORQUE SI NO CON EL ESTILO DE BOOTSTRAP ME LO TAPA*/
 .boton-cuadrado{
     border-radius: 20px;
