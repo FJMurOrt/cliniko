@@ -56,11 +56,11 @@
                 <div class="modal-body">
                     <input type="hidden" id="correo-destinatario" value="">
                     <div class="form-group">
-                        <label class="etiqueta-filtro">Asunto</label>
+                        <label class="etiqueta-modal-crear-usuario" style="color: #2C2C3E;">Asunto</label>
                         <input type="text" id="asunto-usuario" class="form-control" placeholder="Escribe el asunto..." maxlength="100">
                     </div>
                     <div class="form-group">
-                        <label class="etiqueta-filtro">Mensaje</label>
+                        <label class="etiqueta-modal-crear-usuario" style="color: #2C2C3E;">Mensaje</label>
                         <textarea id="mensaje-usuario" class="form-control" rows="5" placeholder="Escribe el mensaje..." maxlength="1000"></textarea>
                         <span id="contador-mensaje-usuario" style="color: #2C2C3E;">0/1000</span>
                     </div>
