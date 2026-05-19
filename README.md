@@ -67,10 +67,19 @@ Gestión completa de citas médicas (CRUD), sistema de roles, envío de notifica
 
 # Paneles de usuario
 
+<p align="center"><b>Panel del Paciente</b></p>
 <p align="center">
-  <img src="capturas/9.png" width="30%">
-  <img src="capturas/10.png" width="30%">
-  <img src="capturas/11.png" width="30%">
+  <img src="capturas/9.png" width="80%">
+</p>
+
+<p align="center"><b>Panel del Médico</b></p>
+<p align="center">
+  <img src="capturas/10.png" width="80%">
+</p>
+
+<p align="center"><b>Panel del Administrador</b></p>
+<p align="center">
+  <img src="capturas/11.png" width="80%">
 </p>
 
 # Demo
