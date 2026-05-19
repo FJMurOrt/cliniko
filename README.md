@@ -46,7 +46,7 @@ Gestión completa de citas médicas (CRUD), sistema de roles, envío de notifica
   
 # Estado del proyecto
 
-El proyecto está en desarrollo pero se puede acceder a él ^^
+⚠️ Este proyecto se encuentra en fase alfa.
 
 # 🌐 Landing Page y páginas públicas
 
