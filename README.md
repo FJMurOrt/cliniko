@@ -42,6 +42,7 @@ Gestión completa de citas médicas (CRUD), sistema de roles, envío de notifica
 - Tidio (chatbot)
 - pdf24.js (generación de PDFs)
 - Canva.com
+- Chatbot con Tidio
 - Imágenes obtenidas de [Freepik](https://www.freepik.com)
   
 # Estado del proyecto
