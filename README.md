@@ -62,18 +62,23 @@ Gestión completa de citas médicas (CRUD), sistema de roles, envío de notifica
 <p align="center">
   <img src="capturas/3.png" width="80%">
 </p>
+<p align="center"><b>Landing page 4</b></p>
 <p align="center">
   <img src="capturas/4.png" width="80%">
 </p>
+<p align="center"><b>Sobre Clíniko 1</b></p>
 <p align="center">
   <img src="capturas/5.png" width="80%">
 </p>
+<p align="center"><b>Sobre Clíniko 2</b></p>
 <p align="center">
   <img src="capturas/6.png" width="80%">
 </p>
+<p align="center"><b>Registro</b></p>
 <p align="center">
   <img src="capturas/7.png" width="80%">
 </p>
+<p align="center"><b>Login</b></p>
 <p align="center">
   <img src="capturas/8.png" width="80%">
 </p>
