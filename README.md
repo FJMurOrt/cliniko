@@ -50,12 +50,15 @@ Gestión completa de citas médicas (CRUD), sistema de roles, envío de notifica
 
 # Landing page y páginas públicas
 
+<p align="center"><b>Landing page 1</b></p>
 <<p align="center">
   <img src="capturas/1.png" width="80%">
 </p>
+<p align="center"><b>Landing page 2</b></p>
 <p align="center">
   <img src="capturas/2.png" width="80%">
 </p>
+<p align="center"><b>Landing page 3</b></p>
 <p align="center">
   <img src="capturas/3.png" width="80%">
 </p>
