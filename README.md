@@ -50,19 +50,29 @@ Gestión completa de citas médicas (CRUD), sistema de roles, envío de notifica
 
 # Landing page y páginas públicas
 
-<p align="center">
-  <img src="capturas/1.png" width="30%">
-  <img src="capturas/2.png" width="30%">
-  <img src="capturas/3.png" width="30%">
+<<p align="center">
+  <img src="capturas/1.png" width="80%">
 </p>
 <p align="center">
-  <img src="capturas/4.png" width="30%">
-  <img src="capturas/5.png" width="30%">
-  <img src="capturas/6.png" width="30%">
+  <img src="capturas/2.png" width="80%">
 </p>
 <p align="center">
-  <img src="capturas/7.png" width="30%">
-  <img src="capturas/8.png" width="30%">
+  <img src="capturas/3.png" width="80%">
+</p>
+<p align="center">
+  <img src="capturas/4.png" width="80%">
+</p>
+<p align="center">
+  <img src="capturas/5.png" width="80%">
+</p>
+<p align="center">
+  <img src="capturas/6.png" width="80%">
+</p>
+<p align="center">
+  <img src="capturas/7.png" width="80%">
+</p>
+<p align="center">
+  <img src="capturas/8.png" width="80%">
 </p>
 
 # Paneles de usuario
