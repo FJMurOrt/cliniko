@@ -104,10 +104,10 @@ La aplicación sigue la estructura MVC para mantener la organización del códig
 **Herramientas:** Docker, Git y GitHub, Brevo API, Stripe, Tidio, pdf24.js
 
 
-# Landing page y páginas públicas
+# Capturas de pantalla de la landing page y páginas públicas.
 
 <p align="center"><b>Landing page 1</b></p>
-<<p align="center">
+<p align="center">
   <img src="capturas/1.png" width="80%">
 </p>
 <p align="center"><b>Landing page 2</b></p>
@@ -139,7 +139,7 @@ La aplicación sigue la estructura MVC para mantener la organización del códig
   <img src="capturas/8.png" width="80%">
 </p>
 
-# Paneles de usuario
+# Capturas de pantalla de los paneles de usuario
 
 <p align="center"><b>Panel del Paciente</b></p>
 <p align="center">
