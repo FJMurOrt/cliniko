@@ -6,6 +6,7 @@ Clíniko es el proyecto final de mi Ciclo Formativo de Grado Superior en Desarro
 
 ⚠️ Este proyecto se encuentra en fase alfa.
 
+---
 
 ## 🐳 Ejecutar con Docker
 
