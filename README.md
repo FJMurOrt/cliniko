@@ -6,7 +6,6 @@ Clíniko es el proyecto final de mi Ciclo Formativo de Grado Superior en Desarro
 
 ⚠️ Este proyecto se encuentra en fase alfa.
 
----
 
 ## 🐳 Ejecutar con Docker
 
@@ -62,7 +61,6 @@ Accede en: **http://localhost:8080**
 | Médico | medico@test.com | Test1234. |
 | Paciente | paciente@test.com | Test1234. |
 
----
 
 ## ⚠️ Avisos importantes
 
@@ -70,13 +68,10 @@ Accede en: **http://localhost:8080**
 - **Stripe:** Los pagos requieren configurar las claves de Stripe propias.
 - Las funcionalidades de email y pagos no están activas en la imagen de Docker por defecto.
 
----
-
 ## 🏗️ Estructura del proyecto (MVC)
 
 La aplicación sigue la estructura MVC para mantener la organización del código.
 
----
 
 ## 👥 Roles y permisos
 
@@ -84,7 +79,6 @@ La aplicación sigue la estructura MVC para mantener la organización del códig
 - **Médico:** gestiona sus citas, consulta historiales y recibe valoraciones.
 - **Administrador:** gestiona usuarios, supervisa valoraciones y la configuración general.
 
----
 
 ## ⚙️ Funcionalidades clave
 
@@ -96,7 +90,6 @@ La aplicación sigue la estructura MVC para mantener la organización del códig
 - Validaciones en frontend y backend
 - Diseño responsive con Bootstrap
 
----
 
 ## 🛠️ Tecnologías utilizadas
 
@@ -106,7 +99,6 @@ La aplicación sigue la estructura MVC para mantener la organización del códig
 
 **Herramientas:** Docker, Git y GitHub, Brevo API, Stripe, Tidio, pdf24.js
 
----
 
 # Landing page y páginas públicas
 
