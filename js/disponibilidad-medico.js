@@ -20,7 +20,7 @@ function crearObjetoPeticion(){
 //FUNCION PARA MOSTRAR LA DISPONIBILIDAD
 function mostrarDisponibilidad(pagina){
     //LA PÁGINA POR DEFECTO DE LA FUNCIÓN SERÁ LA PRIMERA
-    if(pagina == null){
+    if(!pagina){
         pagina = 1;
     }
 

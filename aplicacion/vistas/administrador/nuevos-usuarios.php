@@ -126,7 +126,7 @@
                                 <input type="text" id="crear-direccion" class="form-control" placeholder="Introduce una dirección...">
                                 <span id="error-crear-direccion" style="color: red;"></span>
                             </div>
-                            <div class="col-12 mb-3">
+                            <div class="col-12 col-12 mb-3">
                                 <label class="etiqueta-modal-crear-usuario" style="color: #2C2C3E">NSS <span style="color: #2C2C3E">(opcional)</span></label>
                                 <input type="text" id="crear-nss" class="form-control" placeholder="Introduce el NSS si fuera necesario...">
                                 <span id="error-crear-nss" style="color: red;"></span>

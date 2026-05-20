@@ -17,7 +17,7 @@ function crearObjetoPeticion(){
     return objeto_peticion;
 }
 
-// MI CLAVE PUBLICA DE LA API DE STRIPE
+//MI CLAVE PUBLICA DE LA API DE STRIPE
 const stripe = Stripe("pk_test_51T7RuPLxdshS43I60YRVn1R7TBSrjMI3SsLXiN4Yp6uNSymdKIcRAwGGKDlsvWfivUdKe1oD5arMVo7QbL7tBPVo00BQFP4lF0");
 
 document.getElementById("btn-pagar").addEventListener("click", function(){

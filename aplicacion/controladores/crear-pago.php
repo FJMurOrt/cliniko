@@ -3,7 +3,7 @@ require_once "../configuracion/config.php";
 require_once "../../vendor/autoload.php"; //ESTO ES EL ARCHIVO QUE NECESITO CARGAR LAS LIBRERIAS DE STRIPE QUE LO HACE CON AUTOLOAD.
 
 //ESTA ES MI CLAVE SECRETA DE LA API DE STRIPE
-\Stripe\Stripe::setApiKey("CLAVE_SECRETA_STRIPE");
+\Stripe\Stripe::setApiKey("");
 
 //RECOGEMOS LOS DATOS DEL FORMULARIO DE LA SOLICITUD DE LA CITA
 session_start();

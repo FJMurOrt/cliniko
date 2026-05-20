@@ -1,4 +1,4 @@
-<?php require_once 'aplicacion/vistas/plantillas/cabecera.php'; //IGUAL QUE CON EL INDEX.PHP, PARA QUE ESTA PÁGINA NO CARGUE SIN LA CABECERA.?>
+<?php session_start(); require_once 'aplicacion/vistas/plantillas/cabecera.php'; //IGUAL QUE CON EL INDEX.PHP, PARA QUE ESTA PÁGINA NO CARGUE SIN LA CABECERA.?>
 <!--FORMULARIO DE INCIO DE SESIÓN--->
 <section class="py-5 contenedor_principal" style="background-color: #dee8ed;;">
     <div class="contenedor" style="max-width: 500px; margin: 0 auto;">
@@ -6,7 +6,6 @@
             <h4 class="titulo-tarjeta text-center">Iniciar Sesión</h4>
             <hr>
             <?php
-            session_start();
             if(isset($_SESSION["errores"])){
                 echo "<div class='text-center'>";
                 foreach ($_SESSION["errores"] as $error){

@@ -15,7 +15,7 @@ $paciente = obtenerPaciente($conexion, $id_paciente);
                     <h4 class="titulo-tarjeta2 text-center">Información del Paciente</h4>
                     <hr>
                     <?php
-                    if ($paciente){
+                    if($paciente){
                     ?>
                         <div class="text-center">
                             <img src="../../../uploads/perfiles/<?php echo $paciente["foto_perfil"];?>" class="foto-info-paciente mb-5 ">
@@ -37,5 +37,5 @@ $paciente = obtenerPaciente($conexion, $id_paciente);
             </div>
         </div>
     </div>
-    <?php require_once "../../../panel-medico/includes/footer.php"; ?>
+    <?php require_once "../../../panel-medico/includes/footer.php";?>
 </div>

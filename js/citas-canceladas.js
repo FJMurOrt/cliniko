@@ -19,7 +19,7 @@ function crearObjetoPeticion(){
 
 //FUNCIÓN PARA MOSTRAR LAS CITAS CANCELADAS
 function mostrarCitasCanceladas(pagina){
-    if(pagina == null){
+    if(!pagina){
         pagina = 1;
     }
 

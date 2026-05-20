@@ -20,7 +20,7 @@ reportarValoracion($conexion, $id_valoracion);
 $admins = obtenerCorreosAdmins($conexion);
 
 // INSERTAMOS NOTIFICACIÓN Y ENVIAMOS CORREO A CADA ADMIN
-$api = "CLAVE_DE_LA_API_BREVO";
+$api = "";
 $url_brevo = "https://api.brevo.com/v3/smtp/email";
 
 foreach($admins as $admin){
@@ -45,7 +45,7 @@ foreach($admins as $admin){
     $mensaje_correo .= "<p>El equipo de Clíniko</p>";
 
     $correoEmail = [
-        "sender" => ["name" => "Clíniko", "email" => "francisco.javier.muriel.orta@ieslaarboleda.es"],
+        "sender" => ["name" => "Clíniko", "email" => ""],
         "to" => [["email" => $admin["correo"]]],
         "subject" => $asunto,
         "htmlContent" => $mensaje_correo

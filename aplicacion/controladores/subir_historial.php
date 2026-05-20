@@ -14,6 +14,7 @@ if(!isset($_SESSION["id_usuario"])){
 }
 
 $id_medico = $_SESSION["id_usuario"];
+
 $id_paciente = 0;
 if(isset($_POST["id_paciente"])){
     $id_paciente = intval($_POST["id_paciente"]);

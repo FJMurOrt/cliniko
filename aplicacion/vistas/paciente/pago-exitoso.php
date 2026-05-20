@@ -48,7 +48,7 @@ $medico = mysqli_fetch_assoc($resultados_medico);
 mysqli_stmt_close($datos_medico);
 
 //ENVÍO DEL CORREO AL MÉDICO
-$api = "CLAVE_API_BREVO";
+$api = "";
 $url = "https://api.brevo.com/v3/smtp/email";
 
 //LE PONEMOS EL FORMATO BIEN A LA FECHA Y LA HORA
@@ -85,7 +85,7 @@ $mensaje .= "<p>El equipo de Clíniko</p>";
 
 // DATOS PARA LA API DE BREVO
 $correo_que_se_le_envia = [
-    "sender" => ["name" => "Clíniko", "email" => "francisco.javier.muriel.orta@ieslaarboleda.es"],
+    "sender" => ["name" => "Clíniko", "email" => ""],
     "to" => [["email" => $medico["correo"]]],
     "subject" => $asunto,
     "htmlContent" => $mensaje

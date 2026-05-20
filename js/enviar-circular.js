@@ -33,6 +33,7 @@ function enviarCircular(){
     }
 
     var peticion = crearObjetoPeticion();
+    
     if(!peticion){
        return; 
     }

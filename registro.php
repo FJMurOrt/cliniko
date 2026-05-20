@@ -12,10 +12,12 @@ $especialidades = buscar_especialidades($conexion);
         <?php
         //PARA MOSTRAR LOS ERRORES DE LAS VALIDACIONES DEL BACKEND.
         session_start();
-        if (isset($_SESSION["errores"])) {
+        if (isset($_SESSION["errores"])){
+          echo "<div class='text-center'>";
             foreach ($_SESSION["errores"] as $error) {
                 echo "<p style='color: red;'>".htmlspecialchars($error)."</p>";
             }
+            echo "</div>";
             echo "<hr>";
             unset($_SESSION["errores"]);
         }

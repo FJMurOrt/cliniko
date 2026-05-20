@@ -1,5 +1,5 @@
 <?php
-// PARA CANCELAR LAS CITAS PENDIENTES QUE NO SE HAN CONFIRMADO Y YA HA PASADO LA FECHA
+//PARA CANCELAR LAS CITAS PENDIENTES QUE NO SE HAN CONFIRMADO Y YA HA PASADO LA FECHA
 function cancelarCitasPendientes($conexion){
     $sql_obtener = "SELECT c.id_cita, c.id_medico, c.fecha_cita, u.correo FROM citas c
                     INNER JOIN usuarios u ON c.id_medico = u.id_usuario
@@ -16,7 +16,7 @@ function cancelarCitasPendientes($conexion){
             WHERE estado = 'pendiente' AND fecha_cita < NOW()";
     mysqli_query($conexion, $sql);
 
-    $api = "CLAVE_DE_LA_API_BREVO";
+    $api = "";
     $url_brevo = "https://api.brevo.com/v3/smtp/email";
 
     foreach($citas_a_cancelar as $cita){
@@ -38,7 +38,7 @@ function cancelarCitasPendientes($conexion){
         $mensaje_correo .= "<p>El equipo de Clíniko</p>";
 
         $correoEmail = [
-            "sender" => ["name" => "Clíniko", "email" => "francisco.javier.muriel.orta@ieslaarboleda.es"],
+            "sender" => ["name" => "Clíniko", "email" => ""],
             "to" => [["email" => $cita["correo"]]],
             "subject" => $asunto,
             "htmlContent" => $mensaje_correo

@@ -20,6 +20,7 @@ function crearObjetoPeticion(){
 //FUNCIÓN PARA CARGAR LAS ESPEICALIDADES EN EL SELECT
 function cargarEspecialidadesValoraciones(){
     var peticion = crearObjetoPeticion();
+    
     if(!peticion){
         return;
     }
@@ -322,10 +323,12 @@ document.getElementById("filtro-medico-valoraciones").addEventListener("input", 
 });
 
 document.getElementById("filtro-valoracion-mejores").addEventListener("change", function(){
+    document.getElementById("filtro-orden-valoraciones").value = "";
     cargarMedicosValoraciones();
 });
 
 document.getElementById("filtro-orden-valoraciones").addEventListener("change", function(){
+    document.getElementById("filtro-valoracion-mejores").value = "";
     cargarMedicosValoraciones();
 });
 

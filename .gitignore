@@ -1,0 +1,17 @@
+# Docker
+.env
+
+# PHP
+vendor/
+
+# Uploads
+uploads/perfiles/*
+uploads/historiales/*
+uploads/recetas/*
+!uploads/perfiles/.gitkeep
+!uploads/historiales/.gitkeep
+!uploads/recetas/.gitkeep
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db

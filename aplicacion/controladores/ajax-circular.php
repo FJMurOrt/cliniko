@@ -25,7 +25,7 @@ if($asunto === "" || $mensaje === ""){
 //USO LA FUNCIÓN DE OBTENER LOS CORREOS DE LOS USUARIOS QUE SÓLO ESTÉN HABILITADOS
 $usuarios = obtenerCorreosTodosUsuarios($conexion);
 
-$api = "CLAVE_API_BREVO";
+$api = "";
 $url_brevo = "https://api.brevo.com/v3/smtp/email";
 
 $destinatarios = [];
@@ -34,7 +34,7 @@ foreach($usuarios as $usuario){
 }
 
 $correo_que_se_va_a_enviar = [
-    "sender" => ["name" => "Clíniko", "email" => "francisco.javier.muriel.orta@ieslaarboleda.es"],
+    "sender" => ["name" => "Clíniko", "email" => ""],
     "to" => $destinatarios,
     "subject" => $asunto,
     "htmlContent" => "<p>".nl2br(htmlspecialchars($mensaje))."</p>"

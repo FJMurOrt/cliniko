@@ -87,7 +87,7 @@
                 </div>
                 <div class="modal-body text-center">
                     <input type="hidden" id="id-valoracion-eliminar" value="">
-                    <p class="pregunta-modal">¿Estás seguro de que quieres eliminar esta valoración? Esta acción no se puede deshacer.</p>
+                    <p class="pregunta-modal">¿Estás seguro de que quieres eliminar esta valoración?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn boton-cuadrado" onclick="confirmarEliminarValoracion()">Sí, eliminar</button>

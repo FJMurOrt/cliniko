@@ -1,5 +1,4 @@
 <?php
-session_start();
 $nombre_completo = $_SESSION["nombre"] . " " . $_SESSION["apellidos"];
 
 if(isset($_SESSION["foto_perfil"])){

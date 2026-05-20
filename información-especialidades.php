@@ -1,4 +1,5 @@
 <?php require_once 'aplicacion/vistas/plantillas/cabecera.php'; //SE CARGA LA CABECERA?>
+
 <!-- SECCIÓN DONDE SE EXPLICA LA POLÍTICA DE PRIVACIDAD-->
 <section class="py-5 contenedor_principal">
     <div class="contenedor">
@@ -23,4 +24,5 @@
         </p>
     </div>
 </section>
+
 <?php require_once 'aplicacion/vistas/plantillas/pie.php'; //SE CARGA EL FOOTER.?> 

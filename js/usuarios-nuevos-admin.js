@@ -81,9 +81,9 @@ function mostrarUsuarios(pagina){
                     //DEPENEDE DE SI ESTA O NO HABILITADO EL USUARIO, LE PONGO UN ESTILO.
                     var habilitado = "";
                     if(usuario.habilitado === "si"){
-                        habilitado = "<strong class='estado_habilitado'>Habilitado</strong>";
+                        habilitado = "<b class='estado_habilitado'>Habilitado</b>";
                     }else{
-                        habilitado = "<strong class='estado_no_habilitado'>No habilitado</strong>";
+                        habilitado = "<b class='estado_no_habilitado'>No habilitado</b>";
                     }
 
                     var boton_habilitar = "";
@@ -180,7 +180,7 @@ function habilitarUsuario(id_usuario){
             var respuesta = JSON.parse(peticion.responseText);
             if(respuesta.usuario_habilitado){
                 document.getElementById("mensaje-habilitar").innerHTML = "<p style='color: green;'>El usuario se habilitó correctamente.</p>";
-                document.getElementById("estado-usuario-"+id_usuario).innerHTML = "<strong style='color: green;'>Habilitado</strong>";
+                document.getElementById("estado-usuario-"+id_usuario).innerHTML = "<b style='color: green;'>Habilitado</b>";
             }
         }
     };

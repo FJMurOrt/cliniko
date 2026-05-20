@@ -50,7 +50,7 @@ function mostrarNotificaciones(){
                                 "<div class='card-body'>"+
                                     "<div class='row align-items-center'>"+
                                         "<div class='col-md-2 text-center'>"+
-                                            "<i class='fa fa-bell' style='font-size: 40px; color: #D47B5E;'></i>"+
+                                            "<i class='fa fa-bell' style='font-size: 3vw; color: #D47B5E;'></i>"+
                                         "</div>"+
                                         "<div class='col-md-7'>"+
                                             "<p class='mb-1'>"+notificacion.mensaje+"</p>"+

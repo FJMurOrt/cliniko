@@ -20,7 +20,7 @@ function crearObjetoPeticion(){
 //FUNCIÓN PARA MOSTRAR LAS CITAS ACTIVAS
 function mostrarCitasActivas(pagina){
     //LA PÁGINA POR DEFECTO DE LA FUNCIÓN SERÁ LA PRIMERA
-    if(pagina == null){
+    if(!pagina){
         pagina = 1;
     }
 

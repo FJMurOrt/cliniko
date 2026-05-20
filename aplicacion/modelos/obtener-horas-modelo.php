@@ -58,7 +58,9 @@ function calcularHorasDisponibles($hora_inicio, $hora_fin, $horas_reservadas, $f
 
     while($inicio < $fin){
         $fin_cita = $inicio + 3600;
-        if($fin_cita > $fin) break;
+        if($fin_cita > $fin){
+           break; 
+        }
 
         $hora_str = date("H:i", $inicio);
 

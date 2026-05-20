@@ -22,6 +22,7 @@ function mostrarValoraciones(pagina){
     }
 
     var peticion = crearObjetoPeticion();
+    
     if(!peticion){
        return; 
     }
@@ -241,10 +242,12 @@ document.getElementById("filtro-fecha-valoraciones").addEventListener("change", 
 });
 
 document.getElementById("filtro-puntuacion-valoraciones").addEventListener("change", function(){
+    document.getElementById("filtro-orden-valoraciones").value = "";
     mostrarValoraciones();
 });
 
 document.getElementById("filtro-orden-valoraciones").addEventListener("change", function(){
+    document.getElementById("filtro-puntuacion-valoraciones").value = "";
     mostrarValoraciones();
 });
 

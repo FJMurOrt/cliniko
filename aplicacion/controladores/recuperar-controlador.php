@@ -6,7 +6,7 @@ require_once "../configuracion/config.php";
 $correo = trim($_POST["correo"]);
 
 //VALIDACIÓN PARA QUE EL CAMPO NO ESTÉ VACÍO Y SEA UN CORREO VÁLIDO
-if (empty($correo) || !filter_var($correo, FILTER_VALIDATE_EMAIL)) {
+if(empty($correo) || !filter_var($correo, FILTER_VALIDATE_EMAIL)){
     $_SESSION["errores"] = ["Por favor, introduce un correo válido."];
     header("Location: ../../recuperar-contrasena.php");
     exit;
@@ -21,8 +21,7 @@ $usuario_registro = mysqli_fetch_assoc($resultado);
 mysqli_stmt_close($consulta);
 
 //SI EXISTE EL USUARIO, GENERAMOS EL TOKEN
-if ($usuario_registro) {
-
+if($usuario_registro){
     //GENERACIÓN DEL TOKEN Y FECHA DE CADUCIDAD
     $token = bin2hex(random_bytes(16));
     $f_caduca = date("Y-m-d H:i:s", strtotime("+30 minutes"));
@@ -34,12 +33,12 @@ if ($usuario_registro) {
     mysqli_stmt_close($consultaToken);
 
     //Y ENVIAMOS EL CORREO JUNTO CON EL TOKEN
-    $api = "CLAVE_DE_LA_API_BREVO"; 
+    $api = ""; 
     $url = "https://api.brevo.com/v3/smtp/email";
     $enlace_recuperar = "http://localhost/cliniko_copia_con_datos_para_local-copia/cambiar-contrasena.php?token=$token";
 
     $correoEmail = [
-        "sender" => ["name" => "Clíniko", "email" => "francisco.javier.muriel.orta@ieslaarboleda.es"],
+        "sender" => ["name" => "Clíniko", "email" => ""],
         "to" => [["email" => $correo]],
         "subject" => "Recuperar contraseña",
         "htmlContent" => "<h1>¡Hola ".$usuario_registro["nombre"]."!</h1>".

@@ -19,7 +19,7 @@ $usuario = obtenerDatosUsuario($conexion, $id_usuario);
 habilitarUsuario($conexion, $id_usuario);
 
 //ENVIO EL CORREO AL USUARIO DE QUE SE LE HA HABILITADO
-$api = "CLAVE_API_BREVO";
+$api = "";
 $url_brevo = "https://api.brevo.com/v3/smtp/email";
 
 $asunto = "Tu cuenta en Clíniko ha sido activada";
@@ -30,7 +30,7 @@ $mensaje .= "<p>Saludos cordiales,</p>";
 $mensaje .= "<p>El equipo de Clíniko</p>";
 
 $correo = [
-    "sender" => ["name" => "Clíniko", "email" => "francisco.javier.muriel.orta@ieslaarboleda.es"],
+    "sender" => ["name" => "Clíniko", "email" => ""],
     "to" => [["email" => $usuario["correo"]]],
     "subject" => $asunto,
     "htmlContent" => $mensaje

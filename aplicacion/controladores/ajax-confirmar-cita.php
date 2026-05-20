@@ -79,12 +79,12 @@ $mensaje .= "<p>Recuerda que la cancelación gratuita solo es posible si se real
 $mensaje .= "<p>Saludos cordiales,</p>";
 $mensaje .= "<p>El equipo de Clíniko</p>";
 
-$api = "CLAVE_API_BREVO";
+$api = "";
 $url = "https://api.brevo.com/v3/smtp/email";
 
 //SINTAXIS PREDERTERMINADA DE BREVO PAR APODER ENVIAR EL CORREO
 $correoEmail = [
-    "sender" => ["name" => "Clíniko", "email" => "francisco.javier.muriel.orta@ieslaarboleda.es"],
+    "sender" => ["name" => "Clíniko", "email" => ""],
     "to" => [["email" => $cita_info["correo"]]],
     "subject" => $asunto,
     "htmlContent" => $mensaje

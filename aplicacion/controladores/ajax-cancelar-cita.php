@@ -21,7 +21,7 @@ if(isset($_GET["id_cita"])){
         //ENVÍO EL CORREO AL MÉDICO DE QUE HE CANCELADO LA CITA
         $correo_medico = obtenerCorreoMedico($conexion, $cita_info["id_medico"]);
 
-        $api = "CLAVE_API_BREVO";
+        $api = "";
         $url_brevo = "https://api.brevo.com/v3/smtp/email";
 
         $asunto = "Cita cancelada por ".$cita_info["nombre"]." ".$cita_info["apellidos"];
@@ -31,7 +31,7 @@ if(isset($_GET["id_cita"])){
         $mensaje .= "<p>El equipo de Clíniko</p>";
 
         $correoEmail = [
-            "sender" => ["name" => "Clíniko", "email" => "francisco.javier.muriel.orta@ieslaarboleda.es"],
+            "sender" => ["name" => "Clíniko", "email" => ""],
             "to" => [["email" => $correo_medico]],
             "subject" => $asunto,
             "htmlContent" => $mensaje

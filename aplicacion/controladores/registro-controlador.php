@@ -405,7 +405,7 @@ if(registrarUsuario($conexion, $nombre, $apellidos, $correo, $contrasena, $rol, 
     $admin = mysqli_fetch_assoc($resultado_correo_admin);
 
     // ENVIAMOS EL CORREO AL ADMINISTRADOR
-    $api = "CLAVE_DE_LA_API_BREVO";
+    $api = "";
     $url_brevo = "https://api.brevo.com/v3/smtp/email";
 
     $asunto = "Nuevo usuario registrado en Clíniko";
@@ -422,7 +422,7 @@ if(registrarUsuario($conexion, $nombre, $apellidos, $correo, $contrasena, $rol, 
     $mensaje .= "<p>El equipo de Clíniko</p>";
 
     $correoEmail = [
-        "sender" => ["name" => "Clíniko", "email" => "francisco.javier.muriel.orta@ieslaarboleda.es"],
+        "sender" => ["name" => "Clíniko", "email" => ""],
         "to" => [["email" => $admin["correo"]]],
         "subject" => $asunto,
         "htmlContent" => $mensaje

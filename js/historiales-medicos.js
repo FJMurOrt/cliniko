@@ -19,7 +19,7 @@ function crearObjetoPeticion(){
 
 //FUNCIÓN PARA MOSTRAR PACIENTES
 function mostrarPacientes(pagina){
-    if(pagina == null){
+    if(!pagina){
         pagina = 1;
     }
 
@@ -138,7 +138,7 @@ function generarHistorialPDF(id_paciente, nombre_paciente){
             var fecha_nacimiento = partes_nacimiento[2]+"/"+partes_nacimiento[1]+"/"+partes_nacimiento[0];
 
             var nss = "No proporcionado";
-            if (datos.paciente.nss && datos.paciente.nss !== "El usuario no lo introdujo") {
+            if (datos.paciente.nss && datos.paciente.nss !== "El usuario no lo introdujo"){
                 nss = datos.paciente.nss;
             }
 

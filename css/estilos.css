@@ -195,15 +195,10 @@ footer{
   border-radius: 20px;
   display:none;
   position:fixed;
-  bottom:60px;
+  bottom:290px;
   right:20px;
   background-color: #D47B5E !important;
   color: white !important;
-}
-
-.boton-subir:hover{
-  background-color: #FFC107 !important;
-  color: #D47B5E !important;
 }
 
 /*FONDO DEL FORMULARIO PARA CAMBIAR LA CONTRASEÑA*/

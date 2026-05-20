@@ -29,11 +29,11 @@ if($loquesevaahacer === "enviar"){
         exit;
     }
 
-    $api = "CLAVE_DE_LA_API_BREVO";
+    $api = "";
     $url_brevo = "https://api.brevo.com/v3/smtp/email";
 
     $correo_enviar_al_usuario = [
-        "sender" => ["name" => "Clíniko", "email" => "francisco.javier.muriel.orta@ieslaarboleda.es"],
+        "sender" => ["name" => "Clíniko", "email" => ""],
         "to" => [["email" => $correo]],
         "subject" => $asunto,
         "htmlContent" => "<p>".nl2br(htmlspecialchars($mensaje))."</p>"
@@ -51,7 +51,9 @@ if($loquesevaahacer === "enviar"){
     curl_exec($curl);
     curl_close($curl);
 
-    echo json_encode(["enviado" => true]);
+    echo json_encode([
+        "enviado" => true
+        ]);
     exit;
 }
 

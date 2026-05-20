@@ -15,7 +15,7 @@
                         <img class="imagen-servicio" src="img/imagen_cita.png" alt="cita_medica" style="max-width: 100%; height: auto;">
                         <h5 class="card-titulo mt-4" style="color: #333333;">Gestión de citas</h5>
                         <p class="card-text mt-4">
-                            ¡Solicita, modifica o cancela tus citas médicas!
+                            ¡Solicita, cancela o atiende tus citas médicas!
                         </p>
                     </div>
                 </div>
@@ -28,7 +28,7 @@
                         <img class="imagen-servicio" src="img/historiales.png" alt="historiales_apilados" style="max-width: 100%; height: auto;">
                         <h5 class="card-titulo mt-4" style="color: #333333;">Historiales médicos</h5>
                         <p class="card-text mt-4">
-                            ¡Consulta historiales médicos!
+                            ¡Consulta o genera historiales médicos y recetas!
                         </p>
                     </div>
                 </div>

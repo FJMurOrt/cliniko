@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
     //FUNCIÓN PARA ACTIVAR O DESACTIVAR EL BOTÓN DEPENDIENDO DE LO QUE TENGAMOS SELECCIONADO EN EL SELECT
-    function comprobarFormulario() {
+    function comprobarFormulario(){
         var fecha = select_fechas.value;
         var turno = select_turnos.value;
         var hora = select_horas.value;
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function(){
         return;
     }
 
-    // VALIDACIÓN DE FECHA ANTERIOR A HOY
+    //VALIDACIÓN DE FECHA ANTERIOR A HOY
     var hoy = new Date();
     var fecha_seleccionada = new Date(select_fechas.value);
 
@@ -95,6 +95,7 @@ document.addEventListener("DOMContentLoaded", function(){
         }
 
         var peticion_horas = crearObjetoPeticion();
+        
         if(peticion_horas){
             //ABRIMOS LA PETICION
             peticion_horas.open("GET", "../../controladores/obtener-horas.php?id_medico="+id_medico+"&fecha="+select_fechas.value +"&turno="+select_turnos.value, true);

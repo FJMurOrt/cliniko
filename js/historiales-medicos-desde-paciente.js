@@ -44,7 +44,7 @@ function cargarEspecialidadesHistoriales(){
 
 //FUNCIÓN PARA MOSTRAR MÉDICOS
 function mostrarMedicos(pagina){
-    if(pagina == null){
+    if(!pagina){
         pagina = 1;
     }
 

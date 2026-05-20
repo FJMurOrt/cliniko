@@ -48,7 +48,7 @@
                                         <input id="correo1" type="email" name="correo" class="form-control">
                                     </div>
                                     <div class="form-group">
-                                        <label class='etiqueta-filtro'>Repetir correo</label>
+                                        <label class='etiqueta-filtro'>Vuelve a introducir el correo</label>
                                         <input id="correo2" type="email" name="correo_repetido" class="form-control">
                                     </div>
                                     <?php if(isset($_SESSION["correo_cambiado"])){ ?>
@@ -81,7 +81,7 @@
                                         <input id="telef1" type="text" name="telefono" class="form-control">
                                     </div>
                                     <div class="form-group">
-                                        <label class='etiqueta-filtro'>Repetir teléfono</label>
+                                        <label class='etiqueta-filtro'>Vuelve a introducir el teléfono</label>
                                         <input id="telef2" type="text" name="telefono_repetido" class="form-control">
                                     </div>
                                     <?php if(isset($_SESSION["telefono_cambiado"])){ ?>
@@ -114,7 +114,7 @@
                                         <input id="contra1" type="password" name="contrasena_nueva" class="form-control">
                                     </div>
                                     <div class="form-group">
-                                        <label class='etiqueta-filtro'>Repetir nueva contraseña</label>
+                                        <label class='etiqueta-filtro'>Vuelve a introducir la contraseña</label>
                                         <input id="contra2" type="password" name="contrasena_nueva_repetida" class="form-control">
                                     </div>
                                     <?php if(isset($_SESSION["contra_cambiada"])){?>
