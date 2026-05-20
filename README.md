@@ -61,6 +61,10 @@ Accede en: **http://localhost:8080**
 | Médico | medico@test.com | Test1234. |
 | Paciente | paciente@test.com | Test1234. |
 
+## ⚙️ CI/CD
+
+Este proyecto usa GitHub Actions para construir y publicar automáticamente la imagen Docker en DockerHub con cada push que se hace a la rama `main`.
+
 
 ## ⚠️ Avisos importantes
 
@@ -85,7 +89,7 @@ La aplicación sigue la estructura MVC para mantener la organización del códig
 - Gestión completa de citas médicas (CRUD)
 - Sistema de roles
 - Notificaciones por correo electrónico
-- AJAX con XMLHttpRequest
+- Implementación de AJAX con XMLHttpRequest en la mayoría de funcionalidades
 - Filtros, paginación y búsqueda en tiempo real
 - Validaciones en frontend y backend
 - Diseño responsive con Bootstrap
