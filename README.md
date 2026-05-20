@@ -1,53 +1,112 @@
 # Clíniko
 
-Aplicación web para citas médicas entre pacientes y médicos.
+Aplicación web para la gestión de citas médicas entre pacientes y médicos.
 
-Clíniko es un proyecto desarrollado como proyecto final del Ciclo Formativo de Grado Superior en Desarrollo de Aplicaciones Web (DAW).  
-El objetivo es ofrecer una plataforma digital que facilite la comunicación entre pacientes y médicos, que permita gestionar citas médicas, historiales, crear valoraciones y recibir notificaciones.
+Clíniko es el proyecto final de mi Ciclo Formativo de Grado Superior en Desarrollo de Aplicaciones Web. Es una plataforma digital que ofrece la comunicación entre pacientes y médicos, y que permite gestionar citas médicas, historiales, valoraciones y notificaciones.
 
+> ⚠️ Este proyecto se encuentra en fase alfa.
 
-# Estructura del proyecto (Modelo – Vista – Controlador)
+---
 
-La aplicación sigue la estructura de carpetas del MVC (Modelo – Vista – Controlador) para mantener la organización.
+## 🐳 Ejecutar con Docker
 
-# Roles y permisos
+La forma más fácil de levantar el proyecto es usando la imagen que está en DockerHub.
 
-El usuario paciente  es el usuario que solicita atención médica y puede solicitar, modificar o cancelar citas o valorar médicos y recibir notificaciones por correo. 
-El usuario médico es el usuario que ofrece atención sanitaria y puede gestionar sus citas, consultar historiales y recibir valoraciones.
-Y el usuario administrador es el usuario encargaado de mantener el funcionamiento del sistema y puede gestionar usuarios, supervisar valoraciones y la configuración general de la web.
+### Requisitos
+- Docker instalado
 
-# Funcionalidades clave
+### Pasos
 
-Gestión completa de citas médicas (CRUD), sistema de roles, envío de notificaciones por correo electrónico, uso de AJAX en operaciones de recarga de la página, listados con filtros y paginación, validaciones en frontend y backend y un diseño responsive con Bootstrap.
+```bash
+docker pull fjmurort/cliniko:latest
+```
 
-# Tecnologías utilizadas
+Crea un archivo `docker-compose.yml` con el siguiente contenido:
 
-### Backend
-- PHP (procedural)
-- MySQL con phpMyAdmin
+```yaml
+version: "3.8"
 
-### Frontend
-- HTML5
-- CSS3
-- Bootstrap 5
-- JavaScript vanilla
+services:
+  web:
+    image: fjmurort/cliniko:latest
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_NAME=cliniko
+      - DB_USER=root
+      - DB_PASS=rootpassword
+
+  db:
+    image: mysql:8.0
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpassword
+      - MYSQL_DATABASE=cliniko
+    volumes:
+      - ./cliniko.sql:/docker-entrypoint-initdb.d/cliniko.sql
+```
+
+```bash
+docker-compose up
+```
+
+Accede en: **http://localhost:8080**
+
+### Usuarios de prueba
+
+| Rol | Email | Contraseña |
+|-----|-------|------------|
+| Administrador | admin@test.com | Test1234. |
+| Médico | medico@test.com | Test1234. |
+| Paciente | paciente@test.com | Test1234. |
+
+---
+
+## ⚠️ Avisos importantes
+
+- **Brevo API:** El envío de emails requiere configurar una API key propia de Brevo en el archivo de configuración.
+- **Stripe:** Los pagos requieren configurar las claves de Stripe propias.
+- Las funcionalidades de email y pagos no están activas en la imagen de Docker por defecto.
+
+---
+
+## 🏗️ Estructura del proyecto (MVC)
+
+La aplicación sigue la estructura MVC para mantener la organización del código.
+
+---
+
+## 👥 Roles y permisos
+
+- **Paciente:** solicita, modifica o cancela citas, valora médicos y recibe notificaciones.
+- **Médico:** gestiona sus citas, consulta historiales y recibe valoraciones.
+- **Administrador:** gestiona usuarios, supervisa valoraciones y la configuración general.
+
+---
+
+## ⚙️ Funcionalidades clave
+
+- Gestión completa de citas médicas (CRUD)
+- Sistema de roles
+- Notificaciones por correo electrónico
 - AJAX con XMLHttpRequest
+- Filtros, paginación y búsqueda en tiempo real
+- Validaciones en frontend y backend
+- Diseño responsive con Bootstrap
 
-### Más herramientas emlpeadas.
-- XAMPP (servidor local)
-- InfinityFree (hosting)
-- Git y GitHub (control de versiones)
-- Trello (planificación del proyecto)
-- Brevo API (envío de correos)
-- Tidio (chatbot)
-- pdf24.js (generación de PDFs)
-- Canva.com
-- Chatbot con Tidio
-- Imágenes obtenidas de [Freepik](https://www.freepik.com)
-  
-# Estado del proyecto
+---
 
-⚠️ Este proyecto se encuentra en fase alfa.
+## 🛠️ Tecnologías utilizadas
+
+**Backend:** PHP (procedural), MySQL
+
+**Frontend:** HTML5, CSS3, Bootstrap 5, JavaScript, AJAX
+
+**Herramientas:** Docker, Git y GitHub, Brevo API, Stripe, Tidio, pdf24.js
+
+---
 
 # Landing page y páginas públicas
 
