@@ -161,7 +161,7 @@ La aplicación sigue la estructura MVC para mantener la organización del códig
 </p>
 
 # Demo desde Infinity Free
-También Puedes ver la aplicación en funcionamiento en el siguiente enlace:
+También puedes ver la aplicación en funcionamiento en el siguiente enlace:
 [Clíniko](https://cliniko.infinityfreeapp.com/)
 
 
