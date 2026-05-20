@@ -160,8 +160,8 @@ La aplicación sigue la estructura MVC para mantener la organización del códig
   <img src="capturas/11.png" width="80%">
 </p>
 
-# Demo
-Puedes ver la aplicación en funcionamiento en el siguiente enlace:
+# Demo desde Infinity Free
+También Puedes ver la aplicación en funcionamiento en el siguiente enlace:
 [Clíniko](https://cliniko.infinityfreeapp.com/)
 
 
