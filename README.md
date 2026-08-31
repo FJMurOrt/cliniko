@@ -88,6 +88,7 @@ La aplicación sigue la estructura MVC para mantener la organización del códig
 
 - Gestión completa de citas médicas (CRUD)
 - Sistema de roles
+- ChatBot diferenciado por tipo de usuario
 - Notificaciones por correo electrónico
 - Implementación de AJAX con XMLHttpRequest en la mayoría de funcionalidades
 - Filtros, paginación y búsqueda en tiempo real
@@ -101,7 +102,7 @@ La aplicación sigue la estructura MVC para mantener la organización del códig
 
 **Frontend:** HTML5, CSS3, Bootstrap 5, JavaScript, AJAX
 
-**Herramientas:** Docker, Git y GitHub, Brevo API, Stripe, Tidio, pdf24.js
+**Herramientas:** Docker, Git y GitHub, Brevo API, Stripe, Tidio (ChatBot), pdf24.js
 
 
 # Capturas de pantalla de la landing page y páginas públicas.
